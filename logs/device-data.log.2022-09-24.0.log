@@ -1,0 +1,344 @@
+2022-09-24 18:48:43.042 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2022-09-24 18:48:43.626 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 18:48:43.866 [main] INFO  center.misaki.device.DataApp - The following profiles are active: dev
+2022-09-24 18:48:45.154 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=c1a832f6-0581-3e15-9c8c-cab503fd2a6b
+2022-09-24 18:48:45.216 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$ea90cf90] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 18:48:45.298 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 18:48:45.465 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 18:48:45.748 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2022-09-24 18:48:45.758 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2022-09-24 18:48:45.759 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-24 18:48:45.759 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2022-09-24 18:48:45.853 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-24 18:48:45.853 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1972 ms
+2022-09-24 18:48:46.135 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-09-24 18:48:56.917 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-09-24 18:48:57.623 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-24 18:48:57.821 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-09-24 18:48:57.821 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-09-24 18:48:57.824 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-09-24 18:48:57.824 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-09-24 18:48:58.625 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-09-24 18:48:58.673 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2022-09-24 18:48:58.750 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-09-24 18:48:58.776 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-09-24 18:48:58.912 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-09-24 18:48:58.912 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-09-24 18:48:58.993 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-09-24 18:48:58.993 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-09-24 18:48:59.123 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-09-24 18:48:59.219 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-09-24 18:48:59.219 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-09-24 18:48:59.220 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-09-24 18:48:59.220 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2022-09-24 18:48:59.220 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-09-24 18:48:59.220 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-09-24 18:48:59.220 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-09-24 18:48:59.290 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2022-09-24 18:48:59.291 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2022-09-24 18:48:59.292 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-24 18:48:59.295 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1664016539294 with initial instances count: 0
+2022-09-24 18:48:59.299 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application DEVICE-DATA with eureka with status UP
+2022-09-24 18:48:59.299 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1664016539299, current=UP, previous=STARTING]
+2022-09-24 18:48:59.301 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002: registering service...
+2022-09-24 18:48:59.307 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2022-09-24 18:48:59.327 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2022-09-24 18:48:59.328 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8002
+2022-09-24 18:48:59.359 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - registration status: 204
+2022-09-24 18:48:59.468 [main] INFO  center.misaki.device.DataApp - Started DataApp in 16.393 seconds (JVM running for 17.388)
+2022-09-24 18:49:29.297 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-09-24 18:49:29.298 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-09-24 18:49:29.298 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-09-24 18:49:29.298 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2022-09-24 18:49:29.298 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-09-24 18:49:29.298 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2022-09-24 18:49:29.298 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-09-24 18:49:29.333 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2022-09-24 18:53:59.236 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-09-24 18:54:38.073 [http-nio-8002-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-24 18:54:38.074 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-09-24 18:54:38.081 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2022-09-24 18:54:38.310 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://MISAKI-0112:8002/change], URI: [/change], Request Method: [POST], IP: [127.0.0.1]
+2022-09-24 18:54:38.317 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - DataAccessController.change Parameters: [[{"data":{"20_8FttfwpqtJBBAR2A5sk":"1","3_3cHzCxWF5wt_cMUFWJp":"2022-09-30 06:33:18","1_uQHXTkvZb4E6c9EQWuF":"未发现异常","4_TOkQ1lPQNl1PbSnr7si":"正常","15_QOuGZdBEihJLyA9LDAZ":"1321","6_rcWxLdL0N-FmMmM3S7t":"4","15_DGh3lBLuRt7CaYjFRtM":"[1318]"},"dataId":1323,"formId":9},"eJxlUF1vgkAQ/C/3bA2Q2qhvihQPRIJffDSNOc9TD4+DHEdAmv73HjZpbfq2s7MzuzsfAGGcV1wu\r\nc241BRXkCMZSVKT3QCxyfH3oV/KSCyopKcH47b0HsCBIEgHGJ8RKcsdHwiVV6L8r4ejAfiHPRYbY\r\n5JhR/qMvb+XfhiScZMoRKpmuYH4ligTk5lwONqY+deC2hfqSwhLy1QCb8AVei2hnOqO+GmJkPqF+\r\nahnLNKi91Hv2N2c1uGuTyDkdsleZrJWALfVDNGWYXwaQ1hTxVQHTnPp20CY2bGPDk3EYtP5a0+I0\r\nbhYbRr0Uy2Q2zRJ728ah18abVdppY6MpknCgRQa7dh7Y9ujCdJTHqO52hffDaxpFWn+IzEaziimb\r\nrcJAPJ2R5SbqpUlWufO9I9Z7b+YO0/qG3AnogaokokvB0L9rjjKiklhXWUFEcwOfXy89oWA="]]
+2022-09-24 18:54:38.419 [http-nio-8002-exec-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-09-24 18:54:38.438 [http-nio-8002-exec-1] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-auth-center
+2022-09-24 18:54:38.438 [http-nio-8002-exec-1] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: auth-center instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-09-24 18:54:38.443 [http-nio-8002-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2022-09-24 18:54:38.459 [http-nio-8002-exec-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-09-24 18:54:38.461 [http-nio-8002-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client auth-center initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[MISAKI-0112:8001],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:MISAKI-0112:8001;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 GMT+08:00 1970;	First connection made: Thu Jan 01 08:00:00 GMT+08:00 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@42dbfb12
+2022-09-24 18:54:39.458 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-09-24 18:54:51.165 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://MISAKI-0112:8002/change], URI: [/change], Request Method: [POST], IP: [127.0.0.1]
+2022-09-24 18:54:51.165 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - DataAccessController.change Parameters: [[{"data":{"20_8FttfwpqtJBBAR2A5sk":"1","3_3cHzCxWF5wt_cMUFWJp":"2022-09-30 06:33:18","1_uQHXTkvZb4E6c9EQWuF":"未发现异常","4_TOkQ1lPQNl1PbSnr7si":"正常","15_QOuGZdBEihJLyA9LDAZ":"1321","6_rcWxLdL0N-FmMmM3S7t":"4","15_DGh3lBLuRt7CaYjFRtM":"[1318]"},"dataId":1323,"formId":9},"eJxlUF1vgkAQ/C/3bA2Q2qhvihQPRIJffDSNOc9TD4+DHEdAmv73HjZpbfq2s7MzuzsfAGGcV1wu\r\nc241BRXkCMZSVKT3QCxyfH3oV/KSCyopKcH47b0HsCBIEgHGJ8RKcsdHwiVV6L8r4ejAfiHPRYbY\r\n5JhR/qMvb+XfhiScZMoRKpmuYH4ligTk5lwONqY+deC2hfqSwhLy1QCb8AVei2hnOqO+GmJkPqF+\r\nahnLNKi91Hv2N2c1uGuTyDkdsleZrJWALfVDNGWYXwaQ1hTxVQHTnPp20CY2bGPDk3EYtP5a0+I0\r\nbhYbRr0Uy2Q2zRJ728ah18abVdppY6MpknCgRQa7dh7Y9ujCdJTHqO52hffDaxpFWn+IzEaziimb\r\nrcJAPJ2R5SbqpUlWufO9I9Z7b+YO0/qG3AnogaokokvB0L9rjjKiklhXWUFEcwOfXy89oWA="]]
+2022-09-24 18:55:38.827 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://MISAKI-0112:8002/change], URI: [/change], Request Method: [POST], IP: [127.0.0.1]
+2022-09-24 18:55:38.828 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - DataAccessController.change Parameters: [[{"data":{"20_8FttfwpqtJBBAR2A5sk":"1","3_3cHzCxWF5wt_cMUFWJp":"2022-09-30 06:33:18","1_uQHXTkvZb4E6c9EQWuF":"未发现异常","4_TOkQ1lPQNl1PbSnr7si":"正常","15_QOuGZdBEihJLyA9LDAZ":"1321","6_rcWxLdL0N-FmMmM3S7t":"4","15_DGh3lBLuRt7CaYjFRtM":"[1318]"},"dataId":1323,"formId":9},"eJxlUF1vgkAQ/C/3bA2Q2qhvihQPRIJffDSNOc9TD4+DHEdAmv73HjZpbfq2s7MzuzsfAGGcV1wu\r\nc241BRXkCMZSVKT3QCxyfH3oV/KSCyopKcH47b0HsCBIEgHGJ8RKcsdHwiVV6L8r4ejAfiHPRYbY\r\n5JhR/qMvb+XfhiScZMoRKpmuYH4ligTk5lwONqY+deC2hfqSwhLy1QCb8AVei2hnOqO+GmJkPqF+\r\nahnLNKi91Hv2N2c1uGuTyDkdsleZrJWALfVDNGWYXwaQ1hTxVQHTnPp20CY2bGPDk3EYtP5a0+I0\r\nbhYbRr0Uy2Q2zRJ728ah18abVdppY6MpknCgRQa7dh7Y9ujCdJTHqO52hffDaxpFWn+IzEaziimb\r\nrcJAPJ2R5SbqpUlWufO9I9Z7b+YO0/qG3AnogaokokvB0L9rjjKiklhXWUFEcwOfXy89oWA="]]
+2022-09-24 18:58:14.195 [DiscoveryClient-0] WARN  com.netflix.discovery.TimedSupervisorTask - task supervisor timed out
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+2022-09-24 18:58:14.195 [DiscoveryClient-1] WARN  com.netflix.discovery.TimedSupervisorTask - task supervisor timed out
+java.util.concurrent.TimeoutException: null
+	at java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:66)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+2022-09-24 18:58:59.238 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-09-24 19:03:59.247 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-09-24 19:06:05.833 [Thread-45] INFO  com.netflix.loadbalancer.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+2022-09-24 19:06:05.833 [SpringContextShutdownHook] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application DEVICE-DATA with eureka with status DOWN
+2022-09-24 19:06:05.833 [SpringContextShutdownHook] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1664017565833, current=DOWN, previous=UP]
+2022-09-24 19:06:05.834 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002: registering service...
+2022-09-24 19:06:05.836 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-24 19:06:05.837 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2022-09-24 19:06:05.842 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - registration status: 204
+2022-09-24 19:06:05.847 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-09-24 19:06:05.848 [SpringContextShutdownHook] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook removed for: NFLoadBalancer-PingTimer-auth-center
+2022-09-24 19:06:05.848 [SpringContextShutdownHook] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:948)
+2022-09-24 19:06:05.850 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2022-09-24 19:06:08.852 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2022-09-24 19:06:08.869 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - deregister  status: 200
+2022-09-24 19:06:08.873 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2022-09-24 19:06:13.041 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2022-09-24 19:06:13.641 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:13.868 [main] INFO  center.misaki.device.DataApp - The following profiles are active: dev
+2022-09-24 19:06:14.428 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=c1a832f6-0581-3e15-9c8c-cab503fd2a6b
+2022-09-24 19:06:14.467 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$9db1e8bf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:14.519 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:14.611 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:14.783 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2022-09-24 19:06:14.790 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2022-09-24 19:06:14.790 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-24 19:06:14.790 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2022-09-24 19:06:14.904 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-24 19:06:14.904 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1023 ms
+2022-09-24 19:06:15.180 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-09-24 19:06:23.210 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-09-24 19:06:23.855 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-24 19:06:24.041 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-09-24 19:06:24.041 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-09-24 19:06:24.044 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-09-24 19:06:24.044 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-09-24 19:06:24.768 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-09-24 19:06:24.808 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2022-09-24 19:06:24.868 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-09-24 19:06:24.891 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-09-24 19:06:25.017 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-09-24 19:06:25.017 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-09-24 19:06:25.084 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-09-24 19:06:25.085 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-09-24 19:06:25.167 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-09-24 19:06:25.261 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-09-24 19:06:25.261 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-09-24 19:06:25.261 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-09-24 19:06:25.262 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2022-09-24 19:06:25.262 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-09-24 19:06:25.262 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-09-24 19:06:25.262 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-09-24 19:06:25.350 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2022-09-24 19:06:25.352 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2022-09-24 19:06:25.353 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-24 19:06:25.355 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1664017585354 with initial instances count: 3
+2022-09-24 19:06:25.359 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application DEVICE-DATA with eureka with status UP
+2022-09-24 19:06:25.359 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1664017585359, current=UP, previous=STARTING]
+2022-09-24 19:06:25.361 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002: registering service...
+2022-09-24 19:06:25.367 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2022-09-24 19:06:25.386 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2022-09-24 19:06:25.387 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8002
+2022-09-24 19:06:25.394 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - registration status: 204
+2022-09-24 19:06:25.519 [main] INFO  center.misaki.device.DataApp - Started DataApp in 12.443 seconds (JVM running for 13.117)
+2022-09-24 19:06:31.628 [SpringContextShutdownHook] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application DEVICE-DATA with eureka with status DOWN
+2022-09-24 19:06:31.628 [SpringContextShutdownHook] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1664017591628, current=DOWN, previous=UP]
+2022-09-24 19:06:31.628 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002: registering service...
+2022-09-24 19:06:31.632 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-24 19:06:31.633 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2022-09-24 19:06:31.641 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - registration status: 204
+2022-09-24 19:06:31.643 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-09-24 19:06:31.645 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2022-09-24 19:06:34.652 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Unregistering ...
+2022-09-24 19:06:34.670 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - deregister  status: 200
+2022-09-24 19:06:34.674 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2022-09-24 19:06:36.897 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2022-09-24 19:06:37.472 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:37.718 [main] INFO  center.misaki.device.DataApp - The following profiles are active: dev
+2022-09-24 19:06:38.317 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=c1a832f6-0581-3e15-9c8c-cab503fd2a6b
+2022-09-24 19:06:38.363 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$2304e7f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:38.430 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:38.525 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-09-24 19:06:38.761 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2022-09-24 19:06:38.769 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2022-09-24 19:06:38.770 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-24 19:06:38.770 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2022-09-24 19:06:38.870 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-24 19:06:38.870 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1138 ms
+2022-09-24 19:06:39.144 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2022-09-24 19:06:47.182 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-09-24 19:06:47.795 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2022-09-24 19:06:47.963 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-09-24 19:06:47.963 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-09-24 19:06:47.966 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2022-09-24 19:06:47.966 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-09-24 19:06:48.720 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2022-09-24 19:06:48.762 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2022-09-24 19:06:48.825 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2022-09-24 19:06:48.851 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2022-09-24 19:06:48.982 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2022-09-24 19:06:48.983 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2022-09-24 19:06:49.061 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2022-09-24 19:06:49.061 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2022-09-24 19:06:49.187 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2022-09-24 19:06:49.284 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2022-09-24 19:06:49.285 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2022-09-24 19:06:49.285 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2022-09-24 19:06:49.285 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2022-09-24 19:06:49.285 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2022-09-24 19:06:49.285 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2022-09-24 19:06:49.285 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2022-09-24 19:06:49.389 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2022-09-24 19:06:49.391 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2022-09-24 19:06:49.393 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-09-24 19:06:49.395 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1664017609395 with initial instances count: 3
+2022-09-24 19:06:49.400 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application DEVICE-DATA with eureka with status UP
+2022-09-24 19:06:49.400 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1664017609400, current=UP, previous=STARTING]
+2022-09-24 19:06:49.402 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002: registering service...
+2022-09-24 19:06:49.408 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2022-09-24 19:06:49.430 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2022-09-24 19:06:49.431 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8002
+2022-09-24 19:06:49.433 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - registration status: 204
+2022-09-24 19:06:49.562 [main] INFO  center.misaki.device.DataApp - Started DataApp in 12.625 seconds (JVM running for 13.402)
+2022-09-24 19:06:58.602 [http-nio-8002-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-24 19:06:58.602 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-09-24 19:06:58.610 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2022-09-24 19:06:58.825 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://MISAKI-0112:8002/change], URI: [/change], Request Method: [POST], IP: [127.0.0.1]
+2022-09-24 19:06:58.831 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - DataAccessController.change Parameters: [[{"data":{"20_8FttfwpqtJBBAR2A5sk":"1","3_3cHzCxWF5wt_cMUFWJp":"2022-09-30 06:33:18","1_uQHXTkvZb4E6c9EQWuF":"未发现异常","4_TOkQ1lPQNl1PbSnr7si":"正常","15_QOuGZdBEihJLyA9LDAZ":"1321","6_rcWxLdL0N-FmMmM3S7t":"4","15_DGh3lBLuRt7CaYjFRtM":"[1318]"},"dataId":1323,"formId":9},"eJxlUF1vgkAQ/C/3bA2Q2qhvihQPRIJffDSNOc9TD4+DHEdAmv73HjZpbfq2s7MzuzsfAGGcV1wu\r\nc241BRXkCMZSVKT3QCxyfH3oV/KSCyopKcH47b0HsCBIEgHGJ8RKcsdHwiVV6L8r4ejAfiHPRYbY\r\n5JhR/qMvb+XfhiScZMoRKpmuYH4ligTk5lwONqY+deC2hfqSwhLy1QCb8AVei2hnOqO+GmJkPqF+\r\nahnLNKi91Hv2N2c1uGuTyDkdsleZrJWALfVDNGWYXwaQ1hTxVQHTnPp20CY2bGPDk3EYtP5a0+I0\r\nbhYbRr0Uy2Q2zRJ728ah18abVdppY6MpknCgRQa7dh7Y9ujCdJTHqO52hffDaxpFWn+IzEaziimb\r\nrcJAPJ2R5SbqpUlWufO9I9Z7b+YO0/qG3AnogaokokvB0L9rjjKiklhXWUFEcwOfXy89oWA="]]
+2022-09-24 19:06:58.940 [http-nio-8002-exec-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-09-24 19:06:58.959 [http-nio-8002-exec-1] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-auth-center
+2022-09-24 19:06:58.959 [http-nio-8002-exec-1] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: auth-center instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-09-24 19:06:58.964 [http-nio-8002-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2022-09-24 19:06:58.978 [http-nio-8002-exec-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-09-24 19:06:58.980 [http-nio-8002-exec-1] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client auth-center initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[MISAKI-0112:8001],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:MISAKI-0112:8001;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 GMT+08:00 1970;	First connection made: Thu Jan 01 08:00:00 GMT+08:00 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@7cdcc82c
+2022-09-24 19:07:06.608 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-09-24 19:07:06.631 [Thread-37] INFO  com.netflix.loadbalancer.PollingServerListUpdater - Shutting down the Executor Pool for PollingServerListUpdater
+2022-09-24 19:07:06.631 [SpringContextShutdownHook] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Unregistering application DEVICE-DATA with eureka with status DOWN
+2022-09-24 19:07:06.631 [SpringContextShutdownHook] WARN  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1664017626631, current=DOWN, previous=UP]
+2022-09-24 19:07:06.631 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002: registering service...
+2022-09-24 19:07:06.634 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2022-09-24 19:07:06.634 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2022-09-24 19:07:06.644 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/MISAKI-0112:device-data:8002 - registration status: 204
+2022-09-24 19:07:06.645 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-09-24 19:07:06.646 [SpringContextShutdownHook] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook removed for: NFLoadBalancer-PingTimer-auth-center
+2022-09-24 19:07:06.648 [SpringContextShutdownHook] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1065)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1060)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1029)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:948)
+2022-09-24 19:07:06.651 [SpringContextShutdownHook] INFO  com.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2022-09-24 19:07:06.960 [http-nio-8002-exec-1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService
+2022-09-24 19:07:06.963 [device-async-1] ERROR center.misaki.device.Config.AsyncTaskExecutePool - ====Could not open JDBC Connection for transaction; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Sat Sep 24 19:07:06 GMT+08:00 2022====
+org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Sat Sep 24 19:07:06 GMT+08:00 2022
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:307)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:376)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:572)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:360)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already closed at Sat Sep 24 19:07:06 GMT+08:00 2022
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionInternal(DruidDataSource.java:1574)
+	at com.alibaba.druid.pool.DruidDataSource.getConnectionDirect(DruidDataSource.java:1427)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1407)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1397)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:100)
+	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:263)
+	... 12 common frames omitted
+2022-09-24 19:07:06.963 [device-async-1] ERROR center.misaki.device.Config.AsyncTaskExecutePool - exception method:saveSingleDataLog
+2022-09-24 19:07:07.077 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - DataAccessController.change Response: [{"code":0,"msg":"修改成功"}]
+2022-09-24 19:07:07.078 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/change': running time = 8258073700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+011907600  000%  PrintRequest
+8244245300  100%  DataAccessController#change
+001920800  000%  PrintResponse
+

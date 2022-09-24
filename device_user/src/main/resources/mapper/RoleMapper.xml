@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="center.misaki.device.AddressBook.dao.RoleMapper">
+    
+    <select id="selectRoleIdsByUserId" resultType="java.util.Map" >
+        select userRole.role_id as roleId ,role.name from userRole , role where userRole.user_id=#{arg0} 
+        and userRole.role_id=role.id and userRole.tenement_id=#{arg1} and role.tenement_id=#{arg1}
+    </select>
+    
+    <insert id="insertIntoUserRole" >
+        insert into userRole(tenement_id,user_id,role_id,create_time) values (#{arg2},#{arg0},#{arg1},now())
+    </insert>
+    
+    <delete id="deleteOneUserRole">
+        delete from userRole where userRole.tenement_id=#{arg2} and userRole.user_id=#{arg0} and userRole.role_id=#{arg1}
+    </delete>
+    
+    
+    <insert id="insertRoleGroup" >
+        insert into roleGroup(tenement_id,name) values (#{arg0},#{arg1})
+    </insert>
+    
+    <select id="selectUserForRole" resultType="center.misaki.device.domain.Pojo.User">
+        select user.* from user , userRole where user.id=userRole.user_id and userRole.role_id=#{arg0} 
+        and userRole.tenement_id=#{arg1}
+    </select>
+    
+    <select id="selectNameGroup" resultType="java.lang.String">
+        select roleGroup.name from roleGroup where roleGroup.id=#{arg0} and roleGroup.tenement_id=#{arg1}
+    </select>
+    
+    <update id="changeRoleGroupName">
+        update roleGroup SET roleGroup.name=#{arg2}  where roleGroup.id=#{arg0} and roleGroup.tenement_id=#{arg1}
+    </update>
+    
+    <select id="selectAllGroupId" resultType="java.lang.Integer">
+        select roleGroup.id from roleGroup where roleGroup.tenement_id=#{arg0}
+    </select>
+    
+    <delete id="deleteRoleGroup">
+        delete from roleGroup where roleGroup.id=#{arg0}
+    </delete>
+    
+    <select id="selectUserIdsForRole" resultType="java.lang.Integer">
+        select user.id from user , userRole   where user.id=userRole.user_id and userRole.role_id=#{arg0}
+    </select>
+</mapper>
