@@ -192,7 +192,7 @@ public class RoleServiceImpl implements RoleService {
     @Async
     @Transactional
     public void saveUserIdsForRole(List<Integer> userIds, Integer roleId) {
-        if (userIds==null||userIds.isEmpty()) return;
+//        if (userIds==null||userIds.isEmpty()) return;
         Set<Integer> originUserIds = roleMapper.selectUserForRole(roleId, SecurityUtils.getCurrentUser().getTenementId()).stream().map(User::getId).collect(Collectors.toSet());
         userIds.forEach(u->{
             if(originUserIds.contains(u)) originUserIds.remove(u);

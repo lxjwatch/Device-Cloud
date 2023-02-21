@@ -147,6 +147,7 @@ public class UserServiceImpl implements UserService {
             userVo.setPhone(u.getPhone());
             userVo.setEmail(u.getEmail());
             userVo.setRole(roleServiceImpl.getUserRoleMap(u.getId()));
+            userVo.setState(u.getState());
             userVos.add(userVo);
         });
         return userVos;
