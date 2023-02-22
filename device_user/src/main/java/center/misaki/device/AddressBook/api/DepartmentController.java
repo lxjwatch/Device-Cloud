@@ -46,7 +46,7 @@ public class DepartmentController {
     
     //获取所有的部门
     @GetMapping("/show")
-    @AuthOnCondition(NeedSysAdmin = false)
+//    @AuthOnCondition(NeedSysAdmin = false)
     public Result<DepartmentVo> showAllDepartment(){
         DepartmentVo allDepartments = departmentService.getAllDepartments();
         return Result.ok(allDepartments,"获取成功");
@@ -54,7 +54,7 @@ public class DepartmentController {
     
     //获取一个部门下所有的成员
     @GetMapping("/getOneDeUser")
-    @AuthOnCondition(NeedSysAdmin = false)
+//    @AuthOnCondition(NeedSysAdmin = false)
     @AuthScope(department = true)
     public Result<List<UserVo>> getOneDeUser(@Valid @NotNull  Integer departmentId){
         List<UserVo> userOnDepart = departmentService.getUserOnDepart(departmentId);
@@ -78,5 +78,6 @@ public class DepartmentController {
             return Result.ok(null,"修改成功");
         }else return Result.error("修改失败");
     }
-    
+
+
 }

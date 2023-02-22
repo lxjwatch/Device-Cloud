@@ -79,7 +79,7 @@ public class AdminController {
         return Result.ok(null,"更新成功");
     }
     
-    
+    //修改普通管理组名
     @AuthOnCondition
     @PostMapping("/updateNormalAdminName")
     public Result<?> updateNormalName(String name,Integer groupId){

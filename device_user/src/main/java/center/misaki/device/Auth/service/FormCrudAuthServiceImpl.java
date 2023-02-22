@@ -61,6 +61,8 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
     public Set<Integer> getFormAuth(Integer formId) {
         JwtUserDto currentUser = SecurityUtils.getCurrentUser();
         Set<Integer> ans = new HashSet<>();
+
+        //如果是创建者和系统管理员直接赋予所有权限
         if(currentUser.isCreater()||currentUser.isSysAdmin()){
             ans.add(FormAuthEnum.SUBMIT.operation);
             ans.add(FormAuthEnum.SUBMIT_SELF.operation);
@@ -69,16 +71,28 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             return ans;
         }
         //获取用户所在的部门ID集合
-        List<Integer> departmentIds = departmentMapper.selectUserDepartIds(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId()).stream().map(m -> ((Long) m.get("departmentId")).intValue()).collect(Collectors.toList());
-        List<Integer> roleIds = roleMapper.selectRoleIdsByUserId(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId()).stream().map(m -> ((Long) m.get("roleId")).intValue()).collect(Collectors.toList());
+        List<Integer> departmentIds = departmentMapper.selectUserDepartIds(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId())
+                                                      .stream()
+                                                      .map(m -> ((Long) m.get("departmentId")).intValue())
+                                                      .collect(Collectors.toList());
+        //获取用户拥有的角色ID集合
+        List<Integer> roleIds = roleMapper.selectRoleIdsByUserId(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId())
+                                                      .stream()
+                                                      .map(m -> ((Long) m.get("roleId")).intValue())
+                                                      .collect(Collectors.toList());
 
+        //获取当前用户对一张表的权限
         UserAuthForm userAuthForm = userAuthMapper.selectOne(new QueryWrapper<UserAuthForm>().eq("user_id", currentUser.getUserId()).eq("form_id", formId));
+
+        //赋予用户身份自带的权限
         if(userAuthForm!=null){
             if(userAuthForm.getSubmit()) ans.add(FormAuthEnum.SUBMIT.operation);
             if(userAuthForm.getSubmitSelf()) ans.add(FormAuthEnum.SUBMIT_SELF.operation);
             if(userAuthForm.getManage()) ans.add(FormAuthEnum.MANAGE.operation);
             if(userAuthForm.getWatch()) ans.add(FormAuthEnum.WATCH.operation);
         }
+
+        //用户所在部门可以赋予用户某些权限
         departmentIds.forEach(departmentId -> {
             DepartmentAuthForm departmentAuthForm = departmentAuthMapper.selectOne(new QueryWrapper<DepartmentAuthForm>().eq("department_id", departmentId).eq("form_id", formId));
             if(departmentAuthForm!=null){
@@ -88,6 +102,8 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
                 if(departmentAuthForm.getWatch()) ans.add(FormAuthEnum.WATCH.operation);
             }
         });
+
+        //用户拥有的角色可以赋予用户某些权限
         roleIds.forEach(roleId -> {
             RoleAuthForm roleAuthForm = roleAuthMapper.selectOne(new QueryWrapper<RoleAuthForm>().eq("role_id", roleId).eq("form_id", formId));
             if(roleAuthForm!=null){
@@ -98,6 +114,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             }
         });
 
+        //用户所在的角色组可以赋予用户某些权限
         List<GroupAuthForm> groupAuthForms = formAuthMapper.selectUserFormGroupId(currentUser.getUserId(), formId);
         groupAuthForms.forEach(g->{
             if(g.getSubmit())ans.add(FormAuthEnum.SUBMIT.operation);
@@ -114,27 +131,37 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
     @Transactional
     public void updateSubmitAuth(FormSingleAuthDto formSingleAuthDto) {
         JwtUserDto currentUser = SecurityUtils.getCurrentUser();
+        //获取修改后拥有该表单权限的部门、角色、用户
         Set<Integer> department = formSingleAuthDto.getDepartment();
         Set<Integer> user = formSingleAuthDto.getUser();
         Set<Integer> role = formSingleAuthDto.getRole();
 
+        //获取原先拥有该表单权限的部门
         Map<Long, Object> departAuthMap = formAuthMapper.selectDepartAuthMap(SecurityUtils.getCurrentUser().getTenementId(), formSingleAuthDto.getFormId());
+        //获取原先拥有该表单权限的角色
         Map<Long, Object> userAuthMap = formAuthMapper.selectUserAuthMap(SecurityUtils.getCurrentUser().getTenementId(), formSingleAuthDto.getFormId());
+        //获取原先拥有该表单权限的用户
         Map<Long, Object> roleAuthMap = formAuthMapper.selectRoleAuthMap(SecurityUtils.getCurrentUser().getTenementId(), formSingleAuthDto.getFormId());
         
-        //增加权限
+        //给一些部门添加该表单的 直接添加数据 权限
         department.forEach(d->{
+            //当前用户是否为创建者或者系统管理员
             if(currentUser.isCreater()||currentUser.isSysAdmin()
+                    //当前用户是否可以管理全部部门的权限（-1：管理范围为全部部门）
                     || currentUser.getAuthDto().getScope().getDepartment().contains(-1)
+                    //当前用户是否可以管理某个部门的权限（d：拥有当前表单权限管理的某个部门）
                     ||currentUser.getAuthDto().getScope().getDepartment().contains(d)){
+                //当前部门是否为原先拥有该表单权限的部门
                 if(departAuthMap.containsKey(d.longValue())){
                     HashMap<String,Object> value = (HashMap) departAuthMap.get(d.longValue());
+                    //如果原先部门没有对该表单的提交权限，就赋予该部门对该表单的提交权限
                     if(!(Boolean) value.get("submit")){
                         departmentAuthMapper.update(null,new UpdateWrapper<DepartmentAuthForm>()
                                 .eq("id",value.get("id")).set("submit",true));
                     }
+                    //将当前部门移出老部门列表，后续会将留在列表里的部门（不再拥有对该表单权限的部门）进行删除
                     departAuthMap.remove(d.longValue());
-                }else{
+                }else{//新增加的拥有该表单权限的部门
                     DepartmentAuthForm authForm = new DepartmentAuthForm();
                     authForm.setFormId(formSingleAuthDto.getFormId());
                     authForm.setDepartmentId(d);
@@ -145,18 +172,24 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             }else log.warn("此用户：{} 进行了非法越权操作,已阻止，添加departmentID 为：{} 的部门有 表单id为 {}的直接添加数据权限",
                     SecurityUtils.getCurrentUsername(),d,formSingleAuthDto.getFormId());
         });
+        //给一些角色添加该表单的 直接添加数据 权限
         role.forEach(r->{
             if(currentUser.isCreater()||currentUser.isSysAdmin()
+                    //当前用户是否可以管理全部角色的权限（-1：管理范围为全部角色）
                     || currentUser.getAuthDto().getScope().getRole().contains(-1)
+                    //当前用户是否可以管理某个角色的权限（r：拥有当前表单权限管理的某个角色）
                     ||currentUser.getAuthDto().getScope().getRole().contains(r)){
+                //当前角色是否为原先拥有该表单权限的角色
                 if(roleAuthMap.containsKey(r.longValue())){
                     HashMap<String,Object> value = (HashMap) roleAuthMap.get(r.longValue());
+                    //如果原先角色没有对该表单的提交权限，就赋予该角色对该表单的提交权限
                     if(!(Boolean) value.get("submit")){
                         roleAuthMapper.update(null,new UpdateWrapper<RoleAuthForm>()
                                 .eq("id",value.get("id")).set("submit",true));
                     }
+                    //将当前角色移出老角色列表，后续会将留在列表里的角色（不再拥有对该表单权限的角色）进行删除
                     roleAuthMap.remove(r.longValue());
-                }else{
+                }else{//新增加的拥有该表单权限的角色
                     RoleAuthForm authForm = new RoleAuthForm();
                     authForm.setFormId(formSingleAuthDto.getFormId());
                     authForm.setRoleId(r);
@@ -167,18 +200,22 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             }else log.warn("此用户：{} 进行了非法越权操作,已阻止，添加roleID 为：{} 的角色有 表单id为 {}的直接添加数据权限",
                     SecurityUtils.getCurrentUsername(),r,formSingleAuthDto.getFormId());
         });
+        //给一些用户添加该表单的 直接添加数据 权限
         user.forEach(u->{
             if(currentUser.isCreater()||currentUser.isSysAdmin()
                     || currentUser.getAuthDto().getScope().getDepartment().contains(-1)
+                    //当前用户是否可以管理某个用户的权限（如果被管理的用户存在当前用户可以管理的部门里时就可以管理那个用户的权限）
                     ||currentUser.getAuthDto().getScope().getDepartment().stream().anyMatch(d->departmentMapper.existUserInDepart(d,u))){
+                //当前用户是否为原先拥有该表单权限的用户
                 if(userAuthMap.containsKey(u.longValue())){
                     HashMap<String,Object> value = (HashMap) userAuthMap.get(u.longValue());
                     if(!(Boolean) value.get("submit")){
                         userAuthMapper.update(null,new UpdateWrapper<UserAuthForm>()
                                 .eq("id",value.get("id")).set("submit",true));
                     }
+                    //将当前用户移出老用户列表，后续会将留在列表里的用户（不再拥有对该表单权限的用户）进行删除
                     userAuthMap.remove(u.longValue());
-                }else{
+                }else{//新增加的拥有该表单权限的用户
                     UserAuthForm authForm = new UserAuthForm();
                     authForm.setFormId(formSingleAuthDto.getFormId());
                     authForm.setUserId(u);
@@ -190,7 +227,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
                     SecurityUtils.getCurrentUsername(),u,formSingleAuthDto.getFormId());
         });
         
-        //删除权限
+        //删除部门拥有该表单 直接添加数据 的权限
         departAuthMap.forEach((k,v)->{
             if(currentUser.isCreater()||currentUser.isSysAdmin()
                     || currentUser.getAuthDto().getScope().getDepartment().contains(-1)
@@ -202,6 +239,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
                 }
             }
         });
+        //删除角色拥有该表单 直接添加数据 的权限
         roleAuthMap.forEach((k,v)->{
             if(currentUser.isCreater()||currentUser.isSysAdmin()
                     || currentUser.getAuthDto().getScope().getRole().contains(-1)
@@ -213,6 +251,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
                 }
             }
         });
+        //删除角色拥有该表单 直接添加数据 的权限
         userAuthMap.forEach((k,v)->{
             if(currentUser.isCreater()||currentUser.isSysAdmin()
                     || currentUser.getAuthDto().getScope().getDepartment().contains(-1)
@@ -531,6 +570,9 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
                         userAuthMapper.update(null,new UpdateWrapper<UserAuthForm>()
                                 .eq("id",value.get("id")).set("watch",true));
                     }
+                    /**
+                     * 根据IDEA的提示，这里可能需要改成long(u)
+                     */
                     userAuthMap.remove(u);
                 }else{
                     UserAuthForm authForm = new UserAuthForm();
@@ -583,9 +625,11 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
     @Override
     @Transactional
     public List<FormSingleAuthDto.FormSingleAuthVo> getAuthForOneForm(Integer formId) {
-
+        //获取部门权限
         List<DepartmentAuthForm> departmentAuthForms = formAuthMapper.selectDepartAuthForFormId(SecurityUtils.getCurrentUser().getTenementId(), formId);
+        //获取角色权限
         List<RoleAuthForm> roleAuthForms = formAuthMapper.selectRoleAuthForFormId(SecurityUtils.getCurrentUser().getTenementId(), formId);
+        //获取用户权限
         List<UserAuthForm> userAuthForms = formAuthMapper.selectUserAuthForFormId(SecurityUtils.getCurrentUser().getTenementId(), formId);
         Map<Integer, List<Object>> stringListHashMap = new HashMap<>();
         stringListHashMap.put(FormAuthEnum.SUBMIT.operation,new ArrayList<>());
@@ -593,19 +637,21 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
         stringListHashMap.put(FormAuthEnum.MANAGE.operation, new ArrayList<>());
         stringListHashMap.put(FormAuthEnum.WATCH.operation, new ArrayList<>());
         
-        
+        //获取每个权限对应拥有的部门
         departmentAuthForms.forEach(d->{
             if(d.getSubmit()) stringListHashMap.get(FormAuthEnum.SUBMIT.operation).add(d);
             if(d.getSubmitSelf()) stringListHashMap.get(FormAuthEnum.SUBMIT_SELF.operation).add(d);
             if(d.getManage()) stringListHashMap.get(FormAuthEnum.MANAGE.operation).add(d);
             if(d.getWatch()) stringListHashMap.get(FormAuthEnum.WATCH.operation).add(d);
         });
+        //获取每个权限对应拥有的角色
         roleAuthForms.forEach(d->{
             if(d.getSubmit()) stringListHashMap.get(FormAuthEnum.SUBMIT.operation).add(d);
             if(d.getSubmitSelf()) stringListHashMap.get(FormAuthEnum.SUBMIT_SELF.operation).add(d);
             if(d.getManage()) stringListHashMap.get(FormAuthEnum.MANAGE.operation).add(d);
             if(d.getWatch()) stringListHashMap.get(FormAuthEnum.WATCH.operation).add(d);
         });
+        //获取每个权限对应拥有的用户
         userAuthForms.forEach(d->{
             if(d.getSubmit()) stringListHashMap.get(FormAuthEnum.SUBMIT.operation).add(d);
             if(d.getSubmitSelf()) stringListHashMap.get(FormAuthEnum.SUBMIT_SELF.operation).add(d);
@@ -613,6 +659,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             if(d.getWatch()) stringListHashMap.get(FormAuthEnum.WATCH.operation).add(d);
         });
 
+        //将每个权限对应拥有的 部门、角色、用户 与 该权限 合并成一个对象
         List<FormSingleAuthDto.FormSingleAuthVo> ans = new ArrayList<>();
         stringListHashMap.forEach((k,v)->{
             FormSingleAuthDto.FormSingleAuthVo formSingleAuthVo = new FormSingleAuthDto.FormSingleAuthVo();
@@ -622,7 +669,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             formSingleAuthVo.setRole(new HashMap<>());
             v.forEach(v1->{
                 if(v1 instanceof DepartmentAuthForm){
-                    DepartmentAuthForm value= (DepartmentAuthForm) v1;
+                    DepartmentAuthForm value = (DepartmentAuthForm) v1;
                     formSingleAuthVo.getDepartment().put(value.getDepartmentId(),departmentMapper.selectNameById(value.getDepartmentId()));
                 }else if(v1 instanceof RoleAuthForm){
                     RoleAuthForm value= (RoleAuthForm) v1;
@@ -646,6 +693,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
         groupAuthForm.setDataLink(groupFormDto.getData());
         groupAuthForm.setTenementId(SecurityUtils.getCurrentUser().getTenementId());
         groupAuthForm.setName(groupFormDto.getName());
+        //获取权限数组
         Set<Integer> operations = groupFormDto.getOperations();
         if(operations.contains(FormAuthEnum.SUBMIT.operation)){
             groupAuthForm.setSubmit(true);
@@ -693,17 +741,21 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
     @Async
     @Transactional
     public void updateUserGroup(Head head,Integer groupId) {
+        //获取原来权限组里的成员id
         List<Integer> originIds = formAuthMapper.selectUserIdsGroup(groupId);
+        //获取新权限组里的成员id
         Set<Integer> userIds = userService.getUserIdsFromHead(head);
         int n=userIds.size();
         int succ=0;
         int del=0;
+        //原来的老成员不在新权限组就将其删除
         for (Integer originId : originIds) {
             if(!userIds.contains(originId)){
                 int i = formAuthMapper.deleteOneUserGroup(groupId,originId);
                 del+=i;
-            }else userIds.remove(originId);
+            } else userIds.remove(originId);//还在的成员就将其移出列表
         }
+        //剩余在列表里的用户即为权限组新添加的用户
         for (Integer userId : userIds) {
             int i = formAuthMapper.insertIntoUserGroup(SecurityUtils.getCurrentUser().getTenementId(), userId,groupId);
             succ+=i;

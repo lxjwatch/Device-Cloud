@@ -14,7 +14,7 @@ public class CustomExceptionHandler {
     
     
     @ResponseBody
-    @ExceptionHandler(value = ForbiddenException.class)
+    @ExceptionHandler(value = ForbiddenException.class)//捕获ForbiddenException异常进行统一处理
     public Result<?> forbiddenHandler(ForbiddenException ex){
         ex.printStackTrace();
         return Result.error(ex.getMessage());

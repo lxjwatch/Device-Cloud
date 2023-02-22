@@ -7,7 +7,7 @@ import lombok.Data;
  */
 @Data
 public class DepartmentDto {
-    private Integer preId;
+    private Integer preId;//上一级部门Id
     
     private Integer departmentId;
     

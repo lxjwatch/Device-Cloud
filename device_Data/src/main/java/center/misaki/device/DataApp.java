@@ -19,7 +19,7 @@ import java.util.TimeZone;
 @EnableTransactionManagement
 @EnableAsync
 @EnableFeignClients
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy//开启注解格式AOP功能
 public class DataApp {
     public static void main(String[] args) {
         SpringApplication.run(DataApp.class, args);

@@ -4,16 +4,16 @@
 <mapper namespace="center.misaki.device.AddressBook.dao.RoleMapper">
     
     <select id="selectRoleIdsByUserId" resultType="java.util.Map" >
-        select userRole.role_id as roleId ,role.name from userRole , role where userRole.user_id=#{arg0} 
-        and userRole.role_id=role.id and userRole.tenement_id=#{arg1} and role.tenement_id=#{arg1}
+        select userrole.role_id as roleId ,role.name from userrole , role where userrole.user_id=#{arg0}
+        and userrole.role_id=role.id and userrole.tenement_id=#{arg1} and role.tenement_id=#{arg1}
     </select>
     
     <insert id="insertIntoUserRole" >
-        insert into userRole(tenement_id,user_id,role_id,create_time) values (#{arg2},#{arg0},#{arg1},now())
+        insert into userrole(tenement_id,user_id,role_id,create_time) values (#{arg2},#{arg0},#{arg1},now())
     </insert>
     
     <delete id="deleteOneUserRole">
-        delete from userRole where userRole.tenement_id=#{arg2} and userRole.user_id=#{arg0} and userRole.role_id=#{arg1}
+        delete from userrole where userrole.tenement_id=#{arg2} and userrole.user_id=#{arg0} and userrole.role_id=#{arg1}
     </delete>
     
     

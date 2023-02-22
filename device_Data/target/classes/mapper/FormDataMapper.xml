@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="center.misaki.device.Form.dao.FormDataMapper">
+    
+    <select id="selectOneFormDataAll" resultType="center.misaki.device.Form.pojo.FormData">
+        select * from formData where formData.form_id=#{arg0} and formData.tenement_id=#{arg1}
+    </select>
+    
+    <select id="selectOneFormData"  resultType="center.misaki.device.Form.pojo.FormData">
+        select * from formData where formData.form_id=#{arg0} and formData.tenement_id=#{arg1}  and formData.is_flow_data=false
+    </select>
+    
+    <select id="selectUserFormData" resultType="center.misaki.device.Form.pojo.FormData">
+        select * from formData where formData.form_id=#{arg0} and formData.tenement_id=#{arg1} and formData.is_flow_data=false
+        and formData.create_person=#{arg2}
+    </select>
+    
+    <update id="deleteOneData" parameterType="center.misaki.device.Form.pojo.FormData">
+        update formData set formData.is_delete=true where formData.id=#{id} and formData.tenement_id=#{tenementId} and
+        formData.form_id=#{formId}
+    </update>
+    
+    <select id="selectOneDataComment" resultType="java.lang.String">
+        select formData.comment_content from formData where formData.id=#{arg0}
+    </select>
+    
+    <update id="updateOneDataComment">
+        update formData set formData.comment_content=#{arg1} where formData.id=#{arg0}
+    </update>
+    
+    <select id="selectOneFormName" resultType="java.lang.String">
+        select form.form_name from form, formData where formData.id=#{arg0} and formData.form_id=form.id
+    </select>
+    
+    <select id="selectFormId" resultType="java.lang.Integer">
+        select formData.form_id from formData where formData.id=#{arg0}
+    </select>
+    
+    <select id="selectIds" resultType="java.lang.Integer">
+        select formData.id from formData where formData.form_id=#{arg0} 
+    </select>
+            
+</mapper>

@@ -9,9 +9,11 @@ import center.misaki.device.AddressBook.vo.DepartmentVo;
 import center.misaki.device.AddressBook.vo.UserVo;
 import center.misaki.device.Auth.SecurityUtils;
 import center.misaki.device.domain.Pojo.User;
+import cn.hutool.core.lang.tree.Tree;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +28,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 public class DepartmentServiceImpl implements DepartmentService {
-    
+
     private final DepartmentMapper departmentMapper;
     private final UserMapper userMapper;
     private final RoleServiceImpl roleService;
@@ -48,6 +50,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     //获得某个用户所在部门 ID，Name 的 Map
     public Map<Integer,String> getDepartMapForUser(Integer userId){
         List<Map<String, Object>> departIdNames = departmentMapper.selectUserDepartIds(userId, SecurityUtils.getCurrentUser().getTenementId());
+//        System.out.println("-------------departIdNames----------:    " + departIdNames);
         Map<Integer, String> ans = new HashMap<>();
         departIdNames.forEach(d->{
             ans.put((((Long) d.get("departmentId")).intValue()),(String) d.get("name"));
@@ -135,6 +138,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     @Transactional
     public boolean changePreDepart(DepartmentDto departmentDto) {
+        //待优化，对该部门的子部门进行遍历，如果该部门的pre_id为其子部门的id时，会形成回路导致死循环
         int i = departmentMapper.update(null, new UpdateWrapper<Department>().eq("id", departmentDto.getDepartmentId()).eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId())
                 .set("pre_id", departmentDto.getPreId()));
         return i>0;
@@ -143,6 +147,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     @Transactional
     public boolean deleteDepartment(Integer Id) {
+        /**
+         * 此处有优化空间，可以把ids判空条件放在子部门的查询之前，
+         * 这样就可以优化有成员时直接返回结果，不再从库查询子部门，
+         * ids不为空时再进一步判断子部门的情况，可优化一种情况时的时间
+         */
         List<Integer> ids = getUserIdsForDepart(Id);
         List<Map<String, Object>> list = departmentMapper.selectSubDepartIds(Id, SecurityUtils.getCurrentUser().getTenementId());
         if(!ids.isEmpty()||!list.isEmpty()){
@@ -155,26 +164,35 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentVo getAllDepartments() {
+        //获取所有部门
         List<Department> departments = departmentMapper.selectList(new QueryWrapper<Department>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()));
         Map<Integer, List<Department>> map = new HashMap<>();
         departments.forEach(d->{
+            //如果map没有当前部门的上一级部门，就创建一个初始部门，departmentId为-1
             if(!map.containsKey(d.getPreId())) map.put(d.getPreId(),new ArrayList<>());
+            //map有当前部门的上一级部门，就将当前部门添加在其部门下
             map.get(d.getPreId()).add(d);
         });
+        //初始部门作为根节点
         DepartmentVo root = new DepartmentVo(map.get(-1).get(0));
-        DepartmentVo ans=root;
+        DepartmentVo ans = root;
         map.remove(-1);
         ArrayDeque<DepartmentVo> queue = new ArrayDeque<>();
         while(!map.isEmpty()){
+            //获取当前部门的子部门
             List<Department> nodes = map.get(root.getId());
-            if(nodes!=null&&!nodes.isEmpty()) {
+            if(nodes!=null&&!nodes.isEmpty()) {//子部门存在时
+                //将当前部门移出
                 map.remove(root.getId());
-                List<DepartmentVo> vos = nodes.stream().map(DepartmentVo::new).collect(Collectors.toList());
-                root.setNodes(vos);
-                queue.addAll(vos);
+                List<DepartmentVo> vos = nodes.stream()
+                                              //将每个当前部门的每个子部门都映射为一个DepartmentVo对象
+                                              .map(DepartmentVo::new)
+                                              .collect(Collectors.toList());
+                root.setNodes(vos);//将子部门与当前部门绑定
+                queue.addAll(vos);//将子部门全部添加到队列中（从队尾添加元素）
             }
-            root=queue.poll();
-            if(root==null) break;
+            root=queue.poll();//从队列中取出一个子部门设为当前部门继续遍历其子部门（从队头取出元素）
+            if(root==null) break;//所有部门遍历完后结束循环
         }
         return ans;
     }

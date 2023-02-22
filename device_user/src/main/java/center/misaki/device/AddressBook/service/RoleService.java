@@ -19,9 +19,11 @@ public interface RoleService {
     
     //删除一个角色
     boolean deleteOneRole(RoleDto roleDto);
-    
+
+    //修改角色名称
     boolean  changeRoleName(RoleDto roleDto);
-    
+
+    //修改角色组名称
     boolean changeGroupName(RoleDto.GroupDto groupDto);
     
     //查看这个角色下的所有人

@@ -47,13 +47,19 @@ public class DataLogService {
      */
     @Transactional
     public List<BatchLogVo> getBatchDataLog(int formId,String userInfo){
+        //获取所有表单更改日志
         List<FormModifyLog> modifyLogs = dataLogMapper.selectByFormId(formId, UserInfoUtil.getTenementId(userInfo));
+        //创建批量日志数组
         List<BatchLogVo> logVos = new ArrayList<>();
         modifyLogs.forEach(m->{
+            //根据fieldId获取被修改的表单域的名字
             Optional<String> name = fieldMapper.selectOneFieldName(m.getFieldId());
             if(name.isPresent()){
+                //创建单个日志视图对象
                 BatchLogVo batchLogVo = new BatchLogVo();
+                //单条修改日志
                 batchLogVo.setFormModifyLog(m);
+                //被更改的表单域的名字
                 batchLogVo.setFieldName(name.get());
                 logVos.add(batchLogVo);
             }
@@ -78,7 +84,9 @@ public class DataLogService {
     @Async
     @Transactional
     public void saveSingleDataLog(OneDataDto oneDataDto, String userInfo, FormData originFormData){
+        //要更改的新数据
         Map<String, String> newData = oneDataDto.getData();
+        //被更改的旧数据（反序列化出数据库formData表的form_Data数据）
         Map<String, String> origin = JSON.parseObject(originFormData.getFormData(), new TypeReference<Map<String, String>>() {});
         
         Map<String, String[]> change = new HashMap<>();
@@ -86,18 +94,19 @@ public class DataLogService {
         for (Map.Entry<String, String> entry : newData.entrySet()) {
             String k = entry.getKey();
             String v = entry.getValue();
-            if (origin.containsKey(k)) {
-                String v1 = origin.get(k);
-                if (!v.equals(v1)){
+            if (origin.containsKey(k)) {//更新老数据
+                String v1 = origin.get(k);//获取老数据
+                if (!v.equals(v1)){//如果跟老数据不一样
                     change.put(k, new String[]{v1, v});
                     changeNum++;
                 }
-            } else {
-                change.put(k, new String[]{"",v});
+            } else {//添加新数据
+                change.put(k, new String[]{"",v});//这地方为什么要添加个空字符串？？
                 changeNum++;
             }
         }
         if(changeNum==0) return;
+        //创建一个数据日志
         DataModifyLog dataLog = new DataModifyLog();
         dataLog.setDataId(oneDataDto.getDataId());
         dataLog.setChangeNum(changeNum);
@@ -122,6 +131,9 @@ public class DataLogService {
         formModifyLog.setTenementId(UserInfoUtil.getTenementId(userInfo));
         formModifyLog.setFailNum(formModifyLog.getModifyNum()- formModifyLog.getSuccessNum());
         auditLog(formModifyLog,userInfo);
+        /**
+         * 下面这行为什么要自己定义一个sql语句使用，mp自带的insert方法就能将该对象插入表中
+         */
         int i = dataLogMapper.insertBatchModifyLog(formModifyLog);
         if(i<0) log.error("批量日志：{} 存储失败",formModifyLog);
     }
@@ -132,21 +144,23 @@ public class DataLogService {
     
     //审计功能
     private void auditLog(DataModifyLog dataModifyLog,String userInfo){
+        //补充创建者
         if(dataModifyLog.getCreatePerson()==null||dataModifyLog.getCreatePerson().equals("")){
             String userName = UserInfoUtil.getUserName(userInfo);
             dataModifyLog.setCreatePerson(userName);
         }
-        
+        //补充创建时间
         if(dataModifyLog.getCreateTime()==null){
             dataModifyLog.setCreateTime(LocalDateTime.now());
         }
     }
     private void auditLog(FormModifyLog formModifyLog,String userInfo){
+        //补充创建者
         if(formModifyLog.getCreatePerson()==null||formModifyLog.getCreatePerson().equals("")){
             String userName = UserInfoUtil.getUserName(userInfo);
             formModifyLog.setCreatePerson(userName);
         }
-
+        //补充创建时间
         if(formModifyLog.getCreateTime()==null){
             formModifyLog.setCreateTime(LocalDateTime.now());
         }

@@ -72,6 +72,7 @@ public class FormStructureController {
         FormStrucDto flowForm = structureService.createNormalForm(menuId, 1, userInfo);
         return Result.ok(flowForm,"成功创建表单");
     }
+
     
     //修改菜单名字
     @AuthOnCondition(NeedSysAdmin = false)
@@ -90,9 +91,7 @@ public class FormStructureController {
             return Result.ok(null,"成功修改表单名字");
         }else return Result.error("修改表单名字失败");
     }
-    
-    
-    
+
     //切换一个表单的类型
     @AuthOnCondition(NeedSysAdmin = false)
     @PostMapping("/change/formType")
@@ -112,6 +111,6 @@ public class FormStructureController {
         }else return Result.error("删除表单失败");
     }
     
-    
+
     
 }

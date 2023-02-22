@@ -73,7 +73,7 @@ public interface FormService {
     boolean changeFormTypeToNormal(int formId,String userInfo);
     
     List<OneDataVo.OneFormLinkValue> getDataLinkFormSearch(List<DataScreenDto> dataScreenDto, String userInfo) throws ExecutionException, InterruptedException;
-
+    //快速查询数据
     List<FormData> fastQuery(List<Integer> dataIds);
 
 }

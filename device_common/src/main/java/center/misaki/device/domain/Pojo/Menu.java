@@ -12,4 +12,5 @@ public class Menu {
     private Integer tenementId;
     
     private String name;
+
 }

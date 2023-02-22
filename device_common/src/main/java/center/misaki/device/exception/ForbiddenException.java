@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * Exception caused by accessing forbidden resources.
+ * 访问禁止的资源导致异常
  */
 public class ForbiddenException extends AbstractDeviceException {
 

@@ -12,7 +12,7 @@ import java.util.Set;
 @Data
 public class FormSingleAuthDto {
 
-    private Integer  operation;
+    private Integer operation;
     
     private Integer formId;
     

@@ -15,7 +15,8 @@ public class GroupFormDto {
     private String name;
     
     private String description;
-    
+
+    //权限数组
     private Set<Integer> operations;
     @NotNull
     private Integer formId;

@@ -7,6 +7,7 @@
     <groupId>center.misaki</groupId>
     <artifactId>config_device</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>device_user</module>
         <module>device_Gateway</module>

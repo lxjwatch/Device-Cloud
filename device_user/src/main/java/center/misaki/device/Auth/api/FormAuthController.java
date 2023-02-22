@@ -68,7 +68,7 @@ public class FormAuthController {
     
     //查看一张表的固有权限信息
     @GetMapping("/showDetails")
-    @AuthOnCondition(NeedSysAdmin = false)
+//    @AuthOnCondition(NeedSysAdmin = false)
     public Result<List<FormSingleAuthDto.FormSingleAuthVo>> showConfig(Integer formId){
         List<FormSingleAuthDto.FormSingleAuthVo> authForOneForm = formCrudAuthService.getAuthForOneForm(formId);
         return Result.ok(authForOneForm,"获取成功");
@@ -107,6 +107,5 @@ public class FormAuthController {
     }
     
     
-    
-    
+
 }

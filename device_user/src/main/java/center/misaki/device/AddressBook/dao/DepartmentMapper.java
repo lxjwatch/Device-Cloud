@@ -11,7 +11,8 @@ import java.util.Map;
 
 @Mapper
 public interface DepartmentMapper extends BaseMapper<Department> {
-    
+
+    //查询用户是否在一个部门里
     Boolean existUserInDepart(Integer departmentId,Integer userId);
     
     //查询这个部门ID中UserId集合
@@ -34,6 +35,8 @@ public interface DepartmentMapper extends BaseMapper<Department> {
     //查询这个部门名字
     @Select({"select name from department where id=#{arg0}"})
     String selectNameById(Integer departmentId);
-    
-    
+
+    //通过部门名字查询部门id
+    @Select({"select id from department where name=#{arg0}"})
+    int selectIdByName(String name);
 }

@@ -78,4 +78,5 @@ public class JwtUserDto extends User implements Serializable {
     public void setToken(String token) {
         this.token = token;
     }
+
 }

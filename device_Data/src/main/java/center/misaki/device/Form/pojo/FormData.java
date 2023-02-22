@@ -16,6 +16,10 @@ import java.time.LocalDateTime;
 public class FormData implements Serializable {
     @TableId(type= IdType.AUTO)
     private Integer id;
+    /**
+     * @JSONField(serialize = false)：
+     * 该属性不会随该对象序列化返回给前端
+     */
     @JSONField(serialize = false)
     private Integer tenementId;
     @JSONField(serialize = false)
@@ -26,8 +30,9 @@ public class FormData implements Serializable {
      * @see java.util.Map
      */
     private String formData;
+
     @JSONField(serialize = false)
-    private Boolean isFlowData;
+    private Boolean isFlowData;//数据库默认值为false
     
     private String createPerson;
     

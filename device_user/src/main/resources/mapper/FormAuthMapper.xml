@@ -4,32 +4,32 @@
 <mapper namespace="center.misaki.device.Auth.dao.FormAuthMapper">
     
     <select id="selectUserAuthMap" resultType="java.util.Map" >
-        select * from userAuthForm where tenement_id=#{arg0} and form_id=#{arg1}
+        select * from userauthform where tenement_id=#{arg0} and form_id=#{arg1}
     </select>
     
     <select id="selectDepartAuthMap" resultType="java.util.Map">
-        select * from departmentAuthForm where tenement_id=#{arg0} and form_id=#{arg1}
+        select * from departmentauthform where tenement_id=#{arg0} and form_id=#{arg1}
     </select>
     
     <select id="selectRoleAuthMap" resultType="java.util.Map" >
-        select * from roleAuthForm where tenement_id=#{arg0} and form_id=#{arg1}
+        select * from userauthform where tenement_id=#{arg0} and form_id=#{arg1}
     </select>
     
     <insert id="insertIntoUserGroup">
-        insert into userFormGroup(tenement_id,user_id,group_id,create_time) values(#{arg0},#{arg1},#{arg2},now())
+        insert into userformgroup(tenement_id,user_id,group_id,create_time) values(#{arg0},#{arg1},#{arg2},now())
     </insert>
     
     <delete id="deleteOneUserGroup">
-        delete from userFormGroup where user_id=#{arg0} and group_id=#{arg1}
+        delete from userformgroup where user_id=#{arg0} and group_id=#{arg1}
     </delete>
     
     <select id="selectUserIdsGroup" resultType="java.lang.Integer">
-        select user_id from userFormGroup where group_id=#{arg0}
+        select user_id from userformgroup where group_id=#{arg0}
     </select>
 
     <select id="selectUserFormGroupId" resultType="center.misaki.device.domain.Pojo.GroupAuthForm">
-        select groupAuthForm.* from groupAuthForm ,userFormGroup where groupAuthForm.id=userFormGroup.group_id 
-        and userFormGroup.user_id=#{arg0} and groupAuthForm.form_id=#{arg1}
+        select groupauthform.* from groupauthform ,userformgroup where groupauthform.id=userformgroup.group_id
+        and userformgroup.user_id=#{arg0} and groupauthform.form_id=#{arg1}
     </select>
     
 </mapper>

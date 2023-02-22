@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -52,6 +53,14 @@ public class SecurityService implements UserDetailsService {
         this.authorizationUrls=new ArrayList<>();
     }
 
+    /**
+     *
+     * @param username：用户输入的账号
+     * SpringSecurity会自动调用该方法对用户进行认证，并把用户输入的账号作为参数传入
+     *
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if(username==null||username.equals("")) return null;
@@ -69,7 +78,7 @@ public class SecurityService implements UserDetailsService {
             throw new BadRequestException("该账户有异常,无法登陆");
         }
         JwtUserDto userDto = new JwtUserDto(user);
-        userDto.eraseCredentials();
+        userDto.eraseCredentials();//将密码删除后返回该用户信息对象，防止敏感信息泄露
         return userDto;
     }
     

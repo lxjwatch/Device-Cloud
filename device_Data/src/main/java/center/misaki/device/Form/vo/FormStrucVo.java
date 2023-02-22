@@ -20,7 +20,7 @@ public class FormStrucVo {
     
     
     @Data
-    public static class   FormSimpleVo{
+    public static class FormSimpleVo{
         private Integer formId;
         private String formName;
         private List<FieldSimpleVo> fieldSimpleVos;

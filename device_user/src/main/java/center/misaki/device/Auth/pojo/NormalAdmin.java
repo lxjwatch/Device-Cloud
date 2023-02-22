@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data
 public class NormalAdmin {
     
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.AUTO)//IdType.AUTO的作用是:使用数据库ID自增
     private  Integer id;
     
     private String name;

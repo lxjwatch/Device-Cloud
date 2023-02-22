@@ -39,7 +39,7 @@ public class DataExpendController {
     }
 
 
-    //带有重复校验去提交一条数据接口
+    //带有重复校验去提交一条数据
     @PostMapping("/submit/check")
     @FormAuthCondition(NeedSubmitSelf = true,NeedManage = true,NeedSubmit = true)
     public Result<List<String>> submitPlus(@Valid @RequestBody OneDataDto.OneDataDtoPlus dataDto, String userInfo){

@@ -26,7 +26,7 @@ import java.util.List;
  * @author Misaki
  * 数据访问接口
  */
-@RestController
+@RestController//@RestController == @Controller + @ResponseBody
 @Slf4j
 public class DataAccessController {
     

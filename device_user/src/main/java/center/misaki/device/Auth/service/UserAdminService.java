@@ -17,11 +17,12 @@ public interface UserAdminService {
     
     
     //获取所有的普通管理组以及管理组的成员
-   List<NorAdminGVo> getAllNormalGroupAdmin();
+    List<NorAdminGVo> getAllNormalGroupAdmin();
    
-   //更新普通管理员组配置
+    //更新普通管理员组配置
     void updateNormalAdminConfig(AuthDto authDto,Integer groupId);
-    
+
+    //修改普通管理组名
     void updateNormalAdminName(Integer groupId,String name);
     
     //新增一个系统管理员

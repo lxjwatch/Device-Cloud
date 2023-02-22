@@ -13,8 +13,8 @@ import javax.annotation.PostConstruct;
 import java.util.TimeZone;
 
 @SpringBootApplication
-@EnableEurekaClient
-@EnableZuulProxy
+@EnableEurekaClient // 开启 EurekaClient 注解，目前版本如果配置了 Eureka 注册中心，默认会开启该注解,即：可不写该行代码
+@EnableZuulProxy // 开启 Zuul 注解
 public class ZuulApp {
 
 

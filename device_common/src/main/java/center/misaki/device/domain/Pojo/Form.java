@@ -21,7 +21,7 @@ import java.util.List;
 public class Form  implements Serializable{
     @TableId(type= IdType.AUTO)
     private Integer id;
-    @JSONField(serialize = false)
+    @JSONField(serialize = false)//指定该属性不被序列化
     private Integer tenementId;
     
     private Integer formType;
