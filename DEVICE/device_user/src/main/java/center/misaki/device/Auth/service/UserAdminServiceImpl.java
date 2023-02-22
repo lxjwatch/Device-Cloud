@@ -1,0 +1,180 @@
+package center.misaki.device.Auth.service;
+
+import center.misaki.device.AddressBook.dao.UserMapper;
+import center.misaki.device.AddressBook.vo.UserVo;
+import center.misaki.device.Auth.NorAdminGVo;
+import center.misaki.device.Auth.SecurityUtils;
+import center.misaki.device.Auth.dao.NormalAdminMapper;
+import center.misaki.device.Auth.dao.SysAdminMapper;
+import center.misaki.device.Auth.dto.AuthDto;
+import center.misaki.device.Auth.pojo.NormalAdmin;
+import center.misaki.device.Auth.pojo.SysAdmin;
+import center.misaki.device.domain.Pojo.User;
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author Misaki
+ */
+@Service
+@Slf4j
+public class UserAdminServiceImpl implements UserAdminService {
+    
+    private final UserMapper userMapper;
+    private final SysAdminMapper sysAdminMapper;
+    private final NormalAdminMapper normalAdminMapper;
+    
+
+    public UserAdminServiceImpl(UserMapper userMapper, SysAdminMapper sysAdminMapper, 
+                                NormalAdminMapper normalAdminMapper) {
+        this.userMapper = userMapper;
+        this.sysAdminMapper = sysAdminMapper;
+        this.normalAdminMapper = normalAdminMapper;
+    }
+
+    @Override
+    public Map<Integer, Object> getAllSysAdmin() {
+        return sysAdminMapper.selectMapSysAdmin(SecurityUtils.getCurrentUser().getTenementId());
+    }
+
+    @Override
+    public List<NorAdminGVo> getAllNormalGroupAdmin() {
+        //获取所有普通管理组的用户
+        List<User> users = userMapper.selectList(new QueryWrapper<User>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()).ne("normal_admin_group_id", -1));
+        //获取所有普通管理组
+        List<NormalAdmin> normalAdmins = normalAdminMapper.selectList(new QueryWrapper<NormalAdmin>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()));
+        Map<Integer, List<UserVo.SimpleUserVo>> userMap = new HashMap<>();
+        users.forEach(u->{
+            //如果集合中还没有该普通管理组则创建该普通管理组
+            if(!userMap.containsKey(u.getNormalAdminGroupId())){
+                userMap.put(u.getNormalAdminGroupId(),new ArrayList<>());
+            }
+            //将用户添加到所属的普通管理组中
+            UserVo.SimpleUserVo simpleUserVo = new UserVo.SimpleUserVo();
+            simpleUserVo.setUserName(u.getUsername());
+            simpleUserVo.setUserId(u.getId());
+            userMap.get(u.getNormalAdminGroupId()).add(simpleUserVo);
+        });
+        
+        
+        List<NorAdminGVo> ans = new ArrayList<>();
+        for (NormalAdmin normalAdmin : normalAdmins) {
+            NorAdminGVo norAdminGVo = new NorAdminGVo();
+            //如果该普通管理组有用户则返回用户对象数组，没有则返回空数组
+            if(userMap.containsKey(normalAdmin.getId())){
+                norAdminGVo.setAdmins(userMap.get(normalAdmin.getId()));
+            }else norAdminGVo.setAdmins(new ArrayList<>());
+            
+            norAdminGVo.setAuthDto(JSON.parseObject(normalAdmin.getConfig(),AuthDto.class));
+            norAdminGVo.setName(normalAdmin.getName());
+            norAdminGVo.setId(normalAdmin.getId());
+            ans.add(norAdminGVo);
+        }
+        return ans;
+    }
+
+    @Override
+    @Async
+    @Transactional
+    public void updateNormalAdminConfig(AuthDto authDto, Integer groupId) {
+        int i = normalAdminMapper.updateConfig(JSON.toJSONString(authDto), groupId);
+        log.info("更新了{}条记录的config",i);
+    }
+
+    @Override
+    @Transactional
+    @Async
+    public void updateNormalAdminName(Integer groupId, String name) {
+        NormalAdmin normalAdmin = normalAdminMapper.selectById(groupId);
+        int i = normalAdminMapper.update(null, new UpdateWrapper<NormalAdmin>().eq("id", groupId).set("name", name));
+        log.info("更新了{}条记录的name",i);
+        AuthDto authDto = JSON.parseObject(normalAdmin.getConfig(), AuthDto.class);
+        authDto.setName(name);
+        //修改表字段config的信息，因为其中包含该管理组名，需要更新
+        updateNormalAdminConfig(authDto, groupId);
+        //{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"增加管理组1","scope":{"department":[],"role":[]}}
+    }
+
+    @Override
+    @Transactional//开启事务
+    public boolean addSysAdmins(List<Integer> userIds) {
+        int sum=userIds.size();
+        int succ=0;//记录成功创建多少个系统管理员
+        for (Integer userId : userIds) {
+            SysAdmin sysAdmin = new SysAdmin();
+            sysAdmin.setUserId(userId);
+            sysAdmin.setTenementId(SecurityUtils.getCurrentUser().getTenementId());
+            int i = sysAdminMapper.insert(sysAdmin);
+            succ+=i;
+        }
+        log.info("需要创造{}个系统管理员，由用户 {}，创造了 {} 个系统管理员",sum,SecurityUtils.getCurrentUsername(),succ);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean deleteSysAdmin(Integer userId) {
+        //删除条件：1、TenementId == tenement_id 和 2、userId == user_id
+        int i = sysAdminMapper.delete(new QueryWrapper<SysAdmin>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()).eq("user_id", userId));
+        return i>0;
+    }
+
+    @Override
+    @Transactional
+    public boolean addNorAdminGroup(AuthDto authDto) {
+        NormalAdmin normalAdmin = new NormalAdmin();
+        normalAdmin.setConfig(JSON.toJSONString(authDto));
+        normalAdmin.setName(authDto.getName());
+        normalAdmin.setTenementId(SecurityUtils.getCurrentUser().getTenementId());
+        int i = normalAdminMapper.insert(normalAdmin);
+        log.info("由用户 {},{}创造了一个普通管理组",SecurityUtils.getCurrentUsername(),i>0?"成功":"失败");
+        return i>0;
+    }
+
+    @Override
+    @Transactional
+    public boolean setupAdmins(List<Integer> userIds,Integer groupId) {
+        int sum=userIds.size();
+        int succ=0;
+        for (Integer userId : userIds) {
+            //条件：id相等、非创建者
+            int i = userMapper.update(null, new UpdateWrapper<User>().eq("id", userId).eq("is_creater", false).set("normal_admin_group_id", groupId));
+            succ += i;
+        }
+        log.info("需要将 {} 名用户设置为普通管理员，实际成功设置了 {} 名",sum,succ);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean deleteNormalAdmin(Integer userId) {
+        //条件：id相等
+        int i = userMapper.update(null, new UpdateWrapper<User>().eq("id", userId).set("normal_admin_group_id", -1));
+        return i>0;
+    }
+
+    @Override
+    @Transactional
+    public boolean deleteNormalGroup(Integer groupId) {
+        //根据normal_admin_group_id 和 tenement_id 查找对应用户
+        List<User> users = userMapper.selectList(new QueryWrapper<User>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId())
+                .eq("normal_admin_group_id", groupId));
+        //该管理组有用户则无法删除
+        if (users != null &&!users.isEmpty()) return false;
+        //无用户则可以根据id删除
+        int i = normalAdminMapper.deleteById(groupId);
+        return i>0;
+    }
+
+
+}

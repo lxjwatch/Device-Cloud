@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="center.misaki.device.Form.dao.DataLogMapper">
+    <select id="selectByDataId" resultType="center.misaki.device.Form.pojo.DataModifyLog">
+        select * from dataModifyLog where dataModifyLog.data_id=#{dataId} order by dataModifyLog.create_time desc
+    </select>
+    
+    <select id="selectByFormId" resultType="center.misaki.device.Form.pojo.FormModifyLog">
+        select * from formModifyLog where formModifyLog.form_id=#{arg0} and formModifyLog.tenement_id=#{arg1} order by formModifyLog.create_time desc
+    </select>
+    
+    <insert id="insertBatchModifyLog" parameterType="center.misaki.device.Form.pojo.FormModifyLog" >
+        insert into formModifyLog(tenement_id,fail_num,form_id,field_id,new_value,modify_num,success_num,create_person,create_time)
+        values(#{tenementId},#{failNum},#{formId},#{fieldId},#{newValue},#{modifyNum},#{successNum},#{createPerson},#{createTime})
+    </insert>
+    
+    
+</mapper>
