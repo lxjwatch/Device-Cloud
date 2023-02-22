@@ -1,10 +1,13 @@
 package center.misaki.device.utils;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+
+
+import java.util.Base64;
+import java.util.Base64.Encoder;
+import java.util.Base64.Decoder;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+
 import java.util.zip.DeflaterOutputStream;
 import java.util.zip.InflaterOutputStream;
 
@@ -51,17 +54,19 @@ public class StringZipUtil {
 
     private static byte[] convertFromBase64(String encdata) {
         byte[] compressed = null;
-        try {
-//            compressed = new sun.misc.BASE64Decoder().decodeBuffer(encdata);
-            compressed = new BASE64Decoder().decodeBuffer(encdata);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //            compressed = new sun.misc.BASE64Decoder().decodeBuffer(encdata);
+
+        Decoder decoder = Base64.getDecoder();
+        compressed = decoder.decode(encdata);
+//            compressed = new BASE64Decoder().decodeBuffer(encdata);
         return compressed;
     }
 
     private static String convertToBase64(byte[] byteArray) {
-        return new BASE64Encoder().encode(byteArray);
+
+        Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(byteArray);
+//        return new BASE64Encoder().encode(byteArray);
     }
 
 }
