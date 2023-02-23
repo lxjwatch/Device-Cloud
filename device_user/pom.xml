@@ -99,66 +99,72 @@
             <scope>compile</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            <version>2.3.7.RELEASE</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>2.3.7.RELEASE</version>
+        </dependency>
 
 
     </dependencies>
 
 
-    <!-- 打包 -->
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--                <version>2.3.7.RELEASE</version>-->
-<!--                <configuration>-->
-<!--                    <mainClass>center.misaki.device.userApp</mainClass>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>repackage</goal>&lt;!&ndash;可以把依赖的包都打包到生成的Jar包中&ndash;&gt;-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <outputDirectory>/home/device/jars</outputDirectory>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                -->
-<!--            </plugin>-->
+<!--打包-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.7.RELEASE</version>
+                <configuration>
+                    <mainClass>center.misaki.device.userApp</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                        <configuration>
+                            <outputDirectory>/home/device/jars</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
 
-<!--            &lt;!&ndash; 跳过单元测试 &ndash;&gt;-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-plugin</artifactId>-->
-<!--                <configuration>-->
-<!--                    <skipTests>true</skipTests>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
+            </plugin>
 
-<!--        <resources>-->
-<!--            <resource>-->
-<!--                <directory>src/main/resources</directory>-->
-<!--                <includes>-->
-<!--                    <include>*</include>-->
-<!--                    <include>*/*</include>-->
-<!--                </includes>-->
-<!--                <filtering>true</filtering>-->
-<!--            </resource>-->
-<!--            <resource>-->
-<!--                <directory>src/main/resources</directory>-->
-<!--                <includes>-->
-<!--                    <include>**/*.ftl</include>-->
-<!--                </includes>-->
-<!--            </resource>-->
-<!--        </resources>-->
-<!--        -->
-<!--        -->
-<!--    </build>-->
+            <!-- 跳过单元测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*</include>
+                    <include>*/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.ftl</include>
+                </includes>
+            </resource>
+        </resources>
+
+
+    </build>
 </project>
