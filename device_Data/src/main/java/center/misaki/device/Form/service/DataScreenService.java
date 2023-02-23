@@ -40,14 +40,10 @@ public class DataScreenService {
      * 仅限表格筛选数据，同时亦可用于数据联动等等 
      */
     public List<FormData> screen(DataScreenDto dataScreenDto,List<FormData> originData) throws ExecutionException, InterruptedException {
-        //获取表单使用的所有数据
         List<Map<String,String>> dataMap = formDataService.converterDataMap(originData);
-        //筛选条件
         String restrictType = dataScreenDto.getRestrictType();
-        //默认为和
         boolean and = restrictType == null || !restrictType.equals("or");
         List<DataScreenDto.FieldRestrict> conditions = dataScreenDto.getConditions();
-        //如果所有条件都不设置，则返回所有数据
         if((conditions==null||conditions.isEmpty())&&dataScreenDto.getCreateTime()==null&&dataScreenDto.getCreatePerson()==null&&dataScreenDto.getUpdateTime()==null) return originData;
         List<Future<Set<Integer>>> futures = new ArrayList<>();
         //多线程筛选

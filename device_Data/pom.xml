@@ -46,17 +46,6 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.2</version>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            <version>2.3.7.RELEASE</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-compiler-plugin</artifactId>-->
-<!--            <version>3.8.1</version>-->
-<!--        </dependency>-->
     </dependencies>
 
     <!-- 打包 -->
@@ -65,7 +54,6 @@
 <!--            <plugin>-->
 <!--                <groupId>org.springframework.boot</groupId>-->
 <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--                <version>2.3.7.RELEASE</version>-->
 <!--                <configuration>-->
 <!--                    <mainClass>center.misaki.device.DataApp</mainClass>-->
 <!--                </configuration>-->
@@ -87,11 +75,6 @@
 <!--                <configuration>-->
 <!--                    <skipTests>true</skipTests>-->
 <!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <version>3.8.1</version>-->
 <!--            </plugin>-->
 <!--        </plugins>-->
 <!--    </build>-->

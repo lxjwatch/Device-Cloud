@@ -188,20 +188,14 @@ public class WorkLogService {
      */
     @Transactional
     public List<WorkLogVo> getWorkLogVos(WorkLogEnum workLogEnum,String userInfo){
-        //根据user_id 和 state 查询用户所属的工作日志
         List<WorkLog> workLogs = workLogMapper.selectList(new QueryWrapper<WorkLog>().eq("user_id", UserInfoUtil.getUserId(userInfo))
                 .eq("state", workLogEnum.value));
         List<WorkLogVo> workLogVos = new ArrayList<>();
         workLogs.forEach(workLog -> {
-            //从数据库取出的WorkLog对象数据并不够完整，还需要添加一些属性（变成WorkLogVo）然后返回给前端
             WorkLogVo workLogVo = new WorkLogVo(workLog);
-            //获取一张表单的数据
             workLogVo.setOneDataVo(formService.getOneData(workLog.getDataId(),userInfo));
-            //获取流程日志(根据workLog表的flow_log_id去flowLog表获取整条流程日志)
             workLogVo.setFlowLog(flowLogService.getFlowLogById(workLog.getFlowLogId()));
-            //获取表单名字(从workLog表获取data_id再去formData表获取form_id根据form_id在form表获取formName)
             workLogVo.setFormName(formDataService.getFormNameByDataId(workLog.getDataId()));
-            //获取表单id（根据workLog表的data_id去formData表获取form_id）
             workLogVo.setFormId(formDataService.getFormIdByDataId(workLog.getDataId()));
             workLogVos.add(workLogVo);
         });

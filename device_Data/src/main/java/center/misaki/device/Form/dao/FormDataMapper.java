@@ -24,16 +24,15 @@ public interface FormDataMapper extends BaseMapper<FormData> {
     //删除数据
     int deleteOneData(FormData model);
     
+    
     //查询一条数据中的评论信息
     String selectOneDataComment(Integer dataId);
     
     //更新一条数据的评论信息
     int updateOneDataComment(Integer dataId,String comment);
-
-    //获取一个表单的名字
+    
     String selectOneFormName(Integer dataId);
-
-    //获取一个表单的Id
+    
     Integer selectFormId(Integer dataId);
     
     List<Integer> selectIds(Integer formId);

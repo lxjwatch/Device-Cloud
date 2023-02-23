@@ -12,34 +12,34 @@ import java.time.LocalDateTime;
 @Data
 public class WorkLogVo {
     private Integer id;
-
+    
     private Integer userId;
 
     private Integer state;
 
     private Integer nodeId;
-
+    
     private Integer dataId;
 
     private Integer flowLogId;
-
+    
     private String formName;
-
+    
     private Integer formId;
 
     private Boolean allow;
-
+    
     private WorkLog.NodeProperty nodeProperty;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
-
+    
     private OneDataVo oneDataVo;
-
+    
     private FlowLog flowLog;
-
-    public WorkLogVo(WorkLog workLog) {
+    
+    public  WorkLogVo(WorkLog workLog){
         this.id = workLog.getId();
         this.userId = workLog.getUserId();
         this.state = workLog.getState();
@@ -51,5 +51,5 @@ public class WorkLogVo {
         this.createTime = workLog.getCreateTime();
         this.updateTime = workLog.getUpdateTime();
     }
-
+    
 }

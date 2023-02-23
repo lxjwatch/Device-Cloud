@@ -23,7 +23,6 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static com.alibaba.fastjson.JSON.parseObject;
 
@@ -91,7 +90,6 @@ public class FormDataService {
         oneData.setTenementId(UserInfoUtil.getTenementId(userInfo));
         oneData.setFormId(oneDataDto.getFormId());
         oneData.setFormData(JSON.toJSONString(oneDataDto.getData(), SerializerFeature.WriteNonStringKeyAsString));
-        //补充数据（创建者、创建时间，更新者、更新时间）
         auditData(oneData,userInfo);
         return formDataMapper.insert(oneData)>0;
     }
@@ -105,7 +103,7 @@ public class FormDataService {
         oneData.setTenementId(UserInfoUtil.getTenementId(userInfo));
         oneData.setFormId(oneDataDto.getFormId());
         oneData.setFormData(JSON.toJSONString(oneDataDto.getData(), SerializerFeature.WriteNonStringKeyAsString));
-        oneData.setIsFlowData(true);//标记该条数据是需要流程流转的数据，默认为false
+        oneData.setIsFlowData(true);
         auditData(oneData,userInfo);
         formDataMapper.insert(oneData);
         return oneData.getId();
@@ -126,11 +124,9 @@ public class FormDataService {
      */
     @Transactional
     public boolean changeOneData(OneDataDto oneDataDto,String userInfo){
-        //拿到需要修改的数据
         FormData oneData = formDataMapper.selectById(oneDataDto.getDataId());
         //保存修改日志
         dataLogService.saveSingleDataLog(oneDataDto,userInfo,BeanUtil.copyProperties(oneData,FormData.class));
-        //更新数据
         oneData.setFormData(JSON.toJSONString(oneDataDto.getData(),SerializerFeature.WriteNonStringKeyAsString));
         auditData(oneData,userInfo);
         return formDataMapper.updateById(oneData)>0;
@@ -143,36 +139,22 @@ public class FormDataService {
     public void batchChangeData(BatchChangeDto batchChangeDto,String userInfo){
         List<Integer> dataId = batchChangeDto.getDataId();
         FormModifyLog formModifyLog = new FormModifyLog();
-        //获取该表单的表单域
-        Set<String> originFieldIds = JSONObject.parseArray(formMapper.selectOneFormFields(batchChangeDto.getFormId(), UserInfoUtil.getTenementId(userInfo)), Form.FormFieldsDto.class)
-                .stream()                               //类型：Stream<Form.FormFieldsDto>
-                //获取出form_fields中的fieldsId,是一个字符串数组
-                .map(Form.FormFieldsDto::getFieldsId)   //类型：Stream<List<String>>
-                //将字符串数组中的每个字符串分别变成一个Stream流
-                .flatMap(Collection::stream)            //类型：Stream<String>
-                //将这些字符串Stream流转换成一个HashSet集合
-                .collect(Collectors.toSet());           //类型：HashSet
+        Set<String> originFieldIds = JSONObject.parseArray(formMapper.selectOneFormFields(batchChangeDto.getFormId(), UserInfoUtil.getTenementId(userInfo)), Form.FormFieldsDto.class).stream()
+                .map(Form.FormFieldsDto::getFieldsId).flatMap(Collection::stream).collect(Collectors.toSet());
         int success=0;
         for(Integer d: dataId){
-            /**
-             * 下面两行代码似乎可以放到if里，if条件不满足用不到这两个数据，用不到不获取是不是可以节省时间
-             */
             FormData oneData = formDataMapper.selectById(d);
             Map<String, String> originData = parseObject(oneData.getFormData(), new TypeReference<Map<String, String>>() {});
-            //修改的数据属于该提交的表单时才允许修改数据
             if(originFieldIds.contains(batchChangeDto.getFieldId())){
-                //修改旧数据为提交的新数据（未更新数据库）
                 originData.put(batchChangeDto.getFieldId(),batchChangeDto.getNewValue());
                 success++;
                 oneData.setFormData(JSON.toJSONString(originData, SerializerFeature.WriteNonStringKeyAsString));
                 auditData(oneData, userInfo);
-                //修改旧数据为提交的新数据（更新数据库）
                 formDataMapper.updateById(oneData);
             }
         }
-        //记录成功修改数据的条数
         formModifyLog.setSuccessNum(success);
-        //记录批量修改数据日志
+        
         dataLogService.saveBatchDataLog(batchChangeDto,userInfo,formModifyLog);
     }
 
@@ -204,20 +186,11 @@ public class FormDataService {
     
     //获取一张表单内所有的数据ID，和数据值的MAP集合
     public List<Map<String,String>> getOneFormAllDataMap(Integer formId,String userInfo){
-       return getOneFormData(formId, userInfo)
-               .stream()
-               .map(FormData::getFormData)
-               .map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {}))
-               .collect(Collectors.toList());
+       return getOneFormData(formId, userInfo).stream().map(FormData::getFormData).map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {})).collect(Collectors.toList());
     }
     //获取一张表单内所有的数据ID，和数据值的MAP集合，除去其中一条数据
     public List<Map<String,String>> getOneFormAllDataMapExOne(Integer formId,Integer dataId,String userInfo){
-       return getOneFormData(formId, userInfo)
-               .stream()
-               .filter(a->!a.getId().equals(dataId))
-               .map(FormData::getFormData)
-               .map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {}))
-               .collect(Collectors.toList());
+       return getOneFormData(formId, userInfo).stream().filter(a->!a.getId().equals(dataId)).map(FormData::getFormData).map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {})).collect(Collectors.toList());
     }
     
     //获取一张表单内所有的数据ID
@@ -226,13 +199,9 @@ public class FormDataService {
     }
     
     
-    //将原始数据转换为：数据ID，和数据值的MAP集合
+    //将原始数据转换为，数据ID，和数据值的MAP集合
     public List<Map<String,String>> converterDataMap(List<FormData> originData){
-        return originData
-                .stream()
-                .map(FormData::getFormData)
-                .map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>(){}))
-                .collect(Collectors.toList());
+        return originData.stream().map(FormData::getFormData).map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>(){})).collect(Collectors.toList());
     }
     
     //添加一条评论信息
@@ -313,17 +282,13 @@ public class FormDataService {
     
     //设置好数据审计
     private void auditData(FormData oneData,String userInfo){
-        //如果一条FormData数据创建时没有设置创建者，则设置为当前用户
         if(oneData.getCreatePerson()==null||oneData.getCreatePerson().equals("")){
             oneData.setCreatePerson(UserInfoUtil.getUserName(userInfo));
         }
-        //如果一条FormData数据创建时没有设置创建时间，则设置为当前时间
         if(oneData.getCreateTime()==null){
             oneData.setCreateTime(LocalDateTime.now());
         }
-        //设置一条FormData数据的更新人为当前用户
         oneData.setUpdatePerson(UserInfoUtil.getUserName(userInfo));
-        //设置一条FormData数据的更新时间为当前时间
         oneData.setUpdateTime(LocalDateTime.now());
     }
     
