@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="center.misaki.device.Auth.dao.SysAdminMapper">
+    
+    <select id="selectMapSysAdmin" resultType="java.util.Map" parameterType="java.lang.Integer">
+        select sysadmin.user_id  as id , user.username from sysadmin ,user where sysadmin.user_id=user.id and sysadmin.tenement_id=#{tenementId}
+    </select>
+</mapper>
+

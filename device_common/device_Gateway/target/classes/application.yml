@@ -1,0 +1,54 @@
+server:
+  http:
+    port: 8000
+#  port: 443
+#  ssl:
+#    key-store-password: 5d315w99qj80
+#    key-store: /home/device/ssl/device.misaki.center_tomcat/device.misaki.center.pfx
+#    key-store-type: PKCS12
+
+eureka:
+  client:
+    service-url: # 设置服务注册中心地址
+      defaultZone: http://localhost:18761/eureka
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  routes:
+    uaa:
+      path: /uaa/**
+      sensitiveHeaders: "*"
+      serviceId: auth-center #根据 serviceId 自动从 Eureka 注册中心获取服务地址并转发请求
+  
+    data:
+      path: /data/**
+      sensitiveHeaders: "*"
+      serviceId: device-data
+
+
+
+  #进行 url 路由的时候 此处超时设置会生效
+  host:
+    connect-timeout-millis: 90000
+    socket-timeout-millis: 100000
+  #开启饿加载 减少第一次请求失败的概率
+  ribbon:
+    eager-load:
+      enabled: true
+#进行 serviceId 路有时候 此处超时设置会生效
+spring:
+  application:
+    name: gateway
+  cloud:
+    inetutils:
+      ignored-interfaces: 'VMware Virtual Ethernet Adapter for VMnet1,VMware Virtual Ethernet Adapter for VMnet8'
+
+#设置feign 客户端超时时间（openFeign默认支持ribbon）
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 500000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 500000
+  #这里需要开启所有操作重试，否则post请求的重试会失败，只会进行get请求的重试
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 0
+  OkToRetryOnAllOperations: true
