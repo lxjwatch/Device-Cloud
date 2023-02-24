@@ -27,38 +27,22 @@ import javax.validation.constraints.NotNull;
 import java.lang.reflect.Method;
 import java.util.Objects;
 
-/**
- * @author Misaki
- * Aop 日志管理
- *
- * @Order: 用来控制bean的执行顺序的而并非加载顺序。
- *         AOP 会用到 @Order，如果一个方法被多个 @Around 增强，
- *         可以使用 @Order 指定增强执行顺序
- * @Component: 标注一个类为Spring容器的Bean
- * @Aspect: 设置当前类为AOP切面类
- * @Slf4j: 开启log日志记录功能
- */
 @Component
 @Aspect
 @Slf4j
+/**
+ * @author Misaki
+ * Aop 日志管理
+ */
 @Order(1)
 public class ControllerLogAop {
 
-    /**
-     * 切点：后端接口
-     */
     @Pointcut("@within(org.springframework.web.bind.annotation.RestController)")
     public void restController(){}
 
-    /**
-     * 切点：后端接口
-     */
     @Pointcut("@within(org.springframework.stereotype.Controller)")
     public void controller(){}
-
-    /**
-     * 作用：对接口调用进行 日志记录时间 操作
-     */
+    
     @Around("controller()||restController()")
     public Object controller(ProceedingJoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
@@ -66,37 +50,24 @@ public class ControllerLogAop {
         if(method == null){
             return joinPoint.proceed();
         }
-        //获取类名
         String className = joinPoint.getTarget().getClass().getSimpleName();
-        //获取方法名
         String methodName = joinPoint.getSignature().getName();
-        //获取方法参数
         Object[] args = joinPoint.getArgs();
-
-        //获取请求信息
         ServletRequestAttributes requestAttributes =
                 (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = Objects.requireNonNull(requestAttributes).getRequest();
-
         final StopWatch watch = new StopWatch(request.getRequestURI());
-
-        //记录打印请求日志的时间
         watch.start("PrintRequest");
         printRequestLog(request, className, methodName, args);
         watch.stop();
-
-        //记录方法执行直到方法返回结果的时间
         watch.start(className + "#" + methodName);
         final Object returnObj = joinPoint.proceed();
         watch.stop();
-
-        //记录打印响应日志的时间
         watch.start("PrintResponse");
         printResponseLog(request, className, methodName, returnObj);
         watch.stop();
-
-        //记录上面三个过程所花的时间
-        log.info("Usage:\n{}", watch.prettyPrint());
+       
+            log.info("Usage:\n{}", watch.prettyPrint());
             
         return returnObj;
     }
@@ -168,5 +139,6 @@ public class ControllerLogAop {
         }
         return toString;
     }
+
 
 }

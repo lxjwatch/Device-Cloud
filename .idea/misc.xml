@@ -7,7 +7,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/device_mysql/pom.xml" />
         <option value="$PROJECT_DIR$/device_mongo/pom.xml" />
-        <option value="$PROJECT_DIR$/device_common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

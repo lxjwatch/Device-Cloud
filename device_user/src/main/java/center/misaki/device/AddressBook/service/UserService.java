@@ -2,7 +2,6 @@ package center.misaki.device.AddressBook.service;
 
 import center.misaki.device.AddressBook.dto.Head;
 import center.misaki.device.AddressBook.dto.UserDto;
-import center.misaki.device.AddressBook.dto.UserRegisterDto;
 import center.misaki.device.AddressBook.vo.UserVo;
 
 import java.util.List;
@@ -12,10 +11,7 @@ import java.util.Set;
  * 用户操作接口
  */
 public interface UserService {
-
-    //0.0.1版本，用户注册
-    boolean registerUser(UserRegisterDto userRegisterDto);
-
+    
     //新增用户
     Integer addUser(UserDto userDto);
     
@@ -45,8 +41,8 @@ public interface UserService {
     
     //获取单人的详细信息
     UserVo.SingleUserVo getOneUserDetail(Integer userId);
-
-    //从Head中获取用户ID集合
+    
+    
     Set<Integer> getUserIdsFromHead(Head head);
     
 }

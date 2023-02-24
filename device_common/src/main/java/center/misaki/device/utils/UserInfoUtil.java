@@ -13,7 +13,6 @@ public class UserInfoUtil {
     
     public static Boolean isCreater(String userInfo){
         JSONObject user = JSONUtils.jsonToBean(userInfo);
-        //判断user是否为空，空则抛出AssertionError异常
         assert user != null;
         return user.getBoolean("Creater");
     }

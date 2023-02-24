@@ -14,13 +14,13 @@ import java.util.Map;
 @Mapper
 public interface FormAuthMapper {
     
-    @Select({"select * from userauthform where tenement_id=#{arg0} and form_id=#{arg1}"})
+    @Select({"select * from userAuthForm where tenement_id=#{arg0} and form_id=#{arg1}"})
     List<UserAuthForm> selectUserAuthForFormId(Integer tenementId,Integer formId);
     
-    @Select({"select * from departmentauthform where tenement_id=#{arg0} and form_id=#{arg1}"})
+    @Select({"select * from departmentAuthForm where tenement_id=#{arg0} and form_id=#{arg1}"})
     List<DepartmentAuthForm> selectDepartAuthForFormId(Integer tenementId,Integer formId);
     
-    @Select({"select * from roleauthform where tenement_id=#{arg0} and form_id=#{arg1}"})
+    @Select({"select * from roleAuthForm where tenement_id=#{arg0} and form_id=#{arg1}"})
     List<RoleAuthForm> selectRoleAuthForFormId(Integer tenementId,Integer formId);
     
     //Object是UserAuthForm

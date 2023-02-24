@@ -7,7 +7,7 @@ import lombok.Data;
  * 传输过来的权限类
  */
 @Data
-public class  AuthDto {
+public class AuthDto {
     
     private Boolean editForm;
     
@@ -27,4 +27,5 @@ public class  AuthDto {
         private Integer[] department;
         private Integer[] role;
     }
+    
 }

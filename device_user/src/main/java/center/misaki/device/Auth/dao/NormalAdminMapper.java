@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface NormalAdminMapper extends BaseMapper<NormalAdmin> {
     
-    @Update("update normaladmin set config = #{arg0} where id = #{arg1}")
+    @Update("update normalAdmin set config = #{arg0} where id = #{arg1}")
     int updateConfig(String config,Integer id);
     
     

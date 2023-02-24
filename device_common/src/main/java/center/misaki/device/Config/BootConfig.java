@@ -11,9 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 转换前端请求数据的转换器
- */
 @Configuration
 public class BootConfig {
     @Bean

@@ -65,24 +65,6 @@ public class StructureServiceImpl implements StructureService {
         this.flowLogMapper = flowLogMapper;
     }
 
-    @Override
-    @Transactional
-    public boolean createForm(Integer menuId, Integer formType, String name, int tenementId, String formFields){
-        assert formType==0 || formType==1;
-        Form form = new Form();
-        form.setTenementId(tenementId);
-        form.setFormName(name);
-        form.setMenuId(menuId);
-        form.setFormType(formType);
-
-        form.setFormFields(formFields);
-        form.setProperties("{\"displayType\":\"column\",\"labelWidth\":120,\"type\":\"object\"}");
-        form.setCreateTime(LocalDateTime.now());
-        form.setUpdateTime(LocalDateTime.now());
-
-        int i = formMapper.insert(form);
-        return i>0;
-    }
 
     @Override
     public FormStrucVo getFormStruc(int formId, String userInfo) {

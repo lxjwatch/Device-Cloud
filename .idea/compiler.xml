@@ -13,12 +13,5 @@
         <module name="device_common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="device_common" target="8" />
-      <module name="device_Data" target="8" />
-      <module name="device_Gateway" target="8" />
-      <module name="device_server" target="8" />
-      <module name="device_user" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

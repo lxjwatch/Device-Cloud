@@ -28,7 +28,7 @@ public class RoleController {
     
     //获取所有的角色组和组里面的角色
     @GetMapping("/show")
-//    @AuthOnCondition(NeedSysAdmin = false)
+    @AuthOnCondition(NeedSysAdmin = false)
     public Result<List<RoleGroupVo>> showAllRole(){
         List<RoleGroupVo> allGroupRole = roleService.getAllGroupRole();
         return Result.ok(allGroupRole,"获取成功");
@@ -64,7 +64,7 @@ public class RoleController {
     //删除角色
     @PostMapping("/deleteRole")
     @AuthOnCondition
-    public Result<?> deleteGroup(@Valid RoleDto roleDto){
+    public Result<?> deleteGroup(@Valid   RoleDto roleDto){
         if(roleService.deleteOneRole(roleDto)){
             return Result.ok(null,"删除成功");
         }else return Result.error("删除失败");
@@ -91,7 +91,7 @@ public class RoleController {
     
     //获取一个角色下的所有成员
     @GetMapping("/showRoleUser")
-//    @AuthOnCondition(NeedSysAdmin = false)
+    @AuthOnCondition(NeedSysAdmin = false)
     @AuthScope(role = true)
     public Result<List<UserVo.UserRoleVo>> getRoleUser(@Valid @NotNull Integer roleId){
         List<UserVo.UserRoleVo> allUserForRole = roleService.getAllUserForRole(roleId);

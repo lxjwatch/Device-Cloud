@@ -14,10 +14,5 @@ public interface UserMapper extends BaseMapper<User> {
     
     @Select({"select email from user where id =#{arg0}"})
     String selectEmailById(Integer userId);
-
-    @Select({"select max(tenement_id) from user"})
-    int selectMaxTenementId();
-
-    @Select({"select id from user where username = #{arg0} and tenement_id =#{arg1}"})
-    int selectIdByUsername(String username ,int tenementId);
+    
 }

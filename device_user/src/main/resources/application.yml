@@ -5,9 +5,6 @@ spring:
     active: dev
   application:
     name: auth-center
-  cloud:
-    inetutils:
-      ignored-interfaces: 'VMware Virtual Ethernet Adapter for VMnet1,VMware Virtual Ethernet Adapter for VMnet8'
 
 
 
@@ -25,10 +22,8 @@ task:
   pool:
     # 核心线程池大小
     corePoolSize: 4
-#    corePoolSize: 20
     # 最大线程数
     maxPoolSize: 8
-#    maxPoolSize: 50
     # 活跃时间
     eepAliveSeconds: 60
     # 队列容量

@@ -6,7 +6,6 @@ import org.springframework.lang.Nullable;
 
 /**
  * Base exception of the project.
- * 项目的基本异常
  *
  * @author johnniang
  */

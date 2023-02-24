@@ -4,7 +4,7 @@
 <mapper namespace="center.misaki.device.Auth.dao.SysAdminMapper">
     
     <select id="selectMapSysAdmin" resultType="java.util.Map" parameterType="java.lang.Integer">
-        select sysadmin.user_id  as id , user.username from sysadmin ,user where sysadmin.user_id=user.id and sysadmin.tenement_id=#{tenementId}
+        select sysAdmin.user_id  as id , user.username from sysAdmin ,user where sysAdmin.user_id=user.id and sysAdmin.tenement_id=#{tenementId} 
     </select>
 </mapper>
 

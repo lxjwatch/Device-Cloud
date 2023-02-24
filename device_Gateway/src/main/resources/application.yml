@@ -9,7 +9,7 @@ server:
 
 eureka:
   client:
-    service-url: # 设置服务注册中心地址
+    service-url:
       defaultZone: http://localhost:18761/eureka
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie,Authorization
@@ -17,7 +17,7 @@ zuul:
     uaa:
       path: /uaa/**
       sensitiveHeaders: "*"
-      serviceId: auth-center #根据 serviceId 自动从 Eureka 注册中心获取服务地址并转发请求
+      serviceId: auth-center
   
     data:
       path: /data/**
@@ -38,10 +38,6 @@ zuul:
 spring:
   application:
     name: gateway
-  cloud:
-    inetutils:
-      ignored-interfaces: 'VMware Virtual Ethernet Adapter for VMnet1,VMware Virtual Ethernet Adapter for VMnet8'
-
 #设置feign 客户端超时时间（openFeign默认支持ribbon）
 ribbon:
   #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间

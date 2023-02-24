@@ -42,7 +42,6 @@ public interface StructureService {
     
     //获取这个公司里的所有表单的简单结构
     List<FormStrucVo.FormSimpleVo> getFormSimpleStruc(String userInfo);
-
-    //用户注册初始化表单
-    boolean createForm(Integer menuId, Integer formType, String name, int tenementId, String formFields);
+    
+    
 }

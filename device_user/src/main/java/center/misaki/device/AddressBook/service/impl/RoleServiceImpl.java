@@ -44,7 +44,7 @@ public class RoleServiceImpl implements RoleService {
         List<Map<String, Object>> roleIdNameMap = roleMapper.selectRoleIdsByUserId(userId, SecurityUtils.getCurrentUser().getTenementId());
         return roleIdNameMap.stream().map(m->((Long)m.get("roleId")).intValue()).collect(Collectors.toList());
     }
-    //返回当前用户拥有的角色 ID，Name 的 Map
+    //返回当前用户拥有的角色ID，和角色名Map集合
     public Map<Integer,String> getUserRoleMap(Integer userId){
         List<Map<String, Object>> roleIdNameMap = roleMapper.selectRoleIdsByUserId(userId, SecurityUtils.getCurrentUser().getTenementId());
         Map<Integer, String> ans = new HashMap<>();
@@ -111,11 +111,9 @@ public class RoleServiceImpl implements RoleService {
     public boolean deleteOneRole(RoleDto roleDto) {
         //查询这个角色是否有用户拥有
         List<User> users = roleMapper.selectUserForRole(roleDto.getRoleId(), SecurityUtils.getCurrentUser().getTenementId());
-        //有用户拥有该角色是无法删除
         if(users==null||users.size()>0){
             return false;
         }
-        //无用户拥有则正常删除
         int i = roleMapper.deleteById(roleDto.getRoleId());
         return i>0;
     }
@@ -159,7 +157,7 @@ public class RoleServiceImpl implements RoleService {
     
     
     @Override
-//    @AuthScope(role = true,useId = false)
+    @AuthScope(role = true,useId = false)
     public List<RoleGroupVo> getAllGroupRole() {
         List<Role> roleList = roleMapper.selectList(new QueryWrapper<Role>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()));
         List<Integer> groupIds = roleMapper.selectAllGroupId(SecurityUtils.getCurrentUser().getTenementId());
@@ -175,9 +173,9 @@ public class RoleServiceImpl implements RoleService {
             RoleGroupVo roleGroupVo = new RoleGroupVo();
             roleGroupVo.setName(roleMapper.selectNameGroup(k,SecurityUtils.getCurrentUser().getTenementId()));
             roleGroupVo.setGroupId(k);
-            Map<Integer, String> roles = new HashMap<>();
-            v.forEach(v1->{roles.put(v1.getId(),v1.getName());});
-            roleGroupVo.setRoles(roles);
+            Map<Integer, String> map = new HashMap<>();
+            v.forEach(v1->{map.put(v1.getId(),v1.getName());});
+            roleGroupVo.setRoles(map);
             roleGroupVos.add(roleGroupVo);
         });
         return roleGroupVos;
@@ -194,22 +192,12 @@ public class RoleServiceImpl implements RoleService {
     @Async
     @Transactional
     public void saveUserIdsForRole(List<Integer> userIds, Integer roleId) {
-//        如果传入过来的用户id为空将不执行下面代码直接返回即修改失败（下面这行代码使业务存在bug，已注释）
 //        if (userIds==null||userIds.isEmpty()) return;
-
-        //查询拥有这个角色的用户们id
         Set<Integer> originUserIds = roleMapper.selectUserForRole(roleId, SecurityUtils.getCurrentUser().getTenementId()).stream().map(User::getId).collect(Collectors.toSet());
         userIds.forEach(u->{
-            //原来还在的用户就移出删除列表
-            if(originUserIds.contains(u)) {
-                originUserIds.remove(u);
-            }
-            //新加的用户就添加进组里
-            else {
-                insertOneUserToRole(u,roleId);
-            }
+            if(originUserIds.contains(u)) originUserIds.remove(u);
+            else insertOneUserToRole(u,roleId);
         });
-        //已经不再组里的老用户全部删除
         originUserIds.forEach(o->{
             deleteOneUserFromRole(o,roleId);
         });
@@ -222,7 +210,7 @@ public class RoleServiceImpl implements RoleService {
         Set<Integer> roleUserIds = roleMapper.selectUserForRole(roleId, SecurityUtils.getCurrentUser().getTenementId()).stream().map(User::getId).collect(Collectors.toSet());
         List<UserVo.UserRoleVo> ans = new ArrayList<>();
         allUsers.forEach(a->{
-            if(roleUserIds.contains(a.getId())){//在角色下包含查询到的用户
+            if(roleUserIds.contains(a.getId())){
                 UserVo.UserRoleVo userRoleVo = new UserVo.UserRoleVo();
                 userRoleVo.setUserId(a.getId());
                 userRoleVo.setNickName(a.getNickName());
@@ -237,7 +225,6 @@ public class RoleServiceImpl implements RoleService {
     @Transactional
     public boolean deleteRoleGroup(Integer groupId) {
         Long count = roleMapper.selectCount(new QueryWrapper<Role>().eq("group_id", groupId));
-        //如果角色组里有成员则无法删除
         if(count>0) return false;
         int i = roleMapper.deleteRoleGroup(groupId);
         return i>0;

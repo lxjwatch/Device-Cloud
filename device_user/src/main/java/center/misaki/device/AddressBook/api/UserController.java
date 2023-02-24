@@ -2,7 +2,6 @@ package center.misaki.device.AddressBook.api;
 import center.misaki.device.AddressBook.AuthScope;
 import center.misaki.device.AddressBook.dto.Head;
 import center.misaki.device.AddressBook.dto.UserDto;
-import center.misaki.device.AddressBook.dto.UserRegisterDto;
 import center.misaki.device.AddressBook.service.UserService;
 import center.misaki.device.AddressBook.vo.UserVo;
 import center.misaki.device.Annotation.AuthOnCondition;
@@ -35,16 +34,6 @@ public class UserController {
     }
     
     public static final String INVITE_URL="";
-
-    //0.0.1版本，用户注册功能
-    @PostMapping("/register")
-    @AuthOnCondition(NeedSysAdmin = false)
-    public Result<?> register(@Valid @RequestBody UserRegisterDto userRegisterDto){
-        if(userService.registerUser(userRegisterDto)){
-            return Result.ok(null,"注册成功");
-        }
-        return Result.error("注册失败");
-    }
 
     //保留，用户邀请接口，待到邮件消息推送功能写完再写
     @PostMapping("/invite")
@@ -130,6 +119,5 @@ public class UserController {
     public Result<?> createSystem(){
         return null;
     }
-
-
+    
 }

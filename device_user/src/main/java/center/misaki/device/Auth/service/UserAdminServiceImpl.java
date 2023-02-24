@@ -49,17 +49,13 @@ public class UserAdminServiceImpl implements UserAdminService {
 
     @Override
     public List<NorAdminGVo> getAllNormalGroupAdmin() {
-        //获取所有普通管理组的用户
         List<User> users = userMapper.selectList(new QueryWrapper<User>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()).ne("normal_admin_group_id", -1));
-        //获取所有普通管理组
         List<NormalAdmin> normalAdmins = normalAdminMapper.selectList(new QueryWrapper<NormalAdmin>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()));
         Map<Integer, List<UserVo.SimpleUserVo>> userMap = new HashMap<>();
         users.forEach(u->{
-            //如果集合中还没有该普通管理组则创建该普通管理组
             if(!userMap.containsKey(u.getNormalAdminGroupId())){
                 userMap.put(u.getNormalAdminGroupId(),new ArrayList<>());
             }
-            //将用户添加到所属的普通管理组中
             UserVo.SimpleUserVo simpleUserVo = new UserVo.SimpleUserVo();
             simpleUserVo.setUserName(u.getUsername());
             simpleUserVo.setUserId(u.getId());
@@ -70,7 +66,6 @@ public class UserAdminServiceImpl implements UserAdminService {
         List<NorAdminGVo> ans = new ArrayList<>();
         for (NormalAdmin normalAdmin : normalAdmins) {
             NorAdminGVo norAdminGVo = new NorAdminGVo();
-            //如果该普通管理组有用户则返回用户对象数组，没有则返回空数组
             if(userMap.containsKey(normalAdmin.getId())){
                 norAdminGVo.setAdmins(userMap.get(normalAdmin.getId()));
             }else norAdminGVo.setAdmins(new ArrayList<>());
@@ -100,16 +95,14 @@ public class UserAdminServiceImpl implements UserAdminService {
         log.info("更新了{}条记录的name",i);
         AuthDto authDto = JSON.parseObject(normalAdmin.getConfig(), AuthDto.class);
         authDto.setName(name);
-        //修改表字段config的信息，因为其中包含该管理组名，需要更新
         updateNormalAdminConfig(authDto, groupId);
-        //{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"增加管理组1","scope":{"department":[],"role":[]}}
     }
 
     @Override
-    @Transactional//开启事务
+    @Transactional
     public boolean addSysAdmins(List<Integer> userIds) {
         int sum=userIds.size();
-        int succ=0;//记录成功创建多少个系统管理员
+        int succ=0;
         for (Integer userId : userIds) {
             SysAdmin sysAdmin = new SysAdmin();
             sysAdmin.setUserId(userId);
@@ -124,7 +117,6 @@ public class UserAdminServiceImpl implements UserAdminService {
     @Override
     @Transactional
     public boolean deleteSysAdmin(Integer userId) {
-        //删除条件：1、TenementId == tenement_id 和 2、userId == user_id
         int i = sysAdminMapper.delete(new QueryWrapper<SysAdmin>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()).eq("user_id", userId));
         return i>0;
     }
@@ -147,7 +139,6 @@ public class UserAdminServiceImpl implements UserAdminService {
         int sum=userIds.size();
         int succ=0;
         for (Integer userId : userIds) {
-            //条件：id相等、非创建者
             int i = userMapper.update(null, new UpdateWrapper<User>().eq("id", userId).eq("is_creater", false).set("normal_admin_group_id", groupId));
             succ += i;
         }
@@ -158,7 +149,6 @@ public class UserAdminServiceImpl implements UserAdminService {
     @Override
     @Transactional
     public boolean deleteNormalAdmin(Integer userId) {
-        //条件：id相等
         int i = userMapper.update(null, new UpdateWrapper<User>().eq("id", userId).set("normal_admin_group_id", -1));
         return i>0;
     }
@@ -166,12 +156,9 @@ public class UserAdminServiceImpl implements UserAdminService {
     @Override
     @Transactional
     public boolean deleteNormalGroup(Integer groupId) {
-        //根据normal_admin_group_id 和 tenement_id 查找对应用户
         List<User> users = userMapper.selectList(new QueryWrapper<User>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId())
                 .eq("normal_admin_group_id", groupId));
-        //该管理组有用户则无法删除
         if (users != null &&!users.isEmpty()) return false;
-        //无用户则可以根据id删除
         int i = normalAdminMapper.deleteById(groupId);
         return i>0;
     }

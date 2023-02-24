@@ -23,17 +23,13 @@ public class SecurityUtils {
      * 获取当前登录的用户
      */
     public static JwtUserDto getCurrentUser() {
-        //从SpringSecurity上下文中获取当前用户身份
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        //如果身份信息不存在，抛出异常
         if (authentication == null) {
             throw new BadRequestException(HttpStatus.UNAUTHORIZED, "当前登录状态过期");
         }
-        //如果身份信息存在，返回当前的用户身份信息
         if (authentication.getPrincipal() instanceof JwtUserDto) {
             return (JwtUserDto) authentication.getPrincipal();
         }
-        //其他异常
         throw new BadRequestException(HttpStatus.UNAUTHORIZED, "找不到当前登录的信息");
     }
 

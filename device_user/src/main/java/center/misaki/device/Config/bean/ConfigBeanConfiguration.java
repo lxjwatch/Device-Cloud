@@ -39,15 +39,10 @@ public class ConfigBeanConfiguration {
         return new LoginProperties();
     }
 
-    /**
-     * 密码编码器：
-     * 用于SpringSecurity认证时将用户输入的明文密码编码后与从数据库查询到的密码进行匹配
-     */
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
     @Bean
     public RestTemplate restTemplate(){
         return new RestTemplate();
@@ -60,19 +55,11 @@ public class ConfigBeanConfiguration {
         return expressionHandler;
     }
 
-    /**
-     * 令牌存储策略：token存储在redis
-     */
     @Bean
     public RedisTokenStore tokenStore() {
         return new RedisTokenExpendStore(connectionFactory,clientDetailsService);
     }
-
-    /**
-     * 对jwt进行签名的key，jwt是明文，签名防篡改。
-     * 接收token的人需要用同样的key验签名，需要把这个key通过服务暴漏出去，
-     * 使用服务的人才能拿到key
-     */
+    
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();

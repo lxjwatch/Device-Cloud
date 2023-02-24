@@ -29,8 +29,8 @@ import java.time.Duration;
 @Slf4j
 @Configuration
 //@EnableCaching
-@ConditionalOnClass(RedisOperations.class)//只有当RedisOperations这个类存在时，才会使该类生效
-@EnableConfigurationProperties(RedisProperties.class)//启用RedisProperties配置类进行配置数据映射
+@ConditionalOnClass(RedisOperations.class)
+@EnableConfigurationProperties(RedisProperties.class)
 public class RedisConfig {
 
     /**

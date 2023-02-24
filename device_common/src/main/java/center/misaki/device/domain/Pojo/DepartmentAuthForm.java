@@ -34,6 +34,5 @@ public class DepartmentAuthForm {
     private LocalDateTime createTime;
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
-
-
+    
 }

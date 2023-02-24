@@ -33,8 +33,7 @@ public interface FormCrudAuthService {
     
     //创建与这张表相关的权限组
     boolean createAuthGroup(GroupFormDto groupFormDto);
-
-    //更新这个权限组对应的权限
+    
     void updateGroupAuth(GroupFormDto groupFormDto);
     
     //将用户纳入与这张表相关的权限组
