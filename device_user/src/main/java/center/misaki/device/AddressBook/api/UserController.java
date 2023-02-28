@@ -128,7 +128,6 @@ public class UserController {
         if (registerUserVo != null){
             return Result.ok(registerUserVo,"注册成功");
         }else return Result.error("注册失败，用户名已存在");
-
     }
 
     //员工注册接口
@@ -140,6 +139,5 @@ public class UserController {
         } else {
             return Result.error(result == 1 ? "注册失败，用户名已存在" : "注册失败，加入的公司不存在");
         }
-
     }
 }

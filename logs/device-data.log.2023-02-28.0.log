@@ -514,3 +514,77 @@ ns         %     Task name
 
 2023-02-28 08:52:28.226 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2023-02-28 08:57:28.238 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:27:03.018 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2023-02-28 15:27:04.763 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 15:27:06.125 [main] INFO  center.misaki.device.DataApp - The following profiles are active: dev
+2023-02-28 15:27:07.346 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=c1a832f6-0581-3e15-9c8c-cab503fd2a6b
+2023-02-28 15:27:07.431 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$46d2a5cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 15:27:07.537 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 15:27:07.712 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 15:27:07.983 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2023-02-28 15:27:07.990 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2023-02-28 15:27:07.991 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-02-28 15:27:07.991 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-02-28 15:27:08.164 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-02-28 15:27:08.164 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1874 ms
+2023-02-28 15:27:08.573 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-02-28 15:27:08.959 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-02-28 15:27:09.992 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 15:27:10.341 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 15:27:10.341 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 15:27:10.344 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 15:27:10.345 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 15:27:11.942 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 15:27:13.141 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 15:27:14.388 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 15:27:14.409 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-02-28 15:27:14.468 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-02-28 15:27:14.554 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-02-28 15:27:14.578 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-02-28 15:27:14.721 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-02-28 15:27:14.721 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-02-28 15:27:14.818 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-02-28 15:27:14.819 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-02-28 15:27:14.940 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:27:15.105 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 15:27:15.105 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 15:27:15.106 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 15:27:15.106 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 15:27:15.106 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 15:27:15.106 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-02-28 15:27:15.107 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 15:27:15.250 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 15:27:15.252 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-02-28 15:27:15.254 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-02-28 15:27:15.258 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1677569235257 with initial instances count: 1
+2023-02-28 15:27:15.264 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application DEVICE-DATA with eureka with status UP
+2023-02-28 15:27:15.265 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1677569235265, current=UP, previous=STARTING]
+2023-02-28 15:27:15.267 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/localhost:device-data:8002: registering service...
+2023-02-28 15:27:15.278 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2023-02-28 15:27:15.302 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/localhost:device-data:8002 - registration status: 204
+2023-02-28 15:27:15.304 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2023-02-28 15:27:15.305 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8002
+2023-02-28 15:27:16.515 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 15:27:16.518 [main] INFO  center.misaki.device.DataApp - Started DataApp in 13.446 seconds (JVM running for 14.293)
+2023-02-28 15:29:53.620 [http-nio-8002-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 15:29:53.620 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-02-28 15:29:53.631 [http-nio-8002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2023-02-28 15:29:53.664 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://localhost:8002/form/initMenu], URI: [/form/initMenu], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
+2023-02-28 15:29:53.665 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.initMenu Parameters: [[17]]
+2023-02-28 15:29:53.912 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.initMenu Response: [{"code":0,"msg":"成功初始化菜单"}]
+2023-02-28 15:29:53.913 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/initMenu': running time = 252851600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+005316700  002%  PrintRequest
+245465400  097%  FormStructureController#initMenu
+002069500  001%  PrintResponse
+
+2023-02-28 15:32:15.109 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:37:15.112 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:42:15.125 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:47:15.141 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:52:15.155 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 15:57:15.168 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 16:02:15.183 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

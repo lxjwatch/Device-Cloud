@@ -198,6 +198,22 @@ public class AuthController {
     }
     
     
+//    @GetMapping("/isAdmin")
+//    public Result<Map<String,Object>> isAdmin(){
+//        JwtUserDto user = SecurityUtils.getCurrentUser();
+//        Map<String, Object> ans = new HashMap<>();
+//        ans.put("creater",user.isCreater());
+//        ans.put("sysAdmin",user.isSysAdmin());
+//        ans.put("norAdmin",user.isNormalAdmin());
+//        if (user.getAuthDto() == null){
+//            String config = "{\"addressBook\":{\"department\":false,\"role\":[false,false]},\"editForm\":false,\"name\":\"无\",\"scope\":{\"department\":[],\"role\":[]}}";
+//            user.setAuthDto(JSON.parseObject(config, AuthDto.class));
+//        }
+//        ans.put("authDetails",user.getAuthDto());
+//        return Result.ok(ans,"获取成功");
+//    }
+
+    //上面注释代码的优化版
     @GetMapping("/isAdmin")
     public Result<Map<String,Object>> isAdmin(){
         JwtUserDto user = SecurityUtils.getCurrentUser();
@@ -205,11 +221,12 @@ public class AuthController {
         ans.put("creater",user.isCreater());
         ans.put("sysAdmin",user.isSysAdmin());
         ans.put("norAdmin",user.isNormalAdmin());
-        if (user.getAuthDto() == null){
-            String config = "{\"addressBook\":{\"department\":false,\"role\":[false,false]},\"editForm\":false,\"name\":\"无\",\"scope\":{\"department\":[],\"role\":[]}}";
-            user.setAuthDto(JSON.parseObject(config, AuthDto.class));
+        AuthDto authDto = user.getAuthDto();
+        if (authDto == null){
+            authDto = JSON.parseObject("{\"addressBook\":{\"department\":false,\"role\":[false,false]},\"editForm\":false,\"name\":\"无\",\"scope\":{\"department\":[],\"role\":[]}}", AuthDto.class);
+            user.setAuthDto(authDto);
         }
-        ans.put("authDetails",user.getAuthDto());
+        ans.put("authDetails",authDto);
         return Result.ok(ans,"获取成功");
     }
     
