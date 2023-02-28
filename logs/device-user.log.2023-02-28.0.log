@@ -1,0 +1,1018 @@
+2023-02-28 08:32:39.169 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2023-02-28 08:32:40.091 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:40.450 [main] INFO  center.misaki.device.userApp - The following profiles are active: dev
+2023-02-28 08:32:41.559 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-02-28 08:32:41.559 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-02-28 08:32:41.622 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45ms. Found 0 Redis repository interfaces.
+2023-02-28 08:32:41.731 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-02-28 08:32:41.966 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a22055f8-ab77-3702-9c8f-92a2fe3a992d
+2023-02-28 08:32:42.044 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$657bbf46] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:42.137 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:42.403 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:42.716 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-02-28 08:32:42.731 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-02-28 08:32:42.731 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-02-28 08:32:42.731 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-02-28 08:32:42.856 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-02-28 08:32:42.856 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2390 ms
+2023-02-28 08:32:42.966 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 08:32:42.966 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 08:32:42.966 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@45117dd
+2023-02-28 08:32:43.122 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-02-28 08:32:43.512 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-02-28 08:32:45.606 [main] WARN  o.s.s.o.p.token.store.JwtAccessTokenConverter - Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2023-02-28 08:32:46.653 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49cceb19, org.springframework.security.web.context.SecurityContextPersistenceFilter@41f7c02d, org.springframework.security.web.header.HeaderWriterFilter@44485db, org.springframework.security.web.authentication.logout.LogoutFilter@3bc891f2, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@5876bed9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5c60c08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cc90398, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7962a746, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@197d5a87, org.springframework.security.web.session.SessionManagementFilter@6d4502ca, org.springframework.security.web.access.ExceptionTranslationFilter@aa8dce8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71668a67]
+2023-02-28 08:32:46.668 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@19e801b5, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24de63b, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e681097, org.springframework.security.web.header.HeaderWriterFilter@9d3a7a1, org.springframework.security.web.authentication.logout.LogoutFilter@b56c222, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@3b2c8bda, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@152891f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d2c253, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42d0e41, org.springframework.security.web.session.SessionManagementFilter@1c411474, org.springframework.security.web.access.ExceptionTranslationFilter@7b4619a3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b69fc07]
+2023-02-28 08:32:46.668 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@459e120b, org.springframework.security.web.context.SecurityContextPersistenceFilter@290807e5, org.springframework.security.web.header.HeaderWriterFilter@144440f5, org.springframework.security.web.csrf.CsrfFilter@17f41739, org.springframework.security.web.authentication.logout.LogoutFilter@2833c093, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ff074a0, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@43f99817, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@fd69983, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@98722ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60bc308b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56499781, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22429a11, org.springframework.security.web.session.SessionManagementFilter@3e2c8ef, org.springframework.security.web.access.ExceptionTranslationFilter@6785df10, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c682e26]
+2023-02-28 08:32:46.856 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 08:32:46.856 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 08:32:47.090 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 08:32:48.199 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-02-28 08:32:48.262 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-02-28 08:32:48.277 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-02-28 08:32:48.418 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-02-28 08:32:48.465 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-02-28 08:32:48.621 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-02-28 08:32:48.621 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-02-28 08:32:48.731 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-02-28 08:32:48.731 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-02-28 08:32:48.871 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-02-28 08:32:49.027 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 08:32:49.168 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 08:32:49.168 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-02-28 08:32:49.168 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-02-28 08:32:49.168 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1677544369168 with initial instances count: 2
+2023-02-28 08:32:49.168 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application AUTH-CENTER with eureka with status UP
+2023-02-28 08:32:49.168 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1677544369168, current=UP, previous=STARTING]
+2023-02-28 08:32:49.168 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/VFZR-HUXPJR:auth-center:8001: registering service...
+2023-02-28 08:32:49.184 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-02-28 08:32:49.215 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/VFZR-HUXPJR:auth-center:8001 - registration status: 204
+2023-02-28 08:32:49.215 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-02-28 08:32:49.215 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8001
+2023-02-28 08:32:49.402 [main] INFO  center.misaki.device.userApp - Started userApp in 10.197 seconds (JVM running for 11.27)
+2023-02-28 08:32:50.215 [RMI TCP Connection(2)-192.168.253.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 08:32:50.215 [RMI TCP Connection(2)-192.168.253.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-02-28 08:32:50.246 [RMI TCP Connection(2)-192.168.253.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 31 ms
+2023-02-28 08:32:50.402 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2023-02-28 08:32:50.402 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2023-02-28 08:36:33.341 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/registerEmployee], URI: [/user/registerEmployee], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
+2023-02-28 08:36:33.351 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.registerEmployee Parameters: [[{"email":"l.hpikvshvi@qq.com","nickname":"任霞","password":"123456","phone":"18164174213","tenementId":15,"username":"员工测试4"}]]
+2023-02-28 08:36:33.577 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.registerEmployee Response: [{"code":0,"msg":"注册成功"}]
+2023-02-28 08:36:33.579 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/registerEmployee': running time = 244396200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+017357900  007%  PrintRequest
+222205400  091%  UserController#registerEmployee
+004832900  002%  PrintResponse
+
+2023-02-28 08:36:47.685 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/login/token], URI: [/login/token], Request Method: [POST], IP: [127.0.0.1]
+2023-02-28 08:36:47.689 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Parameters: [[{"clientId":"pc","clientSecret":"secret","password":"123456","username":"员工测试4"}]]
+2023-02-28 08:36:47.699 [http-nio-8001-exec-7] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2023-02-28 08:36:47.951 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Response: [{"additionalInformation":{"jti":"212ff143-a0af-47eb-ad4c-72f6737fe5a3"},"expiration":1677551807905,"expired":false,"expiresIn":7199,"scope":["all"],"tokenType":"bearer","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc1NTE4MDcsInVzZXJfbmFtZSI6IuWRmOW3pea1i-ivlTQiLCJqdGkiOiIyMTJmZjE0My1hMGFmLTQ3ZWItYWQ0Yy03MmY2NzM3ZmU1YTMiLCJjbGllbnRfaWQiOiJwYyIsInNjb3BlIjpbImFsbCJdfQ.tkY75--OlEsZX_cPUjFF-2ynmP4aTJLG153edAa9LK0"}]
+2023-02-28 08:36:47.951 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/login/token': running time = 265969000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+004801600  002%  PrintRequest
+255744700  096%  AuthController#login
+005422700  002%  PrintResponse
+
+2023-02-28 08:36:48.070 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.070 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:36:48.072 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:36:48.072 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 2346700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000647500  028%  PrintRequest
+000862600  037%  AuthController#isAdmin
+000836600  036%  PrintResponse
+
+2023-02-28 08:36:48.353 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.353 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:48.354 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.354 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.354 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:48.354 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:48.365 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.365 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:48.368 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.368 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:48.395 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:48.395 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:48.395 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:48.395 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 30277300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000265600  001%  PrintRequest
+029783100  098%  AuthController#isAccessed
+000228600  001%  PrintResponse
+
+2023-02-28 08:36:48.395 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:48.395 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:48.396 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 27820800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000418000  002%  PrintRequest
+026992500  097%  AuthController#isAccessed
+000410300  001%  PrintResponse
+
+2023-02-28 08:36:48.396 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 42141200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000817700  002%  PrintRequest
+040886400  097%  AuthController#isAccessed
+000437100  001%  PrintResponse
+
+2023-02-28 08:36:48.396 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 41711400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000616600  001%  PrintRequest
+040472300  097%  AuthController#isAccessed
+000622500  001%  PrintResponse
+
+2023-02-28 08:36:48.396 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 41773400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000351100  001%  PrintRequest
+040739100  098%  AuthController#isAccessed
+000683200  002%  PrintResponse
+
+2023-02-28 08:36:48.411 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.411 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:36:48.411 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:36:48.412 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 971400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000790400  081%  PrintRequest
+000020800  002%  AuthController#isAdmin
+000160200  016%  PrintResponse
+
+2023-02-28 08:36:48.945 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.945 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:48.952 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:48.953 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 7902600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000318600  004%  PrintRequest
+007304200  092%  AuthController#isAccessed
+000279800  004%  PrintResponse
+
+2023-02-28 08:36:49.274 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.276 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:49.277 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.277 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.277 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:49.277 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:49.287 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:49.287 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:49.287 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:49.287 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 10073500 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000359100  004%  PrintRequest
+009337300  093%  AuthController#isAccessed
+000377100  004%  PrintResponse
+
+2023-02-28 08:36:49.287 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 12610100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+002055500  016%  PrintRequest
+010200000  081%  AuthController#isAccessed
+000354600  003%  PrintResponse
+
+2023-02-28 08:36:49.287 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 10111200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000332700  003%  PrintRequest
+009363700  093%  AuthController#isAccessed
+000414800  004%  PrintResponse
+
+2023-02-28 08:36:49.882 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.882 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.883 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:49.883 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:49.883 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.883 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:49.891 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:49.891 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:49.891 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:49.892 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 9221000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000518400  006%  PrintRequest
+008359500  091%  AuthController#isAccessed
+000343100  004%  PrintResponse
+
+2023-02-28 08:36:49.892 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 9372600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000556500  006%  PrintRequest
+008359500  089%  AuthController#isAccessed
+000456600  005%  PrintResponse
+
+2023-02-28 08:36:49.892 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 9027100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000343100  004%  PrintRequest
+008245200  091%  AuthController#isAccessed
+000438800  005%  PrintResponse
+
+2023-02-28 08:36:50.186 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:50.187 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:50.187 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:36:50.187 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:50.187 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:36:50.188 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 1349000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001181800  088%  PrintRequest
+000021100  002%  AuthController#isAdmin
+000146100  011%  PrintResponse
+
+2023-02-28 08:36:50.198 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:50.199 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 11944700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000699000  006%  PrintRequest
+008683900  073%  AuthController#isAccessed
+002561800  021%  PrintResponse
+
+2023-02-28 08:36:55.035 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.035 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.035 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:55.036 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:36:55.036 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:36:55.036 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 1039300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000912200  088%  PrintRequest
+000013900  001%  AuthController#isAdmin
+000113200  011%  PrintResponse
+
+2023-02-28 08:36:55.044 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:55.044 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/authF/show], URI: [/authF/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.044 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Parameters: [[220]]
+2023-02-28 08:36:55.044 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 9237700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000806300  009%  PrintRequest
+008165800  088%  AuthController#isAccessed
+000265600  003%  PrintResponse
+
+2023-02-28 08:36:55.076 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:55.077 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/authF/show': running time = 32351800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000159900  000%  PrintRequest
+031865800  098%  FormAuthController#showAuthForm
+000326100  001%  PrintResponse
+
+2023-02-28 08:36:55.126 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.126 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:36:55.126 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:36:55.126 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/authF/show], URI: [/authF/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.127 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Parameters: [[220]]
+2023-02-28 08:36:55.127 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 550800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000417400  076%  PrintRequest
+000016000  003%  AuthController#isAdmin
+000117400  021%  PrintResponse
+
+2023-02-28 08:36:55.137 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:55.137 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/authF/show': running time = 10338100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000275700  003%  PrintRequest
+009745300  094%  FormAuthController#showAuthForm
+000317100  003%  PrintResponse
+
+2023-02-28 08:36:55.293 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.294 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:36:55.304 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:36:55.304 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 10609700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000547700  005%  PrintRequest
+009755600  092%  AuthController#isAccessed
+000306400  003%  PrintResponse
+
+2023-02-28 08:37:08.216 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.216 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.216 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:37:08.216 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:37:08.228 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:37:08.228 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:37:08.228 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 12697800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000822300  006%  PrintRequest
+011635700  092%  AuthController#isAccessed
+000239800  002%  PrintResponse
+
+2023-02-28 08:37:08.228 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 12673900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000863100  007%  PrintRequest
+011508600  091%  AuthController#isAccessed
+000302200  002%  PrintResponse
+
+2023-02-28 08:37:08.231 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.232 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:37:08.242 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:37:08.243 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 11318600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001062900  009%  PrintRequest
+009890700  087%  AuthController#isAccessed
+000365000  003%  PrintResponse
+
+2023-02-28 08:37:08.518 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.518 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:37:08.518 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:37:08.518 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.518 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:37:08.519 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 507200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000377000  074%  PrintRequest
+000017800  004%  AuthController#isAdmin
+000112400  022%  PrintResponse
+
+2023-02-28 08:37:08.526 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:37:08.527 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 8190800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000159700  002%  PrintRequest
+007679400  094%  AuthController#isAccessed
+000351700  004%  PrintResponse
+
+2023-02-28 08:37:08.560 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.561 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:37:08.568 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx","msg":"验证成功"}]
+2023-02-28 08:37:08.569 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 7981000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000327700  004%  PrintRequest
+007368100  092%  AuthController#isAccessed
+000285200  004%  PrintResponse
+
+2023-02-28 08:37:49.041 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:40:38.969 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/login/token], URI: [/login/token], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
+2023-02-28 08:40:38.970 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Parameters: [[{"clientId":"pc","clientSecret":"secret","password":"123456","username":"员工测试4"}]]
+2023-02-28 08:40:38.970 [http-nio-8001-exec-9] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2023-02-28 08:40:39.070 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Response: [{"additionalInformation":{"jti":"212ff143-a0af-47eb-ad4c-72f6737fe5a3"},"expiration":1677551828552,"expired":false,"expiresIn":6989,"scope":["all"],"tokenType":"bearer","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc1NTE4MDcsInVzZXJfbmFtZSI6IuWRmOW3pea1i-ivlTQiLCJqdGkiOiIyMTJmZjE0My1hMGFmLTQ3ZWItYWQ0Yy03MmY2NzM3ZmU1YTMiLCJjbGllbnRfaWQiOiJwYyIsInNjb3BlIjpbImFsbCJdfQ.tkY75--OlEsZX_cPUjFF-2ynmP4aTJLG153edAa9LK0"}]
+2023-02-28 08:40:39.071 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/login/token': running time = 101274500 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000858300  001%  PrintRequest
+100121300  099%  AuthController#login
+000294900  000%  PrintResponse
+
+2023-02-28 08:41:00.485 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [0:0:0:0:0:0:0:1]
+2023-02-28 08:41:00.486 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:41:00.486 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:41:00.487 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 1283300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001106900  086%  PrintRequest
+000027100  002%  AuthController#isAdmin
+000149300  012%  PrintResponse
+
+2023-02-28 08:42:49.049 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:46:09.865 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2023-02-28 08:46:10.797 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:46:11.182 [main] INFO  center.misaki.device.userApp - The following profiles are active: dev
+2023-02-28 08:46:12.337 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-02-28 08:46:12.340 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-02-28 08:46:12.407 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51ms. Found 0 Redis repository interfaces.
+2023-02-28 08:46:12.520 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-02-28 08:46:12.771 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a22055f8-ab77-3702-9c8f-92a2fe3a992d
+2023-02-28 08:46:12.878 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$15292e2a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:46:13.005 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:46:13.251 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:46:13.556 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-02-28 08:46:13.569 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-02-28 08:46:13.570 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-02-28 08:46:13.570 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-02-28 08:46:13.712 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-02-28 08:46:13.712 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2510 ms
+2023-02-28 08:46:13.824 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 08:46:13.825 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 08:46:13.835 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7d42542
+2023-02-28 08:46:13.982 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-02-28 08:46:14.424 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-02-28 08:46:16.609 [main] WARN  o.s.s.o.p.token.store.JwtAccessTokenConverter - Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2023-02-28 08:46:17.627 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cc90398, org.springframework.security.web.context.SecurityContextPersistenceFilter@7be3abaa, org.springframework.security.web.header.HeaderWriterFilter@2676d96a, org.springframework.security.web.authentication.logout.LogoutFilter@3eff6846, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@4882b9a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@ab2009f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5aac6f9f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a78d380, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b6fd0, org.springframework.security.web.session.SessionManagementFilter@3a48c398, org.springframework.security.web.access.ExceptionTranslationFilter@45dc7be, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c13ca07]
+2023-02-28 08:46:17.645 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@5e95b0ab, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5876bed9, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c31de5d, org.springframework.security.web.header.HeaderWriterFilter@6adcf059, org.springframework.security.web.authentication.logout.LogoutFilter@949d347, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@445b85d7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a7f9d45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@772cf46b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73ddb7ef, org.springframework.security.web.session.SessionManagementFilter@7962a746, org.springframework.security.web.access.ExceptionTranslationFilter@38ebc866, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c1f15df]
+2023-02-28 08:46:17.657 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13390a96, org.springframework.security.web.context.SecurityContextPersistenceFilter@151659dd, org.springframework.security.web.header.HeaderWriterFilter@af9dd34, org.springframework.security.web.csrf.CsrfFilter@64eeddd8, org.springframework.security.web.authentication.logout.LogoutFilter@13cf5f8a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51d88c38, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@f44d033, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3a8b9458, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@615ef20, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a58e0e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e8c84eb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7497a554, org.springframework.security.web.session.SessionManagementFilter@48692405, org.springframework.security.web.access.ExceptionTranslationFilter@5d404a3c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@584136c1]
+2023-02-28 08:46:17.853 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 08:46:17.853 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 08:46:18.080 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 08:46:19.155 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-02-28 08:46:19.206 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-02-28 08:46:19.226 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-02-28 08:46:19.351 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-02-28 08:46:19.389 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-02-28 08:46:19.565 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-02-28 08:46:19.565 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-02-28 08:46:19.684 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-02-28 08:46:19.684 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-02-28 08:46:19.835 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-02-28 08:46:19.978 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 08:46:20.125 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 08:46:20.128 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-02-28 08:46:20.130 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-02-28 08:46:20.133 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1677545180132 with initial instances count: 3
+2023-02-28 08:46:20.138 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application AUTH-CENTER with eureka with status UP
+2023-02-28 08:46:20.138 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1677545180138, current=UP, previous=STARTING]
+2023-02-28 08:46:20.140 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/VFZR-HUXPJR:auth-center:8001: registering service...
+2023-02-28 08:46:20.160 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-02-28 08:46:20.192 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/VFZR-HUXPJR:auth-center:8001 - registration status: 204
+2023-02-28 08:46:20.192 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-02-28 08:46:20.194 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8001
+2023-02-28 08:46:20.397 [main] INFO  center.misaki.device.userApp - Started userApp in 10.467 seconds (JVM running for 11.572)
+2023-02-28 08:46:20.550 [RMI TCP Connection(3)-192.168.253.1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 08:46:20.551 [RMI TCP Connection(3)-192.168.253.1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-02-28 08:46:20.568 [RMI TCP Connection(3)-192.168.253.1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2023-02-28 08:46:20.702 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2023-02-28 08:46:20.703 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2023-02-28 08:46:42.575 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/registerEmployee], URI: [/user/registerEmployee], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
+2023-02-28 08:46:42.585 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.registerEmployee Parameters: [[{"email":"l.hpikvshvi@qq.com","nickname":"任霞","password":"123456","phone":"18164174213","tenementId":15,"username":"员工测试5"}]]
+2023-02-28 08:46:42.831 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.registerEmployee Response: [{"code":0,"msg":"注册成功"}]
+2023-02-28 08:46:42.833 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/registerEmployee': running time = 263907100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+017245200  007%  PrintRequest
+242107800  092%  UserController#registerEmployee
+004554100  002%  PrintResponse
+
+2023-02-28 08:47:02.480 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/login/token], URI: [/login/token], Request Method: [POST], IP: [127.0.0.1]
+2023-02-28 08:47:02.483 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Parameters: [[{"clientId":"pc","clientSecret":"secret","password":"123456","username":"员工注册5"}]]
+2023-02-28 08:47:02.486 [http-nio-8001-exec-10] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2023-02-28 08:47:46.496 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/login/token], URI: [/login/token], Request Method: [POST], IP: [127.0.0.1]
+2023-02-28 08:47:46.497 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Parameters: [[{"clientId":"pc","clientSecret":"secret","password":"123456","username":"员工测试5"}]]
+2023-02-28 08:47:46.497 [http-nio-8001-exec-2] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2023-02-28 08:47:46.651 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Response: [{"additionalInformation":{"jti":"3b88a801-9fc1-4e28-ae67-9a3ef7a4af25"},"expiration":1677552466614,"expired":false,"expiresIn":7199,"scope":["all"],"tokenType":"bearer","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Nzc1NTI0NjYsInVzZXJfbmFtZSI6IuWRmOW3pea1i-ivlTUiLCJqdGkiOiIzYjg4YTgwMS05ZmMxLTRlMjgtYWU2Ny05YTNlZjdhNGFmMjUiLCJjbGllbnRfaWQiOiJwYyIsInNjb3BlIjpbImFsbCJdfQ.FBhYeaHr_znhrf8BYQUzGJhFD1GF4ClgZhmLmm0a9y0"}]
+2023-02-28 08:47:46.652 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/login/token': running time = 154998400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001262100  001%  PrintRequest
+143631900  093%  AuthController#login
+010104400  007%  PrintResponse
+
+2023-02-28 08:47:47.068 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.068 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.068 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.068 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.069 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:47.068 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.069 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.069 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.069 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.069 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.068 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.069 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.085 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.085 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.085 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 16546700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000793300  005%  PrintRequest
+015466600  093%  AuthController#isAccessed
+000286800  002%  PrintResponse
+
+2023-02-28 08:47:47.085 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 16821100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001128100  007%  PrintRequest
+015413600  092%  AuthController#isAccessed
+000279400  002%  PrintResponse
+
+2023-02-28 08:47:47.085 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.085 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.085 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.085 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 17132600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001234200  007%  PrintRequest
+015317600  089%  AuthController#isAccessed
+000580800  003%  PrintResponse
+
+2023-02-28 08:47:47.085 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 16906800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000844900  005%  PrintRequest
+015434400  091%  AuthController#isAccessed
+000627500  004%  PrintResponse
+
+2023-02-28 08:47:47.085 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 17153300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001072300  006%  PrintRequest
+015474100  090%  AuthController#isAccessed
+000606900  004%  PrintResponse
+
+2023-02-28 08:47:47.093 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:47.094 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 25272300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000454800  002%  PrintRequest
+010966900  043%  AuthController#isAdmin
+013850600  055%  PrintResponse
+
+2023-02-28 08:47:47.424 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.424 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:47.424 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:47.424 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 704600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000401200  057%  PrintRequest
+000119300  017%  AuthController#isAdmin
+000184100  026%  PrintResponse
+
+2023-02-28 08:47:47.507 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.507 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.507 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.507 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.507 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.507 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.510 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.510 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:47.518 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.518 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.518 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.519 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 11504800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001865300  016%  PrintRequest
+009333200  081%  AuthController#isAccessed
+000306300  003%  PrintResponse
+
+2023-02-28 08:47:47.519 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 11543100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000347400  003%  PrintRequest
+010852100  094%  AuthController#isAccessed
+000343600  003%  PrintResponse
+
+2023-02-28 08:47:47.519 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 11572700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000497800  004%  PrintRequest
+010668900  092%  AuthController#isAccessed
+000406000  004%  PrintResponse
+
+2023-02-28 08:47:47.519 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:47.519 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 9103600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000339000  004%  PrintRequest
+008642200  095%  AuthController#isAccessed
+000122400  001%  PrintResponse
+
+2023-02-28 08:47:47.997 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.998 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:48.003 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.003 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.004 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:48.004 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:48.005 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:48.005 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 8167000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001079700  013%  PrintRequest
+006815800  083%  AuthController#isAccessed
+000271500  003%  PrintResponse
+
+2023-02-28 08:47:48.012 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:48.012 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:48.012 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 8499800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000779400  009%  PrintRequest
+007480600  088%  AuthController#isAccessed
+000239800  003%  PrintResponse
+
+2023-02-28 08:47:48.012 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 8556600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000798200  009%  PrintRequest
+007515200  088%  AuthController#isAccessed
+000243200  003%  PrintResponse
+
+2023-02-28 08:47:48.286 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.286 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.286 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:48.286 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:48.286 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:48.287 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 553300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000306000  055%  PrintRequest
+000107800  019%  AuthController#isAdmin
+000139500  025%  PrintResponse
+
+2023-02-28 08:47:48.294 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:48.294 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 7892700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000318400  004%  PrintRequest
+007357600  093%  AuthController#isAccessed
+000216700  003%  PrintResponse
+
+2023-02-28 08:47:49.981 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:49.981 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:49.982 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:49.982 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:49.982 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:49.983 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 1136100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000725500  064%  PrintRequest
+000156400  014%  AuthController#isAdmin
+000254200  022%  PrintResponse
+
+2023-02-28 08:47:49.991 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:49.992 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 10434400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000858500  008%  PrintRequest
+008983700  086%  AuthController#isAccessed
+000592200  006%  PrintResponse
+
+2023-02-28 08:47:49.993 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/authF/show], URI: [/authF/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:49.993 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Parameters: [[220]]
+2023-02-28 08:47:50.032 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:50.032 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/authF/show': running time = 39312200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000425000  001%  PrintRequest
+038633300  098%  FormAuthController#showAuthForm
+000253900  001%  PrintResponse
+
+2023-02-28 08:47:50.072 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:50.072 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/authF/show], URI: [/authF/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:50.072 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:50.072 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Parameters: [[220]]
+2023-02-28 08:47:50.073 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:50.074 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 1201700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000380100  032%  PrintRequest
+000268000  022%  AuthController#isAdmin
+000553600  046%  PrintResponse
+
+2023-02-28 08:47:50.085 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - FormAuthController.showAuthForm Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:50.085 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/authF/show': running time = 13017000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000254900  002%  PrintRequest
+012438600  096%  FormAuthController#showAuthForm
+000323500  002%  PrintResponse
+
+2023-02-28 08:47:50.242 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAccessed], URI: [/isAccessed], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:50.242 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Parameters: [[]]
+2023-02-28 08:47:50.252 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAccessed Response: [{"code":0,"data":"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp","msg":"验证成功"}]
+2023-02-28 08:47:50.253 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAccessed': running time = 10833300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000712600  007%  PrintRequest
+008979800  083%  AuthController#isAccessed
+001140900  011%  PrintResponse
+
+2023-02-28 08:47:51.494 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:51.494 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:47:51.520 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:47:51.521 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 27329600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000860400  003%  PrintRequest
+022258000  081%  UserController#showAllUser
+004211200  015%  PrintResponse
+
+2023-02-28 08:47:51.727 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:51.727 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:51.727 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:51.728 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 834400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000332100  040%  PrintRequest
+000100500  012%  AuthController#isAdmin
+000401800  048%  PrintResponse
+
+2023-02-28 08:47:51.805 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:51.805 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:51.805 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:51.806 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 785900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000467100  059%  PrintRequest
+000143500  018%  AuthController#isAdmin
+000175300  022%  PrintResponse
+
+2023-02-28 08:47:52.059 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/department/show], URI: [/department/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:52.059 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - DepartmentController.showAllDepartment Parameters: [[]]
+2023-02-28 08:47:52.070 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - DepartmentController.showAllDepartment Response: [{"code":0,"data":{"id":33,"name":"应决关体温","preId":-1},"msg":"获取成功"}]
+2023-02-28 08:47:52.070 [http-nio-8001-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/department/show': running time = 11025900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000402200  004%  PrintRequest
+007751800  070%  DepartmentController#showAllDepartment
+002871900  026%  PrintResponse
+
+2023-02-28 08:47:54.069 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:54.069 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:47:54.077 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:47:54.078 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 9006400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000548500  006%  PrintRequest
+007876600  087%  UserController#showAllUser
+000581300  006%  PrintResponse
+
+2023-02-28 08:47:55.236 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/role/showRoleUser], URI: [/role/showRoleUser], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:55.236 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:55.237 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - RoleController.getRoleUser Parameters: [[1]]
+2023-02-28 08:47:55.237 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:55.238 [http-nio-8001-exec-2] INFO  center.misaki.device.Aspect.AuthPermissionAspect - 校验权限，该用户：员工测试5，为 普通用户
+2023-02-28 08:47:55.238 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:55.238 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 1758700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001385200  079%  PrintRequest
+000172900  010%  AuthController#isAdmin
+000200600  011%  PrintResponse
+
+2023-02-28 08:47:55.496 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/role/show], URI: [/role/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:55.496 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - RoleController.showAllRole Parameters: [[]]
+2023-02-28 08:47:55.497 [http-nio-8001-exec-10] INFO  center.misaki.device.Aspect.AuthPermissionAspect - 校验权限，该用户：员工测试5，为 普通用户
+2023-02-28 08:47:59.427 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:59.427 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:47:59.434 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:47:59.434 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 7577900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000715700  009%  PrintRequest
+006551900  086%  UserController#showAllUser
+000310300  004%  PrintResponse
+
+2023-02-28 08:47:59.727 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:59.727 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:47:59.727 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:47:59.727 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 629100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000264700  042%  PrintRequest
+000139200  022%  AuthController#isAdmin
+000225200  036%  PrintResponse
+
+2023-02-28 08:48:00.067 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/department/show], URI: [/department/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:48:00.068 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - DepartmentController.showAllDepartment Parameters: [[]]
+2023-02-28 08:48:00.070 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - DepartmentController.showAllDepartment Response: [{"code":0,"data":{"id":33,"name":"应决关体温","preId":-1},"msg":"获取成功"}]
+2023-02-28 08:48:00.070 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/department/show': running time = 2736300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000513700  019%  PrintRequest
+002087800  076%  DepartmentController#showAllDepartment
+000134800  005%  PrintResponse
+
+2023-02-28 08:48:07.728 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:48:07.729 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:48:07.738 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:48:07.739 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 10628200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000961300  009%  PrintRequest
+008555300  080%  UserController#showAllUser
+001111600  010%  PrintResponse
+
+2023-02-28 08:48:09.308 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:48:09.308 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:48:09.314 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:48:09.314 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 6132700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000497000  008%  PrintRequest
+005436000  089%  UserController#showAllUser
+000199700  003%  PrintResponse
+
+2023-02-28 08:48:58.299 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:48:58.300 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:48:58.309 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:48:58.309 [http-nio-8001-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 9921400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000821700  008%  PrintRequest
+008620900  087%  UserController#showAllUser
+000478800  005%  PrintResponse
+
+2023-02-28 08:48:58.550 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:48:58.551 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:48:58.558 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:48:58.559 [http-nio-8001-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 8491400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000518200  006%  PrintRequest
+007497300  088%  UserController#showAllUser
+000475900  006%  PrintResponse
+
+2023-02-28 08:49:07.593 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:49:07.594 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:49:07.594 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:49:07.594 [http-nio-8001-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 753100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000555700  074%  PrintRequest
+000102800  014%  AuthController#isAdmin
+000094600  013%  PrintResponse
+
+2023-02-28 08:49:07.603 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/user/show], URI: [/user/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:49:07.603 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Parameters: [[]]
+2023-02-28 08:49:07.613 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - UserController.showAllUser Response: [{"code":0,"data":[{"email":"k.dfa@qq.com","name":"赵磊","phone":"18678153893","role":{},"state":1,"userId":46},{"email":"t.stvmkaqm@qq.com","name":"曹刚","phone":"18163847544","role":{},"state":1,"userId":48},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":50},{"email":"l.hpikvshvi@qq.com","name":"任霞","phone":"18164174213","role":{},"state":1,"userId":51}],"msg":"获取成功"}]
+2023-02-28 08:49:07.613 [http-nio-8001-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/user/show': running time = 10388000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000975700  009%  PrintRequest
+009155900  088%  UserController#showAllUser
+000256400  002%  PrintResponse
+
+2023-02-28 08:49:07.616 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/isAdmin], URI: [/isAdmin], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:49:07.616 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Parameters: [[]]
+2023-02-28 08:49:07.616 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.isAdmin Response: [{"code":0,"data":{"creater":false,"sysAdmin":false,"authDetails":{"addressBook":{"department":false,"role":[false,false]},"editForm":false,"name":"无","scope":{"department":[],"role":[]}},"norAdmin":false},"msg":"获取成功"}]
+2023-02-28 08:49:07.617 [http-nio-8001-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/isAdmin': running time = 631500 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000312300  049%  PrintRequest
+000154400  024%  AuthController#isAdmin
+000164800  026%  PrintResponse
+
+2023-02-28 08:49:07.802 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8001/department/show], URI: [/department/show], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:49:07.803 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - DepartmentController.showAllDepartment Parameters: [[]]
+2023-02-28 08:49:07.807 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - DepartmentController.showAllDepartment Response: [{"code":0,"data":{"id":33,"name":"应决关体温","preId":-1},"msg":"获取成功"}]
+2023-02-28 08:49:07.807 [http-nio-8001-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/department/show': running time = 7724500 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+003998700  052%  PrintRequest
+003445600  045%  DepartmentController#showAllDepartment
+000280200  004%  PrintResponse
+
+2023-02-28 08:51:19.983 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:56:19.994 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

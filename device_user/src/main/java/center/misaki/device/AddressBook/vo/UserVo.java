@@ -27,6 +27,7 @@ public class UserVo {
         private String userName;
         private String phone;
         private String email;
+        private String tenementName;
         private Map<Integer,String> departments;
         private Map<Integer,String> roles;
     }
@@ -43,5 +44,9 @@ public class UserVo {
         private Integer userId;
         private String userName;
     }
-    
+
+    @Data
+    public static class registerUserVo{
+        private Integer tenementId;
+    }
 }

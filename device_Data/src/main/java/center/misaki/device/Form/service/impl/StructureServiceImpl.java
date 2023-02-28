@@ -280,5 +280,68 @@ public class StructureServiceImpl implements StructureService {
         return ans;
     }
 
+    @Override
+    @Transactional
+    public boolean createMenu(int tenementId) {
+        //创建菜单
+        Menu menu = new Menu();
+        menu.setTenementId(tenementId);
+        String[] menuNames = new String[]{"经营分析报表","设备点检巡检","设备维修保修","设备维护保养","备品备件管理","基础信息"};
+        int menuId = menuMapper.selectIdMax()+1;
+        for (int j = 0;j<menuNames.length;j++){
+            menu.setId(menuId++);
+            menu.setName(menuNames[j]);
+            menuMapper.insert(menu);
+        }
+        //菜单初始化
+        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"设备点检巡检");
+        createMenuForm(menuId,1,tenementId,"设备巡检单");
+        createMenuForm(menuId,0,tenementId,"巡检方案");
+
+        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"设备维修保修");
+        createMenuForm(menuId,1,tenementId,"设备报修单");
+
+        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"设备维护保养");
+        createMenuForm(menuId,0,tenementId,"设备保养单");
+        createMenuForm(menuId,0,tenementId,"保养计划基础表");
+
+        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"备品备件管理");
+        createMenuForm(menuId,0,tenementId,"备件入库单");
+        createMenuForm(menuId,0,tenementId,"备件领用单");
+        createMenuForm(menuId,0,tenementId,"备件台账");
+
+        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"基础信息");
+        createMenuForm(menuId,0,tenementId,"机房");
+        createMenuForm(menuId,0,tenementId,"设备类型");
+        createMenuForm(menuId,0,tenementId,"部门");
+        createMenuForm(menuId,0,tenementId,"设备状态");
+        createMenuForm(menuId,0,tenementId,"保养等级与频次");
+        createMenuForm(menuId,0,tenementId,"仓库");
+        createMenuForm(menuId,0,tenementId,"单位");
+        createMenuForm(menuId,0,tenementId,"安装地点");
+        createMenuForm(menuId,0,tenementId,"设备信息");
+
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean createMenuForm(Integer menuId, Integer formType, Integer tenementId,String formName) {
+        assert formType==0 || formType==1;
+        Form form = new Form();
+        form.setFormName(formName);
+        form.setMenuId(menuId);
+        form.setTenementId(tenementId);
+        form.setFormType(formType);
+        Form.FormFieldsDto formFieldsDto = new Form.FormFieldsDto();
+        formFieldsDto.setName("root");
+        formFieldsDto.setFieldsId(new ArrayList<>());
+        form.setFormFields(JSON.toJSONString(Collections.singletonList(formFieldsDto)));
+        form.setProperties("{\"displayType\":\"column\",\"labelWidth\":120,\"type\":\"object\"}");
+        form.setCreateTime(LocalDateTime.now());
+        form.setUpdateTime(LocalDateTime.now());
+        int i = formMapper.insert(form);
+        return i>0;
+    }
 
 }

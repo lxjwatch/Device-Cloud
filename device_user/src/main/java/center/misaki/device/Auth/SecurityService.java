@@ -80,6 +80,9 @@ public class SecurityService implements UserDetailsService {
     
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
         String requestURI = request.getRequestURI();
+        if ("/user/registerUser".equals(requestURI)||"/user/registerEmployee".equals(requestURI)){
+            return true;
+        }
         Object principal = authentication.getPrincipal();
         boolean hasPermission = false;
         for (String url : authorizationUrls) {

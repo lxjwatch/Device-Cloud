@@ -50,6 +50,7 @@ public class UserController {
         return Result.ok(null, "邀请成功");
     }
 
+    //获取本人信息接口
     @GetMapping("/showSelf")
     public Result<UserVo.SingleUserVo>showUserSelf(){
         UserVo.SingleUserVo userVo = userService.getOneUserDetail(SecurityUtils.getCurrentUser().getUserId());
@@ -74,7 +75,7 @@ public class UserController {
     
     //在全局搜索用户
     @PostMapping("/searchAll")
-    @AuthOnCondition
+//    @AuthOnCondition
     public Result<List<UserVo>> searchAllUser(@Valid @NotNull String userInfo){
         List<UserVo> userVos = userService.searchUser(userInfo);
         return Result.ok(userVos,"获取成功");
@@ -82,7 +83,7 @@ public class UserController {
     
     //在部门下搜索用户
     @PostMapping("/searchDepart")
-    @AuthOnCondition(NeedSysAdmin = false)
+//    @AuthOnCondition(NeedSysAdmin = false)
     @AuthScope(department = true)
     public Result<List<UserVo>> searchDepartUser(@Valid @NotNull String userInfo, @Valid @NotNull Integer departmentId){
         List<UserVo> userVos = userService.searchUser(userInfo, departmentId);
@@ -91,7 +92,7 @@ public class UserController {
     
     //更改用户信息
     @PostMapping("/changeUserInfo")
-    @AuthOnCondition
+//    @AuthOnCondition
     public Result<?> changeUserInfo(@Valid @RequestBody UserDto.ChangeUserInfoDto changeUserInfoDto){
         if(userService.changeUserInfo(changeUserInfoDto)){
             return Result.ok(null,"修改成功");
@@ -119,5 +120,26 @@ public class UserController {
     public Result<?> createSystem(){
         return null;
     }
-    
+
+    //用户注册接口
+    @PostMapping("/registerUser")
+    public Result<UserVo.registerUserVo> registerUser(@Valid @RequestBody UserDto.RegisterUserDto registerUserDto) {
+        UserVo.registerUserVo registerUserVo = userService.registerUser(registerUserDto);
+        if (registerUserVo != null){
+            return Result.ok(registerUserVo,"注册成功");
+        }else return Result.error("注册失败，用户名已存在");
+
+    }
+
+    //员工注册接口
+    @PostMapping("/registerEmployee")
+    public Result<?> registerEmployee(@Valid @RequestBody UserDto.RegisterEmployeeDto registerEmployeeDto) {
+        int result = userService.registerEmployee(registerEmployeeDto);
+        if (result == 0) {
+            return Result.ok(null, "注册成功");
+        } else {
+            return Result.error(result == 1 ? "注册失败，用户名已存在" : "注册失败，加入的公司不存在");
+        }
+
+    }
 }

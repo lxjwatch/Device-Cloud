@@ -11,6 +11,12 @@ import java.util.Set;
  * 用户操作接口
  */
 public interface UserService {
+
+    //注册用户
+    UserVo.registerUserVo registerUser(UserDto.RegisterUserDto registerUserDto);
+
+    //注册员工
+    Integer registerEmployee(UserDto.RegisterEmployeeDto registerEmployeeDto);
     
     //新增用户
     Integer addUser(UserDto userDto);

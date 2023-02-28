@@ -49,7 +49,7 @@ public class AccessFilter extends ZuulFilter {
         HttpServletResponse response = ctx.getResponse();
         log.info("request {}:{}",request.getMethod(),request.getRequestURI());
 
-        if (StringUtils.startsWithAny(request.getRequestURI(), new String[]{"/uaa"})) {
+        if (StringUtils.startsWithAny(request.getRequestURI(), new String[]{"/uaa","/data/form/initMenu"})) {
             ctx.setSendZuulResponse(Boolean.TRUE);
             return null;
         }

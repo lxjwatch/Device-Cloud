@@ -44,5 +44,34 @@ public class UserDto {
         private List<Integer> roleIds;
         private Integer state;
     }
+
+
+    @Data
+    public static class RegisterUserDto{
+        @NotNull
+        private String username;
+        @NotNull
+        private String password;
+        @NotNull
+        private String nickname;
+        private String email;
+        private String phone;
+        @NotNull
+        private String tenementName;
+    }
+
+    @Data
+    public static class RegisterEmployeeDto{
+        @NotNull
+        private String username;
+        @NotNull
+        private String password;
+        @NotNull
+        private String nickname;
+        private String email;
+        private String phone;
+        @NotNull
+        private Integer tenementId;
+    }
     
 }

@@ -24,20 +24,25 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         this.responseExceptionTranslator = responseExceptionTranslator;
     }
 
+    @Override
     public void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
+                //下面这五个接口放行
                 .authorizeRequests()
                 .antMatchers("/error").permitAll()
                 .antMatchers("/login/token").permitAll()
                 .antMatchers("/wx/login/token").permitAll()
-                .anyRequest()
+                .antMatchers("/uaa/user/registerEmployee").permitAll()
+                .antMatchers("/uaa/user/registerUser").permitAll()
 
+                //其他请求都需要做鉴权
+                .anyRequest()
                 .access("@securityService.hasPermission(request,authentication)")
+
                 // 不创建会话
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
     }
 
     @Override

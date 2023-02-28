@@ -1,0 +1,516 @@
+2023-02-28 08:32:21.140 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2023-02-28 08:32:22.046 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:22.405 [main] INFO  center.misaki.device.DataApp - The following profiles are active: dev
+2023-02-28 08:32:23.296 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=c1a832f6-0581-3e15-9c8c-cab503fd2a6b
+2023-02-28 08:32:23.358 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$ce2cd13a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:23.468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:23.608 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 08:32:23.905 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8002 (http)
+2023-02-28 08:32:23.921 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8002"]
+2023-02-28 08:32:23.921 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-02-28 08:32:23.921 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-02-28 08:32:24.155 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-02-28 08:32:24.155 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1734 ms
+2023-02-28 08:32:24.561 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-02-28 08:32:24.889 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-02-28 08:32:25.920 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 08:32:26.155 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 08:32:26.155 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 08:32:26.155 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 08:32:26.155 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 08:32:27.295 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-02-28 08:32:27.373 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-02-28 08:32:27.483 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-02-28 08:32:27.545 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-02-28 08:32:27.764 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-02-28 08:32:27.764 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-02-28 08:32:27.858 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-02-28 08:32:27.858 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-02-28 08:32:28.061 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-02-28 08:32:28.186 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 08:32:28.311 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 08:32:28.311 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-02-28 08:32:28.311 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-02-28 08:32:28.311 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1677544348311 with initial instances count: 1
+2023-02-28 08:32:28.326 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application DEVICE-DATA with eureka with status UP
+2023-02-28 08:32:28.326 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1677544348326, current=UP, previous=STARTING]
+2023-02-28 08:32:28.326 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/VFZR-HUXPJR:device-data:8002: registering service...
+2023-02-28 08:32:28.342 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8002"]
+2023-02-28 08:32:28.373 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_DEVICE-DATA/VFZR-HUXPJR:device-data:8002 - registration status: 204
+2023-02-28 08:32:28.373 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8002 (http) with context path ''
+2023-02-28 08:32:28.373 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8002
+2023-02-28 08:32:28.561 [main] INFO  center.misaki.device.DataApp - Started DataApp in 7.35 seconds (JVM running for 8.32)
+2023-02-28 08:36:48.495 [http-nio-8002-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 08:36:48.496 [http-nio-8002-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-02-28 08:36:48.508 [http-nio-8002-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2023-02-28 08:36:48.565 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/menu], URI: [/form/menu], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.565 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.565 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.565 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.565 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.566 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:48.566 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:48.566 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.getMenuForms Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:48.566 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:48.566 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:48.871 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:48.871 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:48.871 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:48.871 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:48.872 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 315833500 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+011574000  004%  PrintRequest
+285951600  091%  WorkLogController#queryWorkLogHandle
+018307900  006%  PrintResponse
+
+2023-02-28 08:36:48.872 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 315810200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+011042100  003%  PrintRequest
+286495600  091%  WorkLogController#queryWorkLogWait
+018272500  006%  PrintResponse
+
+2023-02-28 08:36:48.872 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 315853700 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+011552000  004%  PrintRequest
+285978200  091%  WorkLogController#queryWorkLogCopy
+018323500  006%  PrintResponse
+
+2023-02-28 08:36:48.872 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 315758400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+010877100  003%  PrintRequest
+286625300  091%  WorkLogController#queryWorkLogLunch
+018256000  006%  PrintResponse
+
+2023-02-28 08:36:48.877 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.getMenuForms Response: [{"code":0,"data":[{"menuId":73,"menuName":"经营分析报表","simpleForms":[]},{"menuId":74,"menuName":"设备点检巡检","simpleForms":[{"formId":212,"formName":"设备巡检单","type":1},{"formId":213,"formName":"巡检方案","type":0}]},{"menuId":75,"menuName":"设备维修保修","simpleForms":[{"formId":214,"formName":"设备报修单","type":1}]},{"menuId":76,"menuName":"设备维护保养","simpleForms":[{"formId":215,"formName":"设备保养单","type":0},{"formId":216,"formName":"保养计划基础表","type":0}]},{"menuId":77,"menuName":"备品备件管理","simpleForms":[{"formId":217,"formName":"备件入库单","type":0},{"formId":218,"formName":"备件领用单","type":0},{"formId":219,"formName":"备件台账","type":0}]},{"menuId":78,"menuName":"基础信息","simpleForms":[{"formId":220,"formName":"机房","type":0},{"formId":221,"formName":"设备类型","type":0},{"formId":222,"formName":"部门","type":0},{"formId":223,"formName":"设备状态","type":0},{"formId":224,"formName":"保养等级与频次","type":0},{"formId":225,"formName":"仓库","type":0},{"formId":226,"formName":"单位","type":0},{"formId":227,"formName":"安装地点","type":0},{"formId":228,"formName":"设备信息","type":0}]}],"msg":"获取成功"}]
+2023-02-28 08:36:48.877 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/menu': running time = 321785800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+011059100  003%  PrintRequest
+296942600  092%  FormStructureController#getMenuForms
+013784100  004%  PrintResponse
+
+2023-02-28 08:36:48.962 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:48.962 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:48.967 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:48.968 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 5949600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000505200  008%  PrintRequest
+004769500  080%  WorkLogController#queryWorkLogLunch
+000674900  011%  PrintResponse
+
+2023-02-28 08:36:49.297 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.297 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.297 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.297 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:49.297 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:49.297 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:49.302 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:49.302 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:49.302 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:49.303 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 5611900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000742600  013%  PrintRequest
+004226200  075%  WorkLogController#queryWorkLogHandle
+000643100  011%  PrintResponse
+
+2023-02-28 08:36:49.303 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 5582300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000673600  012%  PrintRequest
+004216400  076%  WorkLogController#queryWorkLogCopy
+000692300  012%  PrintResponse
+
+2023-02-28 08:36:49.303 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 5561000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000630300  011%  PrintRequest
+004347500  078%  WorkLogController#queryWorkLogWait
+000583200  010%  PrintResponse
+
+2023-02-28 08:36:49.898 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.898 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.898 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:49.898 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:49.898 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:49.898 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:49.902 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:49.903 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:49.903 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:49.903 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 4804800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000479300  010%  PrintRequest
+003976800  083%  WorkLogController#queryWorkLogHandle
+000348700  007%  PrintResponse
+
+2023-02-28 08:36:49.903 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 4935300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000427300  009%  PrintRequest
+004098200  083%  WorkLogController#queryWorkLogWait
+000409800  008%  PrintResponse
+
+2023-02-28 08:36:49.903 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 4682600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000223200  005%  PrintRequest
+004002100  085%  WorkLogController#queryWorkLogLunch
+000457300  010%  PrintResponse
+
+2023-02-28 08:36:50.207 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:50.207 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:50.211 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:36:50.211 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 4672400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000347800  007%  PrintRequest
+004063400  087%  WorkLogController#queryWorkLogCopy
+000261200  006%  PrintResponse
+
+2023-02-28 08:36:55.072 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/get], URI: [/form/get], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.073 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Parameters: [[220,"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:55.098 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Response: [{"code":0,"data":{"fields":[],"form":{"createTime":"2023-02-27T19:45:18","formFields":"[{\"fieldsId\":[],\"name\":\"root\"}]","formName":"机房","formType":0,"id":220,"menuId":78,"properties":"{\"displayType\":\"column\",\"labelWidth\":120,\"type\":\"object\"}","updateTime":"2023-02-27T19:45:18"}},"msg":"获取成功"}]
+2023-02-28 08:36:55.099 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/get': running time = 26917400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000845900  003%  PrintRequest
+018405300  068%  FormStructureController#get
+007666200  028%  PrintResponse
+
+2023-02-28 08:36:55.313 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/get], URI: [/form/get], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:36:55.313 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Parameters: [[220,"eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:36:55.318 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Response: [{"code":0,"data":{"fields":[],"form":{"createTime":"2023-02-27T19:45:18","formFields":"[{\"fieldsId\":[],\"name\":\"root\"}]","formName":"机房","formType":0,"id":220,"menuId":78,"properties":"{\"displayType\":\"column\",\"labelWidth\":120,\"type\":\"object\"}","updateTime":"2023-02-27T19:45:18"}},"msg":"获取成功"}]
+2023-02-28 08:36:55.318 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/get': running time = 5206300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000523000  010%  PrintRequest
+004290000  082%  FormStructureController#get
+000393300  008%  PrintResponse
+
+2023-02-28 08:37:08.251 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.251 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.251 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:37:08.251 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:37:08.257 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:37:08.257 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:37:08.257 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 6124200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000854200  014%  PrintRequest
+005004100  082%  WorkLogController#queryWorkLogLunch
+000265900  004%  PrintResponse
+
+2023-02-28 08:37:08.257 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 6180400 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000811800  013%  PrintRequest
+005047500  082%  WorkLogController#queryWorkLogWait
+000321100  005%  PrintResponse
+
+2023-02-28 08:37:08.265 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.266 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:37:08.271 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:37:08.272 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 6260300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000367100  006%  PrintRequest
+005284800  084%  WorkLogController#queryWorkLogHandle
+000608400  010%  PrintResponse
+
+2023-02-28 08:37:08.534 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.535 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:37:08.540 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:37:08.540 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 5856300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000533600  009%  PrintRequest
+004925900  084%  WorkLogController#queryWorkLogCopy
+000396800  007%  PrintResponse
+
+2023-02-28 08:37:08.575 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/menu], URI: [/form/menu], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:37:08.576 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.getMenuForms Parameters: [["eJxlUUGTkzAY/S85tzuwFJ3trdsFDAJdKl0KOx0nQDoNkARJUOlOf4EnD44evXj25PiLdsefYbBOXfWSyfu+9973ku8OoDznHZMBZ9bbhrS4AFPZdnj0qOHxvHpU7+TuSnIwvQOoKFosxCXn1QAL3KBWUswkmG5RLRS55TUG09sj+nVuDiOACyJt3tITjSGqaODh42cwAiLnDf7X73ZzMtscDscUvCWSYHFs5i1GErcnS4ULpSQK/f82zFBW/4FMZUH1rKCEnfSiF38XJGZ4yAKVTDcV5hVWXYB7d5c5OVkQF672UA8IFJAtzXwOn8CqWd/M3YszRarxsxlZlNZ5sM/1ILIm/lWuiDf7dO1uM2rL9IUSdPGSLmKjwUgnY/K6jkLizd1XhVOpAbD3I5empaX5vb7zHZt6UWikMZRJHGpJrxk+TZS/b6R0pSeRP2jLzKnrjC23KA6HkG+SfggYlJlxWcOyySC1RTZ3i214JqvkqTkeL2pLpOuX+fWqtO3xec/o9QRFrufopoGLGbrwnmtqUZ3A7fAbpna8/97i/ftP99+/PHx79+Prhwk4/ASSudZx"]]
+2023-02-28 08:37:08.588 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.getMenuForms Response: [{"code":0,"data":[{"menuId":73,"menuName":"经营分析报表","simpleForms":[]},{"menuId":74,"menuName":"设备点检巡检","simpleForms":[{"formId":212,"formName":"设备巡检单","type":1},{"formId":213,"formName":"巡检方案","type":0}]},{"menuId":75,"menuName":"设备维修保修","simpleForms":[{"formId":214,"formName":"设备报修单","type":1}]},{"menuId":76,"menuName":"设备维护保养","simpleForms":[{"formId":215,"formName":"设备保养单","type":0},{"formId":216,"formName":"保养计划基础表","type":0}]},{"menuId":77,"menuName":"备品备件管理","simpleForms":[{"formId":217,"formName":"备件入库单","type":0},{"formId":218,"formName":"备件领用单","type":0},{"formId":219,"formName":"备件台账","type":0}]},{"menuId":78,"menuName":"基础信息","simpleForms":[{"formId":220,"formName":"机房","type":0},{"formId":221,"formName":"设备类型","type":0},{"formId":222,"formName":"部门","type":0},{"formId":223,"formName":"设备状态","type":0},{"formId":224,"formName":"保养等级与频次","type":0},{"formId":225,"formName":"仓库","type":0},{"formId":226,"formName":"单位","type":0},{"formId":227,"formName":"安装地点","type":0},{"formId":228,"formName":"设备信息","type":0}]}],"msg":"获取成功"}]
+2023-02-28 08:37:08.589 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/menu': running time = 13584000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000400300  003%  PrintRequest
+012370300  091%  FormStructureController#getMenuForms
+000813400  006%  PrintResponse
+
+2023-02-28 08:37:28.207 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:42:28.209 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:47:28.220 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:47:47.095 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.095 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/menu], URI: [/form/menu], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.095 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.095 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.095 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.096 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.getMenuForms Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.096 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.095 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.096 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.096 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.128 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 658250
+2023-02-28 08:47:47.128 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 657200
+2023-02-28 08:47:47.128 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 658250
+2023-02-28 08:47:47.128 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 638845
+2023-02-28 08:47:47.129 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922255
+2023-02-28 08:47:47.129 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922271
+2023-02-28 08:47:47.129 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922255
+2023-02-28 08:47:47.129 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922255
+2023-02-28 08:47:47.130 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922272
+2023-02-28 08:47:47.130 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922272
+2023-02-28 08:47:47.130 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922272
+2023-02-28 08:47:47.130 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922272
+2023-02-28 08:47:47.130 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922288
+2023-02-28 08:47:47.130 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922288
+2023-02-28 08:47:47.130 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922288
+2023-02-28 08:47:47.131 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922288
+2023-02-28 08:47:47.131 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922289
+2023-02-28 08:47:47.131 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922304
+2023-02-28 08:47:47.131 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922289
+2023-02-28 08:47:47.131 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922304
+2023-02-28 08:47:47.131 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922304
+2023-02-28 08:47:47.131 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922304
+2023-02-28 08:47:47.131 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922320
+2023-02-28 08:47:47.131 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922304
+2023-02-28 08:47:47.131 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922304
+2023-02-28 08:47:47.132 [http-nio-8002-exec-5] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 638514
+2023-02-28 08:47:47.132 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922321
+2023-02-28 08:47:47.132 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922321
+2023-02-28 08:47:47.132 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922321
+2023-02-28 08:47:47.132 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922321
+2023-02-28 08:47:47.132 [http-nio-8002-exec-5] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922336
+2023-02-28 08:47:47.132 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922336
+2023-02-28 08:47:47.132 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922336
+2023-02-28 08:47:47.132 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922336
+2023-02-28 08:47:47.132 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922352
+2023-02-28 08:47:47.132 [http-nio-8002-exec-5] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922352
+2023-02-28 08:47:47.132 [http-nio-8002-exec-9] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922352
+2023-02-28 08:47:47.132 [http-nio-8002-exec-8] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922352
+2023-02-28 08:47:47.133 [http-nio-8002-exec-10] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922368
+2023-02-28 08:47:47.133 [http-nio-8002-exec-6] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 922368
+2023-02-28 08:47:47.142 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.143 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 47967600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001319500  003%  PrintRequest
+045714600  095%  WorkLogController#queryWorkLogLunch
+000933500  002%  PrintResponse
+
+2023-02-28 08:47:47.145 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.145 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.145 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 50421000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001111300  002%  PrintRequest
+049181700  098%  WorkLogController#queryWorkLogHandle
+000128000  000%  PrintResponse
+
+2023-02-28 08:47:47.145 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 50345200 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001355200  003%  PrintRequest
+048772300  097%  WorkLogController#queryWorkLogCopy
+000217700  000%  PrintResponse
+
+2023-02-28 08:47:47.146 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.getMenuForms Response: [{"code":0,"data":[{"menuId":73,"menuName":"经营分析报表","simpleForms":[]},{"menuId":74,"menuName":"设备点检巡检","simpleForms":[{"formId":212,"formName":"设备巡检单","type":1},{"formId":213,"formName":"巡检方案","type":0}]},{"menuId":75,"menuName":"设备维修保修","simpleForms":[{"formId":214,"formName":"设备报修单","type":1}]},{"menuId":76,"menuName":"设备维护保养","simpleForms":[{"formId":215,"formName":"设备保养单","type":0},{"formId":216,"formName":"保养计划基础表","type":0}]},{"menuId":77,"menuName":"备品备件管理","simpleForms":[{"formId":217,"formName":"备件入库单","type":0},{"formId":218,"formName":"备件领用单","type":0},{"formId":219,"formName":"备件台账","type":0}]},{"menuId":78,"menuName":"基础信息","simpleForms":[{"formId":220,"formName":"机房","type":0},{"formId":221,"formName":"设备类型","type":0},{"formId":222,"formName":"部门","type":0},{"formId":223,"formName":"设备状态","type":0},{"formId":224,"formName":"保养等级与频次","type":0},{"formId":225,"formName":"仓库","type":0},{"formId":226,"formName":"单位","type":0},{"formId":227,"formName":"安装地点","type":0},{"formId":228,"formName":"设备信息","type":0}]}],"msg":"获取成功"}]
+2023-02-28 08:47:47.146 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/menu': running time = 51375300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001064000  002%  PrintRequest
+049918300  097%  FormStructureController#getMenuForms
+000393000  001%  PrintResponse
+
+2023-02-28 08:47:47.149 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.149 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 53901800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+001382300  003%  PrintRequest
+052272800  097%  WorkLogController#queryWorkLogWait
+000246700  000%  PrintResponse
+
+2023-02-28 08:47:47.527 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.527 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:47.531 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.531 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.531 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.531 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:47.532 [http-nio-8002-exec-4] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 5043000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000634700  013%  PrintRequest
+004071000  081%  WorkLogController#queryWorkLogWait
+000337300  007%  PrintResponse
+
+2023-02-28 08:47:47.532 [http-nio-8002-exec-7] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 5073800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000544400  011%  PrintRequest
+004159400  082%  WorkLogController#queryWorkLogCopy
+000370000  007%  PrintResponse
+
+2023-02-28 08:47:47.532 [http-nio-8002-exec-2] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 5093100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000583500  011%  PrintRequest
+004130700  081%  WorkLogController#queryWorkLogHandle
+000378900  007%  PrintResponse
+
+2023-02-28 08:47:47.532 [http-nio-8002-exec-3] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 5113900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000529100  010%  PrintRequest
+004174000  082%  WorkLogController#queryWorkLogLunch
+000410800  008%  PrintResponse
+
+2023-02-28 08:47:48.011 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/launch], URI: [/work/queryWorkLog/launch], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.012 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:48.016 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogLunch Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:48.017 [http-nio-8002-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/launch': running time = 5121900 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000612400  012%  PrintRequest
+004233800  083%  WorkLogController#queryWorkLogLunch
+000275700  005%  PrintResponse
+
+2023-02-28 08:47:48.019 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/handle], URI: [/work/queryWorkLog/handle], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.019 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/wait], URI: [/work/queryWorkLog/wait], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.019 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:48.019 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:48.023 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogHandle Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:48.023 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogWait Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:48.023 [http-nio-8002-exec-8] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/handle': running time = 4168300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000289900  007%  PrintRequest
+003679100  088%  WorkLogController#queryWorkLogHandle
+000199300  005%  PrintResponse
+
+2023-02-28 08:47:48.023 [http-nio-8002-exec-9] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/wait': running time = 4196100 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000428400  010%  PrintRequest
+003587200  085%  WorkLogController#queryWorkLogWait
+000180500  004%  PrintResponse
+
+2023-02-28 08:47:48.300 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/work/queryWorkLog/copy], URI: [/work/queryWorkLog/copy], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:48.300 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Parameters: [["eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:48.304 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - WorkLogController.queryWorkLogCopy Response: [{"code":0,"data":[],"msg":"获取成功"}]
+2023-02-28 08:47:48.305 [http-nio-8002-exec-10] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/work/queryWorkLog/copy': running time = 4598800 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000222400  005%  PrintRequest
+004134100  090%  WorkLogController#queryWorkLogCopy
+000242300  005%  PrintResponse
+
+2023-02-28 08:47:49.998 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/get], URI: [/form/get], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:49.999 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Parameters: [[220,"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:50.003 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Response: [{"code":0,"data":{"fields":[],"form":{"createTime":"2023-02-27T19:45:18","formFields":"[{\"fieldsId\":[],\"name\":\"root\"}]","formName":"机房","formType":0,"id":220,"menuId":78,"properties":"{\"displayType\":\"column\",\"labelWidth\":120,\"type\":\"object\"}","updateTime":"2023-02-27T19:45:18"}},"msg":"获取成功"}]
+2023-02-28 08:47:50.004 [http-nio-8002-exec-5] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/get': running time = 5413600 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000749100  014%  PrintRequest
+004269500  079%  FormStructureController#get
+000395000  007%  PrintResponse
+
+2023-02-28 08:47:50.261 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://VFZR-HUXPJR:8002/form/get], URI: [/form/get], Request Method: [GET], IP: [127.0.0.1]
+2023-02-28 08:47:50.261 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Parameters: [[220,"eJxlkMFO20AQht9lzymyASPIjRhs1ko2SnAINkJobY/j3eyuw3pdsBFPwKmHSn2BnjlVfSJQH6MbKrVU3Oab+f+ZX/OAaJ7XrTKkVqf3G6ahQEOjWxi8G4zrfP2u35qq1swwaNDw6nqAcg3UgEbDkooG3rgAZZilj1tB0Uz8Q1VrScVxIZn662+65v+GAQXSbsTW5nqW6zXYKYIuqrIwZ1MW4UWPXcJwg9Xcy318gNebyws/OtqxIgFnx2zKT3dJn7skxg7hiRVe9OllVGYyMOm5NbTLuZwu9zZAXfaJfRbxgo396LYI1/YA7hO+2k/i1d3k3PFSObkfx3Mx4SuTLBe7pHO8JCYi5UVFwkBO+JuXZ6EQmZqXdDnbhrxLum1AwrO9kcB8k2EZNJkfFeVsJxhVCdAzfdOrSpeHo2S26MOoCk7cMNj3xSqt5FhKhx51DhqgtgG9/Ybn/qkVlWAf8vLl28vP768/nn49f/XQ429vJ6mp"]]
+2023-02-28 08:47:50.265 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - FormStructureController.get Response: [{"code":0,"data":{"fields":[],"form":{"createTime":"2023-02-27T19:45:18","formFields":"[{\"fieldsId\":[],\"name\":\"root\"}]","formName":"机房","formType":0,"id":220,"menuId":78,"properties":"{\"displayType\":\"column\",\"labelWidth\":120,\"type\":\"object\"}","updateTime":"2023-02-27T19:45:18"}},"msg":"获取成功"}]
+2023-02-28 08:47:50.266 [http-nio-8002-exec-6] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/form/get': running time = 4678000 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+000373500  008%  PrintRequest
+003968300  085%  FormStructureController#get
+000336200  007%  PrintResponse
+
+2023-02-28 08:52:28.226 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 08:57:28.238 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

@@ -1,8 +1,10 @@
 package center.misaki.device.AddressBook.service.impl;
 
+import center.misaki.device.AddressBook.dao.DepartmentMapper;
 import center.misaki.device.AddressBook.dao.UserMapper;
 import center.misaki.device.AddressBook.dto.Head;
 import center.misaki.device.AddressBook.dto.UserDto;
+import center.misaki.device.AddressBook.pojo.Department;
 import center.misaki.device.AddressBook.service.UserService;
 import center.misaki.device.AddressBook.vo.UserVo;
 import center.misaki.device.Auth.SecurityUtils;
@@ -26,17 +28,79 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     
     private final UserMapper userMapper;
+    private final DepartmentMapper departmentMapper;
     private final DepartmentServiceImpl departmentServiceImpl;
     private final PasswordEncoder passwordEncoder;
     private final RoleServiceImpl roleServiceImpl;
 
-    public UserServiceImpl(UserMapper userMapper, DepartmentServiceImpl departmentServiceImpl, PasswordEncoder passwordEncoder, RoleServiceImpl roleServiceImpl) {
+    public UserServiceImpl(UserMapper userMapper, DepartmentMapper departmentMapper, DepartmentServiceImpl departmentServiceImpl, PasswordEncoder passwordEncoder, RoleServiceImpl roleServiceImpl) {
         this.userMapper = userMapper;
+        this.departmentMapper = departmentMapper;
         this.departmentServiceImpl = departmentServiceImpl;
         this.passwordEncoder = passwordEncoder;
         this.roleServiceImpl = roleServiceImpl;
     }
 
+    @Override
+    @Transactional
+    public UserVo.registerUserVo registerUser(UserDto.RegisterUserDto registerUserDto){
+        //注册的用户名已存在直接返回
+        if(!userMapper.selectAllByUsername(registerUserDto.getUsername()).isEmpty()){ return null; }
+        //用户信息初始化
+        User user = new User();
+        user.setUsername(registerUserDto.getUsername());
+        user.setNickName(registerUserDto.getNickname());
+        user.setPwd(passwordEncoder.encode(registerUserDto.getPassword()));
+        user.setEmail(registerUserDto.getEmail());
+        user.setPhone(registerUserDto.getPhone());
+        user.setState(UserStateEnum.READY.ordinal());
+        user.setIsForbidden(false);
+        int tenementId = userMapper.selectMaxTenementId()+1;
+        user.setTenementId(tenementId);
+        user.setIsCreater(true);
+        userMapper.insert(user);
+        //部门初始化
+        int userId = userMapper.selectIdByUsername(registerUserDto.getUsername());
+        Department department = new Department();
+        department.setTenementId(tenementId);
+        department.setName(registerUserDto.getTenementName());
+        department.setPreId(-1);
+        departmentMapper.insert(department);
+        int departmentId = departmentMapper.selectIdByTenementId(tenementId);
+        departmentMapper.insertIntoUserDepartment(departmentId,userId,tenementId);
+
+        UserVo.registerUserVo registerUserVo = new UserVo.registerUserVo();
+        registerUserVo.setTenementId(tenementId);
+        return registerUserVo;
+    }
+
+    @Override
+    @Transactional
+    public Integer registerEmployee(UserDto.RegisterEmployeeDto registerEmployeeDto){
+        //注册的用户名已存在直接返回
+        if(!userMapper.selectAllByUsername(registerEmployeeDto.getUsername()).isEmpty()){return 1;}
+        //加入的公司不存在直接返回
+        if(userMapper.selectAllByTenementId(registerEmployeeDto.getTenementId()).isEmpty()){ return 2; }
+        //用户信息初始化
+        User user = new User();
+        user.setUsername(registerEmployeeDto.getUsername());
+        user.setNickName(registerEmployeeDto.getNickname());
+        user.setPwd(passwordEncoder.encode(registerEmployeeDto.getPassword()));
+        user.setEmail(registerEmployeeDto.getEmail());
+        user.setPhone(registerEmployeeDto.getPhone());
+        user.setState(UserStateEnum.READY.ordinal());
+        user.setIsForbidden(false);
+        int tenementId = registerEmployeeDto.getTenementId();
+        user.setTenementId(tenementId);
+        user.setIsCreater(false);
+        userMapper.insert(user);
+        //部门初始化
+        int userId = userMapper.selectIdByUsername(registerEmployeeDto.getUsername());
+        int departmentId = departmentMapper.selectIdByTenementId(tenementId);
+        departmentMapper.insertIntoUserDepartment(departmentId,userId,tenementId);
+        return 0;
+
+    }
 
     @Override
     @Transactional
@@ -175,6 +239,9 @@ public class UserServiceImpl implements UserService {
         userVo.setEmail(user.getEmail());
         userVo.setPhone(user.getPhone());
         userVo.setDepartments(departmentServiceImpl.getDepartMapForUser(userId));
+        int tenementId = userMapper.selectTenementIdByUsername(user.getUsername());
+        int departmentId = departmentMapper.selectIdByTenementIdAndPreId(tenementId,-1);
+        userVo.setTenementName(departmentMapper.selectNameById(departmentId));
         userVo.setRoles(roleServiceImpl.getUserRoleMap(userId));
         return userVo;
     }

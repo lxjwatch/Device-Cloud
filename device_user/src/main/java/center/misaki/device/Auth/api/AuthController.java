@@ -41,10 +41,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @RestController
 @Slf4j
@@ -185,11 +182,10 @@ public class AuthController {
             User user1 = userMapper.selectById(user.getUserId());
             Long count = sysAdminMapper.selectCount(new QueryWrapper<SysAdmin>().eq("user_id", user.getUserId()));
             if(count>0) user.setSysAdmin(true);
-            if(user1.getNormalAdminGroupId()!=-1)
-            {
+            if(user1.getNormalAdminGroupId()!=-1) {
                 user.setNormalAdmin(true);
                 NormalAdmin normalAdmin = normalAdminMapper.selectById(user1.getNormalAdminGroupId());
-                if(normalAdmin!=null) user.setAuthDto(JSON.parseObject(normalAdmin.getConfig(), AuthDto.class));
+                if (normalAdmin != null) user.setAuthDto(JSON.parseObject(normalAdmin.getConfig(), AuthDto.class));
             }
             OAuth2AccessToken accessToken = tokenStore.getAccessToken((OAuth2Authentication) SecurityContextHolder.getContext().getAuthentication());
             user.setToken(accessToken.getValue());
@@ -209,6 +205,10 @@ public class AuthController {
         ans.put("creater",user.isCreater());
         ans.put("sysAdmin",user.isSysAdmin());
         ans.put("norAdmin",user.isNormalAdmin());
+        if (user.getAuthDto() == null){
+            String config = "{\"addressBook\":{\"department\":false,\"role\":[false,false]},\"editForm\":false,\"name\":\"无\",\"scope\":{\"department\":[],\"role\":[]}}";
+            user.setAuthDto(JSON.parseObject(config, AuthDto.class));
+        }
         ans.put("authDetails",user.getAuthDto());
         return Result.ok(ans,"获取成功");
     }
