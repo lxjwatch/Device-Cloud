@@ -73,5 +73,13 @@ public class UserDto {
         @NotNull
         private Integer tenementId;
     }
+
+    @Data
+    public static class UpdateUserDto{
+        private String type;
+        private String information;
+        private String oldPassword;
+
+    }
     
 }

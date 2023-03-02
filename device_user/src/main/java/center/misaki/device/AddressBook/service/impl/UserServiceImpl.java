@@ -8,15 +8,18 @@ import center.misaki.device.AddressBook.pojo.Department;
 import center.misaki.device.AddressBook.service.UserService;
 import center.misaki.device.AddressBook.vo.UserVo;
 import center.misaki.device.Auth.SecurityUtils;
+import center.misaki.device.Auth.dto.JwtUserDto;
 import center.misaki.device.Enum.UserStateEnum;
 import center.misaki.device.domain.Pojo.User;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -26,7 +29,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 public class UserServiceImpl implements UserService {
-    
+
     private final UserMapper userMapper;
     private final DepartmentMapper departmentMapper;
     private final DepartmentServiceImpl departmentServiceImpl;
@@ -130,8 +133,43 @@ public class UserServiceImpl implements UserService {
     public boolean checkUserNameIsUsed(String userName){
         return userMapper.exists(new QueryWrapper<User>().eq("username",userName));
     }
-    
-    
+
+    @Override
+    @Transactional
+    public  boolean judgePassword(UserDto.UpdateUserDto updateUserDto){
+        //获取用户信息
+        JwtUserDto currentUser = SecurityUtils.getCurrentUser();
+        String pwd = userMapper.selectById(currentUser.getUserId()).getPwd();
+        String old = updateUserDto.getOldPassword();
+        return passwordEncoder.matches(old, pwd);
+    }
+
+    @Override
+    @Transactional
+    public boolean updateUser(UserDto.UpdateUserDto updateUserDto ){
+        //获取用户信息
+        JwtUserDto currentUser = SecurityUtils.getCurrentUser();
+        User user = new User();
+        user.setId(currentUser.getUserId());
+        String type = updateUserDto.getType();
+        String information = updateUserDto.getInformation();
+        if ("password".equals(type)){
+            user.setPwd(passwordEncoder.encode(information));
+        }else if("username".equals(type)){
+            user.setUsername(information);
+        }else if("nickname".equals(type)){
+            user.setNickName(information);
+        }else if("email".equals(type)){
+            user.setEmail(information);
+        }else if("telephone".equals(type)){
+            user.setPhone(information);
+        }else{
+            return false;
+        }
+        //判断是否修改成功
+        return userMapper.updateById(user) == 1;
+    }
+
 
     @Override
     public boolean changeUserInfo(UserDto.ChangeUserInfoDto changeUserInfoDto) {

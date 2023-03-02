@@ -6,7 +6,6 @@ import center.misaki.device.base.Result;
 import center.misaki.device.Form.dto.FormStrucDto;
 import center.misaki.device.Form.service.StructureService;
 import center.misaki.device.Form.vo.FormStrucVo;
-import center.misaki.device.utils.StringZipUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

@@ -275,3 +275,467 @@
 2023-02-28 15:51:53.944 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2023-02-28 15:56:53.949 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2023-02-28 16:01:53.964 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 19:42:42.369 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:42:43.707 [main] INFO  center.misaki.zuul.ZuulApp - No active profile set, falling back to default profiles: default
+2023-02-28 19:42:44.383 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-02-28 19:42:44.395 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2023-02-28 19:42:44.513 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=5126ee31-1f36-39ec-92c0-2ae71053c5ad
+2023-02-28 19:42:44.725 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 19:42:44.934 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http) 8000 (http)
+2023-02-28 19:42:44.945 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-28 19:42:44.945 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+2023-02-28 19:42:44.953 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-02-28 19:42:44.953 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-02-28 19:42:45.075 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-02-28 19:42:45.075 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1348 ms
+2023-02-28 19:42:45.135 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 19:42:45.135 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 19:42:45.143 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@10c72a6f
+2023-02-28 19:42:46.445 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 19:42:47.741 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 19:42:47.956 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 19:42:47.956 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 19:42:48.115 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 19:42:49.622 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 19:42:49.642 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-02-28 19:42:49.673 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-02-28 19:42:49.868 [main] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer - Starting filter initializer
+2023-02-28 19:42:49.879 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-02-28 19:42:49.957 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-02-28 19:42:49.994 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-02-28 19:42:50.043 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-02-28 19:42:50.044 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-02-28 19:42:50.148 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-02-28 19:42:50.148 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-02-28 19:42:50.345 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-02-28 19:42:50.484 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 19:42:50.655 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 19:42:50.655 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-02-28 19:42:50.655 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-02-28 19:42:50.665 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1677584570664 with initial instances count: 0
+2023-02-28 19:42:50.667 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application GATEWAY with eureka with status UP
+2023-02-28 19:42:50.668 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1677584570668, current=UP, previous=STARTING]
+2023-02-28 19:42:50.669 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway: registering service...
+2023-02-28 19:42:50.684 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-28 19:42:50.693 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2023-02-28 19:42:50.702 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) 8000 (http) with context path ''
+2023-02-28 19:42:50.703 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2023-02-28 19:42:50.735 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway - registration status: 204
+2023-02-28 19:42:51.923 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 19:42:51.924 [main] INFO  center.misaki.zuul.ZuulApp - Started ZuulApp in 11.406 seconds (JVM running for 12.434)
+2023-02-28 19:42:52.023 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 19:42:52.047 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-auth-center
+2023-02-28 19:42:52.047 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: auth-center instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-02-28 19:42:52.055 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-02-28 19:42:52.060 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client auth-center initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1752e45c
+2023-02-28 19:42:52.096 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 19:42:52.096 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-device-data
+2023-02-28 19:42:52.096 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: device-data instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-02-28 19:42:52.101 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-02-28 19:42:52.103 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client device-data initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@42576db9
+2023-02-28 19:42:52.741 [RMI TCP Connection(3)-172.26.17.197] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 19:42:52.741 [RMI TCP Connection(3)-172.26.17.197] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-02-28 19:42:52.749 [RMI TCP Connection(3)-172.26.17.197] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2023-02-28 19:43:20.663 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 19:43:20.705 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 19:45:53.146 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 19:45:53.166 [PollingServerListUpdater-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 19:47:32.822 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/uaa/user/registerUser
+2023-02-28 19:47:45.193 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/initMenu
+2023-02-28 19:47:50.500 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 19:52:50.515 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 21:47:34.883 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 21:47:36.161 [main] INFO  center.misaki.zuul.ZuulApp - No active profile set, falling back to default profiles: default
+2023-02-28 21:47:36.617 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-02-28 21:47:36.626 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2023-02-28 21:47:36.712 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=5126ee31-1f36-39ec-92c0-2ae71053c5ad
+2023-02-28 21:47:36.871 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-02-28 21:47:37.038 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http) 8000 (http)
+2023-02-28 21:47:37.044 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-28 21:47:37.045 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+2023-02-28 21:47:37.052 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-02-28 21:47:37.052 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-02-28 21:47:37.160 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-02-28 21:47:37.161 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 989 ms
+2023-02-28 21:47:37.211 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 21:47:37.211 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 21:47:37.217 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@ae202c6
+2023-02-28 21:47:38.453 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 21:47:39.683 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 21:47:39.839 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-02-28 21:47:39.839 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-02-28 21:47:39.931 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 21:47:41.285 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 21:47:41.298 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-02-28 21:47:41.321 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-02-28 21:47:41.453 [main] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer - Starting filter initializer
+2023-02-28 21:47:41.461 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-02-28 21:47:41.511 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-02-28 21:47:41.540 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-02-28 21:47:41.575 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-02-28 21:47:41.576 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-02-28 21:47:41.649 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-02-28 21:47:41.649 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-02-28 21:47:41.803 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-02-28 21:47:41.921 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 21:47:42.047 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 21:47:42.048 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-02-28 21:47:42.050 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-02-28 21:47:42.052 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1677592062051 with initial instances count: 0
+2023-02-28 21:47:42.054 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application GATEWAY with eureka with status UP
+2023-02-28 21:47:42.055 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1677592062055, current=UP, previous=STARTING]
+2023-02-28 21:47:42.056 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway: registering service...
+2023-02-28 21:47:42.066 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-02-28 21:47:42.075 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2023-02-28 21:47:42.081 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) 8000 (http) with context path ''
+2023-02-28 21:47:42.082 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2023-02-28 21:47:42.120 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway - registration status: 204
+2023-02-28 21:47:43.247 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-02-28 21:47:43.248 [main] INFO  center.misaki.zuul.ZuulApp - Started ZuulApp in 9.933 seconds (JVM running for 10.701)
+2023-02-28 21:47:43.320 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 21:47:43.337 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-auth-center
+2023-02-28 21:47:43.337 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: auth-center instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-02-28 21:47:43.342 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-02-28 21:47:43.344 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client auth-center initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@72324965
+2023-02-28 21:47:43.367 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 21:47:43.368 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-device-data
+2023-02-28 21:47:43.368 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: device-data instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-02-28 21:47:43.369 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-02-28 21:47:43.369 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client device-data initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@352e5a82
+2023-02-28 21:47:43.751 [RMI TCP Connection(1)-172.26.17.197] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 21:47:43.752 [RMI TCP Connection(1)-172.26.17.197] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-02-28 21:47:43.757 [RMI TCP Connection(1)-172.26.17.197] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2023-02-28 21:48:12.062 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-02-28 21:48:12.063 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-02-28 21:48:12.063 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-02-28 21:48:12.063 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-02-28 21:48:12.063 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-02-28 21:48:12.063 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2023-02-28 21:48:12.063 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-02-28 21:48:12.097 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-02-28 21:48:44.424 [PollingServerListUpdater-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 21:49:44.374 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-02-28 21:49:50.182 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/uaa/login/token
+2023-02-28 21:49:50.949 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:51.248 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 21:49:51.263 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 21:49:51.272 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.272 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.296 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 21:49:51.296 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 21:49:51.296 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/menu
+2023-02-28 21:49:51.298 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.298 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.298 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.355 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:51.688 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 21:49:51.691 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.993 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 21:49:51.993 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 21:49:51.995 [http-nio-8000-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:51.995 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:52.012 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 21:49:52.015 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:52.380 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 21:49:52.380 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 21:49:52.380 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 21:49:52.383 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:52.383 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:52.383 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:52.689 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 21:49:52.689 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:52.690 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:55.734 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:55.734 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-02-28 21:49:55.734 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:49:55.736 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:55.790 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:55.790 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-02-28 21:49:55.992 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:49:55.995 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:56.117 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:56.192 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:49:56.192 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:56.453 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:49:56.469 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:49:57.933 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:58.334 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:49:58.334 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:49:58.335 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:58.335 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:49:58.481 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:58.481 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:49:58.799 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:49:58.847 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:49:59.125 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:50:04.443 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:50:04.444 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:50:04.705 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:50:04.788 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:50:04.846 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:50:41.649 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:50:41.956 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:50:41.976 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:50:42.300 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:50:42.300 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:50:51.399 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:50:51.715 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:50:51.745 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:50:51.788 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:50:52.085 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:51:09.938 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:09.938 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:51:10.203 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:10.265 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:51:10.281 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:10.529 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:51:10.529 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:10.529 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:51:10.606 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:51:10.855 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:51:13.478 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/change
+2023-02-28 21:51:13.480 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.075 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 21:51:18.075 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/menu
+2023-02-28 21:51:18.075 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:18.075 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 21:51:18.075 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 21:51:18.075 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 21:51:18.078 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.078 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.078 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.078 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.078 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.413 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-02-28 21:51:18.429 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:51:18.429 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:18.431 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:51:18.798 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:18.798 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:51:19.064 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:51:19.109 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:51:19.120 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:52:00.177 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:52:00.177 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:00.186 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:52:00.188 [http-nio-8000-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:00.437 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:00.499 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:52:00.512 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:52:01.194 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:52:01.196 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:01.932 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:52:01.933 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:01.947 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:52:01.947 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:02.198 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:02.273 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:52:02.288 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:52:02.535 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/queryUserOneForm
+2023-02-28 21:52:02.537 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:02.803 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:52:07.413 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/queryOneForm
+2023-02-28 21:52:07.414 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:07.744 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:52:07.747 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:07.788 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:52:08.121 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:52:08.121 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:08.461 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:08.473 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:52:08.789 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:52:16.990 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:17.020 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:52:17.020 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:52:17.023 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:17.023 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:52:17.039 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:52:17.039 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:17.066 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:52:17.521 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:52:17.521 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:52:41.933 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 21:53:02.393 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:53:02.395 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:53:27.255 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:53:27.255 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:53:27.513 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:53:27.589 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:53:27.623 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:53:45.976 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/change
+2023-02-28 21:53:45.977 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:07.809 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/change
+2023-02-28 21:54:07.811 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:50.491 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:54:50.492 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:51.432 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:54:51.433 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:53.958 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:53.958 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 21:54:53.958 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 21:54:53.958 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 21:54:53.958 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/menu
+2023-02-28 21:54:53.958 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 21:54:53.960 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:53.961 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:53.961 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:53.961 [http-nio-8000-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:53.961 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:54.296 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:54:54.296 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-02-28 21:54:54.300 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:54.314 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:54.699 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:54:54.699 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:54.964 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:55.028 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:54:55.028 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:54:55.411 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:55.723 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:54:55.739 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:55.739 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:54:55.741 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:55.800 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:54:56.074 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:54:57.694 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:57.713 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:54:57.713 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:54:57.715 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:57.715 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:54:57.726 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:54:57.958 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:58.019 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:54:58.286 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:54:58.286 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:55:13.412 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/change
+2023-02-28 21:55:13.413 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.210 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 21:55:36.210 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/menu
+2023-02-28 21:55:36.210 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 21:55:36.210 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:36.210 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 21:55:36.210 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 21:55:36.234 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.234 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.234 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.234 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.236 [http-nio-8000-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.578 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-02-28 21:55:36.591 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:55:36.592 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:36.607 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:36.982 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:36.982 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:55:37.244 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:37.305 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:55:37.323 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:55:40.757 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:41.065 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:55:41.078 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:41.095 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:55:41.096 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:41.158 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:55:41.421 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:55:41.544 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:55:41.545 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:41.947 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:55:41.948 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:42.210 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:55:42.211 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:42.363 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:42.376 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:55:42.376 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:42.689 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:55:42.705 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:55:42.813 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:42.813 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:55:42.829 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:55:42.829 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:55:43.140 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:55:43.140 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:55:43.466 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:55:43.923 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:55:43.925 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:57:41.949 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 21:59:30.859 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:30.861 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:30.890 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:59:30.890 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:31.121 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:31.216 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:59:31.216 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:59:31.354 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:31.356 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:31.368 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:31.447 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:59:31.447 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:31.679 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:59:31.696 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:59:38.711 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:39.044 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 21:59:39.044 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:39.044 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 21:59:39.044 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:39.046 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:39.046 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:39.292 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 21:59:39.369 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 21:59:39.369 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 21:59:39.877 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:39.879 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:43.015 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:43.017 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:46.248 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:46.250 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 21:59:46.599 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-02-28 21:59:46.600 [http-nio-8000-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:02:41.959 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:07:41.969 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:12:41.972 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:17:41.984 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:22:41.993 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:23:36.375 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 22:23:36.375 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-02-28 22:23:36.375 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-02-28 22:23:36.375 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-02-28 22:23:36.375 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-02-28 22:23:36.375 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-02-28 22:23:36.377 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:23:36.377 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:23:36.377 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:23:36.377 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:23:36.711 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-02-28 22:23:36.711 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/menu
+2023-02-28 22:23:36.712 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:23:36.712 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-02-28 22:23:36.745 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 22:23:37.100 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 22:23:37.100 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-02-28 22:23:37.360 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-02-28 22:23:37.424 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-02-28 22:23:37.424 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-02-28 22:27:42.000 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:32:42.009 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:37:42.022 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 22:42:42.037 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 23:05:08.422 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 23:10:08.432 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-02-28 23:15:08.436 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

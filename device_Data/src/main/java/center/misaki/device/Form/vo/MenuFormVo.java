@@ -22,5 +22,6 @@ public class MenuFormVo {
         private String formName;
         private Integer type;
     }
+
     
 }

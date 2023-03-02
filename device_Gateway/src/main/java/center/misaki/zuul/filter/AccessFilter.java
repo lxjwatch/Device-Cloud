@@ -49,6 +49,7 @@ public class AccessFilter extends ZuulFilter {
         HttpServletResponse response = ctx.getResponse();
         log.info("request {}:{}",request.getMethod(),request.getRequestURI());
 
+        //判断请求路径中是否包含/uaa,/data/form/initMenu，如果有则放行
         if (StringUtils.startsWithAny(request.getRequestURI(), new String[]{"/uaa","/data/form/initMenu"})) {
             ctx.setSendZuulResponse(Boolean.TRUE);
             return null;
@@ -69,18 +70,25 @@ public class AccessFilter extends ZuulFilter {
         //其余请求 皆做鉴权处理
         ResponseEntity<Result> stringResponseEntity;
         try{
+            //（1）鉴权：通过Token进行鉴权，成功后返回用户信息
             HttpHeaders headers = new HttpHeaders();
             headers.add("Authorization", request.getHeader("Authorization"));
             HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);
             stringResponseEntity = restTemplate.exchange("http://localhost:8000/uaa/isAccessed", HttpMethod.GET, requestEntity, Result.class);
+            // 判断相应状态码，如果状态码不等于0，就说明是失败并抛出异常(携带状态码code和消息msg)
             if(stringResponseEntity.getBody().getCode()!=0){
                 throw new HttpClientErrorException(HttpStatus.resolve(stringResponseEntity.getBody().getCode()),stringResponseEntity.getBody().getMsg());
             }
-            //将用户信息放到 请求的属性中
+            // （2）鉴权通过后访问原来请求URI
+            // 用户信息
             Map<String, String[]> parameterMap = request.getParameterMap();
             parameterMap.put("userInfo",new String[]{(String) stringResponseEntity.getBody().getData()});
+
+            // 请求参数
             Map<String, List<String>> params = new HashMap<>(10);
             parameterMap.forEach((key, value) -> params.put(key, Arrays.asList(value)));
+
+            // 发送请求: key==userInfo; value==StringZipUtil.compressData(userInfo)
             ctx.setRequestQueryParams(params);
         }catch (HttpClientErrorException e) {
             ctx.setSendZuulResponse(Boolean.FALSE);

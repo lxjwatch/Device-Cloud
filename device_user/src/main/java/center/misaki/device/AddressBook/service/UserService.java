@@ -50,5 +50,12 @@ public interface UserService {
     
     
     Set<Integer> getUserIdsFromHead(Head head);
-    
+
+    //校验数据
+    boolean judgePassword(UserDto.UpdateUserDto updateUserDto);
+
+    //修改用户信息
+    boolean updateUser(UserDto.UpdateUserDto updateUserDto);
+
+
 }

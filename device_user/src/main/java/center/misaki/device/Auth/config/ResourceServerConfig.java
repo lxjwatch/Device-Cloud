@@ -32,8 +32,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/error").permitAll()
                 .antMatchers("/login/token").permitAll()
                 .antMatchers("/wx/login/token").permitAll()
-                .antMatchers("/uaa/user/registerEmployee").permitAll()
-                .antMatchers("/uaa/user/registerUser").permitAll()
+                .antMatchers("/user/registerEmployee").permitAll()
+                .antMatchers("/user/registerUser").permitAll()
 
                 //其他请求都需要做鉴权
                 .anyRequest()
