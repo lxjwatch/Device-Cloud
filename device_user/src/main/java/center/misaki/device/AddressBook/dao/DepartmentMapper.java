@@ -42,4 +42,8 @@ public interface DepartmentMapper extends BaseMapper<Department> {
     //查询公司id
     @Select({"select id from department where tenement_id=#{arg0} and pre_id=#{arg1}"})
     Integer selectIdByTenementIdAndPreId(Integer tenementId,Integer preId);
+
+    //查询上级部门id
+    @Select({"select pre_id from department where id=#{arg0}"})
+    Integer selectIdByPreId(Integer Id);
 }

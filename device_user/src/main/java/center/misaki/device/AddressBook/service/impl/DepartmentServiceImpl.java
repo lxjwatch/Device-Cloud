@@ -135,11 +135,18 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     @Transactional
     public boolean changePreDepart(DepartmentDto departmentDto) {
-        int i = departmentMapper.update(null, new UpdateWrapper<Department>().eq("id", departmentDto.getDepartmentId()).eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId())
-                .set("pre_id", departmentDto.getPreId()));
-        return i>0;
+        Integer preId = departmentMapper.selectIdByPreId(departmentDto.getPreId());
+        if(preId == -1) return false;
+        while (!Objects.equals(preId, departmentDto.getDepartmentId()) && preId !=-1 ){
+            preId = departmentMapper.selectIdByPreId(preId);
+        }
+        if (preId == -1) {
+            departmentMapper.update(null, new UpdateWrapper<Department>().eq("id", departmentDto.getDepartmentId()).eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId())
+                    .set("pre_id", departmentDto.getPreId()));
+            return true;
+        }
+        return  false;
     }
-
     @Override
     @Transactional
     public boolean deleteDepartment(Integer Id) {

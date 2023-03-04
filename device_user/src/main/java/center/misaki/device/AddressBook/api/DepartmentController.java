@@ -55,19 +55,19 @@ public class DepartmentController {
     //获取一个部门下所有的成员
     @GetMapping("/getOneDeUser")
 //    @AuthOnCondition(NeedSysAdmin = false)
-    @AuthScope(department = true)
+//    @AuthScope(department = true)
     public Result<List<UserVo>> getOneDeUser(@Valid @NotNull  Integer departmentId){
         List<UserVo> userOnDepart = departmentService.getUserOnDepart(departmentId);
         return Result.ok(userOnDepart,"获取成功");
     }
-    
+
     //调整上级部门接口
     @PostMapping("/changePre")
     @AuthOnCondition
     public Result<?> changePreDe(@RequestBody DepartmentDto departmentDto){
         if(departmentService.changePreDepart(departmentDto)){
             return Result.ok(null,"修改成功");
-        }else return Result.error("修改失败");
+        }else return Result.error("修改失败，无法以子部门为上级部门");
     }
     
     //修改部门名称接口
