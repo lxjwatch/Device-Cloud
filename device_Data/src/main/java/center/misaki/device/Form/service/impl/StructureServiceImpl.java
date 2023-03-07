@@ -310,58 +310,13 @@ public class StructureServiceImpl implements StructureService {
         return ans;
     }
 
-//    @Override
-//    @Transactional
-//    public boolean createMenu(int tenementId) {
-//        //创建菜单
-//        Menu menu = new Menu();
-//        menu.setTenementId(tenementId);
-//        String[] menuNames = new String[]{"经营分析报表","设备点检巡检","设备维修保修","设备维护保养","备品备件管理","基础信息"};
-//        int menuId = menuMapper.selectIdMax()+1;
-//        for (int j = 0;j<menuNames.length;j++){
-//            menu.setId(menuId++);
-//            menu.setName(menuNames[j]);
-//            menuMapper.insert(menu);
-//        }
-//        //菜单初始化
-//        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"设备点检巡检");
-//        createMenuForm(menuId,1,tenementId,"设备巡检单");
-//        createMenuForm(menuId,0,tenementId,"巡检方案");
-//
-//        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"设备维修保修");
-//        createMenuForm(menuId,1,tenementId,"设备报修单");
-//
-//        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"设备维护保养");
-//        createMenuForm(menuId,0,tenementId,"设备保养单");
-//        createMenuForm(menuId,0,tenementId,"保养计划基础表");
-//
-//        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"备品备件管理");
-//        createMenuForm(menuId,0,tenementId,"备件入库单");
-//        createMenuForm(menuId,0,tenementId,"备件领用单");
-//        createMenuForm(menuId,0,tenementId,"备件台账");
-//
-//        menuId = menuMapper.selectIdByTenementIdAndName(tenementId,"基础信息");
-//        createMenuForm(menuId,0,tenementId,"机房");
-//        createMenuForm(menuId,0,tenementId,"设备类型");
-//        createMenuForm(menuId,0,tenementId,"部门");
-//        createMenuForm(menuId,0,tenementId,"设备状态");
-//        createMenuForm(menuId,0,tenementId,"保养等级与频次");
-//        createMenuForm(menuId,0,tenementId,"仓库");
-//        createMenuForm(menuId,0,tenementId,"单位");
-//        createMenuForm(menuId,0,tenementId,"安装地点");
-//        createMenuForm(menuId,0,tenementId,"设备信息");
-//
-//        return true;
-//    }
-
-    //上面一个方法的优化版
     @Override
     @Transactional
     public boolean createMenu(int tenementId) {
         //菜单初始化
         Menu menu = new Menu();
         menu.setTenementId(tenementId);
-        String[] menuNames = new String[]{"设备档案履历","经营分析报表","设备点检巡检","设备维修保修","设备维护保养","备品备件管理","基础信息"};
+        String[] menuNames = new String[]{"设备档案/履历","经营分析报表","设备点检巡检","设备维修保修","设备维护保养","备品备件管理","基础信息"};
         int menuId = menuMapper.selectIdMax()+1;
         for (String menuName : menuNames){
             menu.setId(menuId++);
@@ -373,7 +328,7 @@ public class StructureServiceImpl implements StructureService {
         for (String menuName : menuNames){
             menuNameMap.put(menuName, menuMapper.selectIdByTenementIdAndName(tenementId, menuName));
         }
-        createMenuForm(menuNameMap.get("设备档案履历"),0,tenementId,"设备档案履历表");
+        createMenuForm(menuNameMap.get("设备档案/履历"),0,tenementId,"设备档案/履历表");
         createMenuForm(menuNameMap.get("设备点检巡检"),1,tenementId,"设备巡检单");
         createMenuForm(menuNameMap.get("设备点检巡检"),0,tenementId,"巡检方案");
         createMenuForm(menuNameMap.get("设备维修保修"),1,tenementId,"设备报修单");
