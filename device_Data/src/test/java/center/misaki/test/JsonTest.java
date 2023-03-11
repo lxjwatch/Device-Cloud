@@ -15,9 +15,7 @@ import java.util.Map;
 public class JsonTest {
     @Test
     public void testJ(){
-        Map<Integer, String> map = new HashMap<>();
-        String s="{'12':['熔断器','修改过后的熔断器'],'15':['上海沪工电器厂','修改过后的上海沪工电器厂']}";
-                
-        
+        String str = "{\"typeId\":\"0\",\"check\":{},\"title\":\"联系人\",\"type\":\"string\",\"fieldId\":\"0_24l9ZPuMRLQ-qzW19Yw\"}";
+        System.out.println(str.replace("0_24l9ZPuMRLQ-qzW19Yw","123456"));
     } 
 }

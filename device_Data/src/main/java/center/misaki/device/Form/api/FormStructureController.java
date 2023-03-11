@@ -111,11 +111,19 @@ public class FormStructureController {
         }else return Result.error("删除表单失败");
     }
 
-    //创建公司菜单模板
+    //创建公司菜单和空表单模板
     @PostMapping("/initMenu")
     public Result<?> initMenu(Integer tenementId){
         if (structureService.createMenu(tenementId)){
            return Result.ok(null,"成功初始化菜单");
         }else return Result.error("初始化菜单失败");
+    }
+
+    //公司表单初始化字段模板
+    @PostMapping("/initTemplate")
+    public Result<?> initTemplate(Integer tenementId){
+        if (structureService.createFormTemplate(tenementId,14)){
+            return Result.ok(null,"表单模板创建成功");
+        }else return Result.error("表单模板创建失败");
     }
 }

@@ -5,6 +5,7 @@ import center.misaki.device.Form.vo.FormStrucVo;
 import center.misaki.device.Form.vo.MenuFormVo;
 import center.misaki.device.Form.vo.SimpleFieldVo;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -42,9 +43,18 @@ public interface StructureService {
     //获取这个公司里的所有表单的简单结构
     List<FormStrucVo.FormSimpleVo> getFormSimpleStruc(String userInfo);
 
-    //创建菜单模板
+    //创建菜单和空表单模板
     boolean createMenu(int tenementId);
 
-    //注册时创建表单
+    //注册时创建空表单
     boolean createMenuForm(Integer menuId,Integer formType,Integer tenementId,String formName);
+
+    //创建字段
+    boolean createField(String id,Integer tenementId,Integer formId,String name,Integer typeId,String detailJsom);
+
+    //生成表单id
+    String getFieldsId(Integer typeId);
+
+    //用户注册选择创建的模板
+    boolean createFormTemplate(int tenementId,int templateTenementId);
 }

@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 /**
  * @author Misaki
  */
@@ -16,4 +18,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
 
     @Select({"select id from menu where tenement_id =#{arg0} and name =#{arg1}"})
     int selectIdByTenementIdAndName(int tenementId, String name);
+
+    @Select({"select name from menu where tenement_id=#{arg0}"})
+    List<String> selectNameList(int tenementId);
 }

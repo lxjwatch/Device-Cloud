@@ -59,17 +59,32 @@ public class UserController {
     }
 
     //修改本人信息接口
+//    @PostMapping("/editSelf")
+//    public Result<?> editSelf(@Valid @RequestBody UserDto.UpdateUserDto updateUserDto) {
+//        if (updateUserDto.getOldPassword() != null) {
+//            return userService.judgePassword(updateUserDto)
+//                    ? Result.ok(null, "校验成功")
+//                    : Result.error("密码错误，请重新输入");
+//        } else {
+//            return userService.updateUser(updateUserDto)
+//                    ? Result.ok(null, "修改成功")
+//                    : Result.error("修改失败，请联系管理员");
+//        }
+//    }
+    //修改本人信息接口
     @PostMapping("/editSelf")
     public Result<?> editSelf(@Valid @RequestBody UserDto.UpdateUserDto updateUserDto) {
-        if (updateUserDto.getOldPassword() != null) {
-            return userService.judgePassword(updateUserDto)
-                    ? Result.ok(null, "校验成功")
-                    : Result.error("密码错误，请重新输入");
-        } else {
-            return userService.updateUser(updateUserDto)
-                    ? Result.ok(null, "修改成功")
-                    : Result.error("修改失败，请联系管理员");
-        }
+        return userService.updateUser(updateUserDto)
+                ? Result.ok(null, "修改成功")
+                : Result.error("修改失败，请联系管理员");
+    }
+
+    //校验本人密码
+    @PostMapping("/confirmPwd")
+    public Result<?> confirmPwd(@Valid @RequestBody UserDto.UpdateUserDto updateUserDto) {
+        return userService.judgePassword(updateUserDto)
+                ? Result.ok(null, "校验成功")
+                : Result.error("密码错误，请重新输入");
     }
 
 
