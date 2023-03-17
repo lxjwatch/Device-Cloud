@@ -122,7 +122,7 @@ public class FormStructureController {
     //公司表单初始化字段模板
     @PostMapping("/initTemplate")
     public Result<?> initTemplate(Integer tenementId){
-        if (structureService.createFormTemplate(tenementId,14)){
+        if (structureService.createFormTemplate(tenementId)){
             return Result.ok(null,"表单模板创建成功");
         }else return Result.error("表单模板创建失败");
     }

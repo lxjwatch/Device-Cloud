@@ -6,6 +6,8 @@ import center.misaki.device.Form.dto.FormStrucDto;
 import center.misaki.device.Form.pojo.Field;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -20,7 +22,7 @@ import java.util.stream.Collectors;
  */
 @Service
 @Slf4j
-public class FieldService {
+public class FieldService  extends ServiceImpl<FieldMapper,Field> implements IService<Field> {
     
     private final FieldMapper fieldMapper;
 
@@ -74,5 +76,5 @@ public class FieldService {
         }
         log.info("原表单需要修改 {} 个字段，实际修改 {} 个",oral,success);
     }
-    
+
 }

@@ -21,6 +21,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,7 @@ import java.util.concurrent.Executor;
  * @author Misaki
  */
 @Service
-public class FormServiceImpl implements FormService {
+public class FormServiceImpl extends ServiceImpl<FormMapper,Form> implements FormService {
     
     private final FormMapper formMapper;
     private final FieldMapper fieldMapper;
@@ -233,12 +234,19 @@ public class FormServiceImpl implements FormService {
 
     @Override
     public List<OneDataVo.OneFieldValue> dataLink(List<DataScreenDto> dataScreenDtos, String userInfo) throws ExecutionException, InterruptedException {
+        // 初始化一个空 ArrayList 以存储 OneDataVo.OneFieldValue 对象
         List<OneDataVo.OneFieldValue> ans = new ArrayList<>();
+        // 遍历输入列表中的每个 DataScreenDto 对象
         for(DataScreenDto dataScreenDto:dataScreenDtos){
+            // 获取一张表单的所有数据
             List<FormData> originData = formDataService.getOneUserFormData(dataScreenDto.getFormId(), userInfo);
+            // 使用 DataScreenService 类基于 DataScreenDto 对象的筛选条件对检索到的表单数据进行筛选
             List<FormData> formData = dataScreenService.screen(dataScreenDto, originData);
+            // 获取原始数据和筛选数据之间关联的字段 ID
             String linkFieldIds = dataScreenDto.getLinkFieldId();
+            // 获取原始数据的 ID
             String originId = dataScreenDto.getOriginId();
+            // 如果筛选后没有找到匹配的表单数据，则向答案列表中添加一个空的 OneDataVo.OneFieldValue 对象，并继续下一个 DataScreenDto 对象的处理
             if(formData==null||formData.size()==0){
                 OneDataVo.OneFieldValue oneFieldValue = new OneDataVo.OneFieldValue();
                 oneFieldValue.setFieldId(originId);
@@ -246,11 +254,15 @@ public class FormServiceImpl implements FormService {
                 ans.add(oneFieldValue);
                 continue;
             }
+            // 从筛选结果中获取第一个匹配的 FormData 对象
             FormData data = formData.get(0);
+            // 将 FormData 对象的 JSON 字符串转换为 Map 对象
             Map<String, String> dataMap = JSON.parseObject(data.getFormData(), new TypeReference<Map<String, String>>() {});
+            // 使用原始数据的 ID 和筛选数据中关联字段的值创建一个新的 OneDataVo.OneFieldValue 对象
             OneDataVo.OneFieldValue oneFieldValue = new OneDataVo.OneFieldValue();
             oneFieldValue.setFieldId(originId);
             oneFieldValue.setFieldValue(dataMap.get(linkFieldIds));
+            // 将新创建的 OneDataVo.OneFieldValue 对象添加到答案列表中
             ans.add(oneFieldValue);
         }
         return ans;

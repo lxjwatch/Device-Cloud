@@ -49,7 +49,7 @@ public class AccessFilter extends ZuulFilter {
         HttpServletResponse response = ctx.getResponse();
         log.info("request {}:{}",request.getMethod(),request.getRequestURI());
 
-        //判断请求路径中是否包含/uaa,/data/form/initMenu，如果有则放行
+        //判断请求路径中是否包含/uaa,/data/form/initMenu，/data/form/initTemplate，如果有则放行
         if (StringUtils.startsWithAny(request.getRequestURI(), new String[]{"/uaa","/data/form/initMenu","/data/form/initTemplate"})) {
             ctx.setSendZuulResponse(Boolean.TRUE);
             return null;

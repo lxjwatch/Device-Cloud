@@ -23,15 +23,16 @@ public class MailProperties extends org.springframework.boot.autoconfigure.mail.
         addProperties("mail.smtp.auth", Boolean.TRUE.toString());
         addProperties("mail.smtp.ssl.enable", Boolean.TRUE.toString());
         addProperties("mail.smtp.timeout", "10000");
-        
+
         super.setHost("smtp.qq.com");
-        super.setUsername("2914883754@qq.com");
-        super.setPassword("apiuunsymkxldefe");
-        super.setDefaultEncoding(StandardCharsets.UTF_8);
+        super.setUsername("2640742121@qq.com");
+        super.setPassword("lxucfsemlkfsdhfj");
         super.setPort(465);
         super.setProtocol("smtp");
-        
+
+
     }
+
 
     public void addProperties(String key, String value) {
         if (properties == null) {

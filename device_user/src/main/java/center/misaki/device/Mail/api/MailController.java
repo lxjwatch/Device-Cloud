@@ -35,9 +35,9 @@ public class MailController {
         this.dataCommentController = dataCommentController;
     }
 
-    
 
-    
+
+
     @PostMapping("/comment")
     public Result<?> sendComment(@RequestBody CommentDto commentDto){
         Integer[] userIds = commentDto.getUserIds();
@@ -52,7 +52,7 @@ public class MailController {
             if(email==null||email.equals(""))continue;
             args.put("userName",userMapper.selectUsernameById(userId));
             args.put("userEmail",email);
-            mailService.asyncSendTemplateMail(email,"数据评论",args,"comment.ftl");
+            mailService.asyncSendTemplateMail(email,"设备运维系统",args,"invite.ftl");
         }
         DataCommentDto dataCommentDto = new DataCommentDto();
         dataCommentDto.setUserName(SecurityUtils.getCurrentUsername());

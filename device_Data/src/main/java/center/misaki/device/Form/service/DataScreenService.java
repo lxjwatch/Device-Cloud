@@ -40,33 +40,54 @@ public class DataScreenService {
      * 仅限表格筛选数据，同时亦可用于数据联动等等 
      */
     public List<FormData> screen(DataScreenDto dataScreenDto,List<FormData> originData) throws ExecutionException, InterruptedException {
+        // 将原始数据 originData 转换为 Map 类型的列表 dataMap
         List<Map<String,String>> dataMap = formDataService.converterDataMap(originData);
+
+        // 从 dataScreenDto 中获取限制类型 restrictType，以确定条件组合时使用 "and" 还是 "or"
         String restrictType = dataScreenDto.getRestrictType();
         boolean and = restrictType == null || !restrictType.equals("or");
+
+        // 获取 dataScreenDto 中的 FieldRestrict 对象列表 conditions
         List<DataScreenDto.FieldRestrict> conditions = dataScreenDto.getConditions();
+
+        // 如果没有条件或时间限制，返回原始数据 originData
         if((conditions==null||conditions.isEmpty())&&dataScreenDto.getCreateTime()==null&&dataScreenDto.getCreatePerson()==null&&dataScreenDto.getUpdateTime()==null) return originData;
+
+        // 创建一个 Future 列表 futures，用于保存每个条件的线程
         List<Future<Set<Integer>>> futures = new ArrayList<>();
+
         //多线程筛选
+        // 将每个字段条件添加为 Future 到 futures 列表中
         assert conditions != null;
         for(DataScreenDto.FieldRestrict restrict:conditions){
             //做出一点处理
+            // 如果不是自定义操作数，则从 dataScreenDto 的 nowValue 映射中获取操作数值
             if(restrict.getCustom()!=null&&!restrict.getCustom()){
                 restrict.setOperand(dataScreenDto.getNowValue().get(restrict.getOperand()));
             }
+            // 提交新线程来处理该条件
             futures.add(executorService.submit(()->screenFields(dataMap,restrict.getFieldId(),restrict.getFieldTypeId(),restrict.getOperand(),ConditionsEnum.operatorTo(restrict.getOperator()))));
         }
+
+        // 如果有创建者条件，则将其作为 Future 添加到 futures 列表中
         if(dataScreenDto.getCreatePerson()!=null){
             futures.add(executorService.submit(()->screenPerson(originData,dataScreenDto.getCreatePerson().getOperand()
                     ,ConditionsEnum.operatorTo(dataScreenDto.getCreatePerson().getOperator()))));
         }
+
+        // 如果有创建时间条件，则将其作为 Future 添加到 futures 列表中
         if(dataScreenDto.getCreateTime()!=null){
             futures.add(executorService.submit(()->screenCreateOrUpdateTime(originData,dataScreenDto.getCreateTime().getOperand()
                     ,ConditionsEnum.operatorTo(dataScreenDto.getCreateTime().getOperator()),true)));
         }
+
+        // 如果有更新时间条件，则将其作为 Future 添加到 futures 列表中
         if(dataScreenDto.getUpdateTime()!=null){
             futures.add(executorService.submit(()->screenCreateOrUpdateTime(originData,dataScreenDto.getUpdateTime().getOperand()
                     ,ConditionsEnum.operatorTo(dataScreenDto.getUpdateTime().getOperator()),false)));
         }
+
+        // 使用 "and" 或 "or" 将所有分离的 Future 集合组合成一个集合
         Set<Integer> ans = new HashSet<>();
         Iterator<Future<Set<Integer>>> iterator = futures.iterator();
         if(iterator.hasNext()) ans=iterator.next().get();
@@ -75,7 +96,11 @@ public class DataScreenService {
             if(and) ans.retainAll(future.get());
             else ans.addAll(future.get());
         }
+
+        // 记录有多少条数据被筛选掉，有多少条数据保留下来
         log.info("原数据 {} 条筛选得到了 {} 条",originData.size(),ans.size());
+
+        // 将剩余的索引转换为 FormData 对象列表
         List<FormData> formData = new ArrayList<>(ans.size());
         ans.forEach(a->formData.add(originData.get(a)));
         return formData;

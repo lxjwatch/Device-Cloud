@@ -56,5 +56,6 @@ public interface StructureService {
     String getFieldsId(Integer typeId);
 
     //用户注册选择创建的模板
-    boolean createFormTemplate(int tenementId,int templateTenementId);
+//    boolean createFormTemplate(int tenementId,int templateTenementId);
+    boolean createFormTemplate(int tenementId);
 }

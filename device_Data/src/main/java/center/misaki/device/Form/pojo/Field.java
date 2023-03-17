@@ -29,5 +29,4 @@ public class Field implements Serializable {
     private String  detailJson;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
-    
 }

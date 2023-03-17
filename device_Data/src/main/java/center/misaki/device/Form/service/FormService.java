@@ -8,6 +8,8 @@ import center.misaki.device.Form.pojo.FormData;
 import center.misaki.device.Form.vo.BatchLogVo;
 import center.misaki.device.Form.vo.FormDataVo;
 import center.misaki.device.Form.vo.OneDataVo;
+import center.misaki.device.domain.Pojo.Form;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * 表单数据操作实现类
  */
-public interface FormService {
+public interface FormService extends IService<Form> {
     
     //获得一张表中所有的数据，无区分( 目前软删除去除了，所以这个函数后下面的一个函数只存在流程数据的区别上 )
     FormDataVo getOneFormAllData(int formId,String userInfo);

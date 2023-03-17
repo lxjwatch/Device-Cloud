@@ -60,6 +60,7 @@ public class MailServiceImpl extends AbstractMailService{
         });
     }
 
+
     @Override
     public void sycSendTemplateMail(String to, String subject, Map<String, Object> content, String templateName) {
         sychSendMailTemplate(messageHelper -> {
