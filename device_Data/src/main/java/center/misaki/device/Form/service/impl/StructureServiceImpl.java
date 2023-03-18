@@ -6,6 +6,7 @@ import center.misaki.device.Flow.WorkLog;
 import center.misaki.device.Flow.dao.FlowLogMapper;
 import center.misaki.device.Flow.dao.WorkLogMapper;
 import center.misaki.device.Flow.service.FlowService;
+import center.misaki.device.Form.dao.DepartmentMapper;
 import center.misaki.device.Form.dao.MenuMapper;
 import center.misaki.device.Form.dto.BatchDeleteDto;
 import center.misaki.device.Form.vo.MenuFormVo;
@@ -30,10 +31,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * @author Misaki
@@ -50,6 +49,8 @@ public class StructureServiceImpl implements StructureService {
     private final FieldService fieldService;
     
     private final MenuMapper menuMapper;
+
+    private final DepartmentMapper departmentMapper;
     
     @Autowired
     private FlowService flowService;
@@ -57,13 +58,14 @@ public class StructureServiceImpl implements StructureService {
     private final WorkLogMapper workLogMapper;
     private final FlowLogMapper flowLogMapper;
 
-    public StructureServiceImpl(FormServiceImpl formService, FormMapper formMapper, FieldMapper fieldMapper, FormDataService formDataService, FieldService fieldService, MenuMapper menuMapper, WorkLogMapper workLogMapper, FlowLogMapper flowLogMapper) {
+    public StructureServiceImpl(FormServiceImpl formService, FormMapper formMapper, FieldMapper fieldMapper, FormDataService formDataService, FieldService fieldService, MenuMapper menuMapper, DepartmentMapper departmentMapper, WorkLogMapper workLogMapper, FlowLogMapper flowLogMapper) {
         this.formService = formService;
         this.formMapper = formMapper;
         this.fieldMapper = fieldMapper;
         this.formDataService = formDataService;
         this.fieldService = fieldService;
         this.menuMapper = menuMapper;
+        this.departmentMapper = departmentMapper;
         this.workLogMapper = workLogMapper;
         this.flowLogMapper = flowLogMapper;
     }
@@ -1218,6 +1220,8 @@ public class StructureServiceImpl implements StructureService {
         //批量更新form表单
         formService.updateBatchById(forms);
 
+        int departmentId = departmentMapper.selectIdByTenementIdAndPreId(tenementId,-1).intValue();
+
         //生成字段数据
         String detailJson01 = "{\"scan\":[\"input_scan\",\"change\"],\"typeId\":\"0\",\"check\":{},\"title\":\"设备编号\",\"type\":\"string\",\"required\":true,\"fieldId\":\""+fieldsId01+"\"}";
         String detailJson02 = "{\"typeId\":\"0\",\"check\":{},\"title\":\"设备名称\",\"type\":\"string\",\"fieldId\":\""+fieldsId02+"\"}";
@@ -1316,12 +1320,12 @@ public class StructureServiceImpl implements StructureService {
         String detailJson95 = "{\"widget\":\"self_linkquery\",\"linkquery_condition\":{\"formId\":"+inspectionSchemeFormId+",\"originId\":\""+fieldsId95+"\",\"restrictType\":\"and\",\"conditions\":[],\"fieldIds\":[\""+fieldsId17+"\",\""+fieldsId66+"\",\""+fieldsId44+"\"],\"fieldShow\":[\""+fieldsId17+"\",\""+fieldsId66+"\",\""+fieldsId44+"\"]},\"typeId\":\"15\",\"title\":\"关联巡检方案\",\"type\":\"any\",\"fieldId\":\""+fieldsId95+"\"}";
         String detailJson96 = "{\"widget\":\"self_linkquery\",\"linkquery_condition\":{\"formId\":"+sparePartsLedgerFormId+",\"originId\":\""+fieldsId96+"\",\"restrictType\":\"and\",\"conditions\":[],\"fieldIds\":[\""+fieldsId25+"\",\""+fieldsId18+"\",\""+fieldsId27+"\",\""+fieldsId69+"\"],\"fieldShow\":[\""+fieldsId25+"\",\""+fieldsId18+"\",\""+fieldsId27+"\",\""+fieldsId69+"\"]},\"typeId\":\"15\",\"describe\":\"<p><span style=\\\"color:#fdda00\\\"><span style=\\\"font-size:18px\\\"><strong>若需要更换备件请在此记录</strong></span></span></p>\",\"title\":\"备件更换\",\"type\":\"any\",\"fieldId\":\""+fieldsId96+"\"}";
         String detailJson97 = "{\"widget\":\"self_linkquery\",\"linkquery_condition\":{\"formId\":"+deviceInformationFormId+",\"originId\":\""+fieldsId97+"\",\"restrictType\":\"and\",\"conditions\":[],\"fieldIds\":[\""+fieldsId24+"\",\""+fieldsId30+"\",\""+fieldsId78+"\"],\"fieldShow\":[\""+fieldsId24+"\",\""+fieldsId30+"\",\""+fieldsId78+"\"]},\"typeId\":\"15\",\"title\":\"关联设备\",\"type\":\"any\",\"fieldId\":\""+fieldsId97+"\"}";
-        String detailJson98 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+tenementId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"巡检人员\",\"type\":\"any\",\"fieldId\":\""+fieldsId98+"\"}";
-        String detailJson99 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+tenementId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"报修人\",\"type\":\"any\",\"fieldId\":\""+fieldsId99+"\"}";
-        String detailJson100 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+tenementId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"领用人\",\"type\":\"any\",\"fieldId\":\""+fieldsId100+"\"}";
-        String detailJson101 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+tenementId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"保养人\",\"type\":\"any\",\"fieldId\":\""+fieldsId101+"\"}";
-        String detailJson102 = "{\"widget\":\"self_department_user\",\"option_list\":[\"选项一\",\"选项二\",\"选项三\"],\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+tenementId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"维修责任人\",\"type\":\"any\",\"fieldId\":\""+fieldsId102+"\"}";
-        String detailJson103 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+tenementId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"入库人\",\"type\":\"any\",\"fieldId\":\""+fieldsId103+"\"}";
+        String detailJson98 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+departmentId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"巡检人员\",\"type\":\"any\",\"fieldId\":\""+fieldsId98+"\"}";
+        String detailJson99 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+departmentId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"报修人\",\"type\":\"any\",\"fieldId\":\""+fieldsId99+"\"}";
+        String detailJson100 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+departmentId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"领用人\",\"type\":\"any\",\"fieldId\":\""+fieldsId100+"\"}";
+        String detailJson101 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+departmentId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"保养人\",\"type\":\"any\",\"fieldId\":\""+fieldsId101+"\"}";
+        String detailJson102 = "{\"widget\":\"self_department_user\",\"option_list\":[\"选项一\",\"选项二\",\"选项三\"],\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+departmentId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"维修责任人\",\"type\":\"any\",\"fieldId\":\""+fieldsId102+"\"}";
+        String detailJson103 = "{\"widget\":\"self_department_user\",\"typeId\":\"20\",\"self_setting\":{\"mul\":false,\"scope\":{\"role\":[],\"department\":["+departmentId+"],\"user\":[]},\"judge\":false,\"type\":\"1\"},\"check\":{},\"title\":\"入库人\",\"type\":\"any\",\"fieldId\":\""+fieldsId103+"\"}";
 
 
         //字段初始化
