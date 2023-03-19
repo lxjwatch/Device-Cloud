@@ -16,7 +16,7 @@ public interface UserService {
     UserVo.registerUserVo registerUser(UserDto.RegisterUserDto registerUserDto);
 
     //注册员工
-    Integer registerEmployee(UserDto.RegisterEmployeeDto registerEmployeeDto);
+    UserVo.registerEmployeeVo registerEmployee(UserDto.RegisterEmployeeDto registerEmployeeDto);
     
     //新增用户
     Integer addUser(UserDto userDto);

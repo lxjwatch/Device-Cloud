@@ -47,8 +47,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserVo.registerUserVo registerUser(UserDto.RegisterUserDto registerUserDto){
+        UserVo.registerUserVo registerUserVo = new UserVo.registerUserVo();
         //注册的用户名已存在直接返回
-        if(!userMapper.selectAllByUsername(registerUserDto.getUsername()).isEmpty()){ return null; }
+        if(!userMapper.selectAllByUsername(registerUserDto.getUsername()).isEmpty()){
+            registerUserVo.setTenementId(-1);
+            return registerUserVo;
+        }
         //用户信息初始化
         User user = new User();
         user.setUsername(registerUserDto.getUsername());
@@ -72,18 +76,26 @@ public class UserServiceImpl implements UserService {
         int departmentId = departmentMapper.selectIdByTenementId(tenementId);
         departmentMapper.insertIntoUserDepartment(departmentId,userId,tenementId);
 
-        UserVo.registerUserVo registerUserVo = new UserVo.registerUserVo();
         registerUserVo.setTenementId(tenementId);
         return registerUserVo;
     }
 
     @Override
     @Transactional
-    public Integer registerEmployee(UserDto.RegisterEmployeeDto registerEmployeeDto){
+    public UserVo.registerEmployeeVo registerEmployee(UserDto.RegisterEmployeeDto registerEmployeeDto){
+        UserVo.registerEmployeeVo registerEmployeeVo = new UserVo.registerEmployeeVo();
         //注册的用户名已存在直接返回
-        if(!userMapper.selectAllByUsername(registerEmployeeDto.getUsername()).isEmpty()){return 1;}
+        if(!userMapper.selectAllByUsername(registerEmployeeDto.getUsername()).isEmpty()){
+            registerEmployeeVo.setTenementId(-1);
+            registerEmployeeVo.setMsg("注册失败，用户名已存在");
+            return registerEmployeeVo;
+        }
         //加入的公司不存在直接返回
-        if(userMapper.selectAllByTenementId(registerEmployeeDto.getTenementId()).isEmpty()){ return 2; }
+        if(userMapper.selectAllByTenementId(registerEmployeeDto.getTenementId()).isEmpty()){
+            registerEmployeeVo.setTenementId(-1);
+            registerEmployeeVo.setMsg("注册失败，加入的公司不存在");
+            return registerEmployeeVo;
+        }
         //用户信息初始化
         User user = new User();
         user.setUsername(registerEmployeeDto.getUsername());
@@ -101,7 +113,7 @@ public class UserServiceImpl implements UserService {
         int userId = userMapper.selectIdByUsername(registerEmployeeDto.getUsername());
         int departmentId = departmentMapper.selectIdByTenementId(tenementId);
         departmentMapper.insertIntoUserDepartment(departmentId,userId,tenementId);
-        return 0;
+        return null;
 
     }
 

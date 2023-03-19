@@ -28,6 +28,7 @@ center\misaki\device\Auth\config\ResponseExceptionTranslator$ForbiddenException.
 center\misaki\device\Auth\config\ResponseExceptionTranslator$UnauthorizedException.class
 center\misaki\device\Auth\dao\UserAuthMapper.class
 center\misaki\device\AddressBook\vo\UserVo$SingleUserVo.class
+center\misaki\device\AddressBook\vo\UserVo$registerEmployeeVo.class
 center\misaki\device\AddressBook\vo\UserVo$registerUserVo.class
 center\misaki\device\Auth\dto\FormSingleAuthDto.class
 center\misaki\device\Auth\dao\NormalAdminMapper.class

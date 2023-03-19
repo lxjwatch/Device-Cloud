@@ -58,33 +58,17 @@ public class UserController {
         return Result.ok(userVo, "获取成功");
     }
 
-    //修改本人信息接口
-//    @PostMapping("/editSelf")
-//    public Result<?> editSelf(@Valid @RequestBody UserDto.UpdateUserDto updateUserDto) {
-//        if (updateUserDto.getOldPassword() != null) {
-//            return userService.judgePassword(updateUserDto)
-//                    ? Result.ok(null, "校验成功")
-//                    : Result.error("密码错误，请重新输入");
-//        } else {
-//            return userService.updateUser(updateUserDto)
-//                    ? Result.ok(null, "修改成功")
-//                    : Result.error("修改失败，请联系管理员");
-//        }
-//    }
+
     //修改本人信息接口
     @PostMapping("/editSelf")
     public Result<?> editSelf(@Valid @RequestBody UserDto.UpdateUserDto updateUserDto) {
-        return userService.updateUser(updateUserDto)
-                ? Result.ok(null, "修改成功")
-                : Result.error("修改失败，请联系管理员");
+        return userService.updateUser(updateUserDto) ? Result.ok(null, "修改成功") : Result.error("修改失败，请联系管理员");
     }
 
     //校验本人密码
     @PostMapping("/confirmPwd")
     public Result<?> confirmPwd(@Valid @RequestBody UserDto.UpdateUserDto updateUserDto) {
-        return userService.judgePassword(updateUserDto)
-                ? Result.ok(null, "校验成功")
-                : Result.error("密码错误，请重新输入");
+        return userService.judgePassword(updateUserDto) ? Result.ok(null, "校验成功") : Result.error("密码错误，请重新输入");
     }
 
 
@@ -156,19 +140,18 @@ public class UserController {
     @PostMapping("/registerUser")
     public Result<UserVo.registerUserVo> registerUser(@Valid @RequestBody UserDto.RegisterUserDto registerUserDto) {
         UserVo.registerUserVo registerUserVo = userService.registerUser(registerUserDto);
-        if (registerUserVo != null) {
+        if (registerUserVo.getTenementId() != -1) {
             return Result.ok(registerUserVo, "注册成功");
-        } else return Result.error("注册失败，用户名已存在");
+        } else return Result.ok(registerUserVo,"注册失败，用户名已存在");
     }
 
     //员工注册接口
     @PostMapping("/registerEmployee")
     public Result<?> registerEmployee(@Valid @RequestBody UserDto.RegisterEmployeeDto registerEmployeeDto) {
-        int result = userService.registerEmployee(registerEmployeeDto);
-        if (result == 0) {
+        UserVo.registerEmployeeVo registerEmployeeVo = userService.registerEmployee(registerEmployeeDto);
+        if (registerEmployeeVo == null) {
             return Result.ok(null, "注册成功");
-        } else {
-            return Result.error(result == 1 ? "注册失败，用户名已存在" : "注册失败，加入的公司不存在");
-        }
+        } else return Result.ok(registerEmployeeVo,registerEmployeeVo.getMsg());
+
     }
 }

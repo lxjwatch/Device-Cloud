@@ -811,91 +811,6 @@ public class StructureServiceImpl implements StructureService {
         return true;
     }
 
-    //此方法效率太低，已弃用
-//    @Override
-//    @Transactional
-//    public boolean createFormTemplate(int tenementId,int templateTenementId){
-//        //获取field表中模板公司的所有字段数据
-//        List<Field> fieldsTemplate = fieldMapper.selectList(new QueryWrapper<Field>().eq("tenement_id",templateTenementId));
-//
-//        //生成模板公司字段数量的字段id，生成后放在fieldIds集合里
-//        List<String> fieldIds = fieldsTemplate.stream().map(Template -> getFieldsId(Template.getTypeId())).collect(Collectors.toList());
-//        fieldIds.forEach(System.out::println);
-//
-//        //获取form表中模板公司的所有表单
-//        List<Form> formsTemplate = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id",templateTenementId));
-//
-//        //遍历获取的form对象集合，取出每个form对象的form_fields、properties，分别添加到formFieldsTemplateStringBuffer、propertiesTemplateStringBuffer两个字符串中
-//        StringBuffer formFieldsTemplateStringBuffer = new StringBuffer(formsTemplate.stream().map(Form::getFormFields).collect(Collectors.joining("###")));
-//        StringBuffer propertiesTemplateStringBuffer = new StringBuffer(formsTemplate.stream().map(Form::getProperties).collect(Collectors.joining("###")));
-//
-//        //遍历获取的field对象集合，取出每个field对象的id、detailJson，分别存储在fieldsIdTemplate集合、detailJsonTemplateStringBuffer字符串中
-//        List<String> fieldsIdTemplate = fieldsTemplate.stream().map(Field::getId).collect(Collectors.toList());
-//        StringBuffer detailJsonTemplateStringBuffer = new StringBuffer(fieldsTemplate.stream().map(Field::getDetailJson).collect(Collectors.joining("###")));
-//
-//        //替换字段id
-//        IntStream.range(0, fieldsIdTemplate.size())
-//                .forEach(i -> {
-//                    String oldFieldId = fieldsIdTemplate.get(i);
-//                    String newFieldId = fieldIds.get(i);
-//                    replaceString(formFieldsTemplateStringBuffer, oldFieldId, newFieldId);
-//                    replaceString(propertiesTemplateStringBuffer, oldFieldId, newFieldId);
-//                    replaceString(detailJsonTemplateStringBuffer, oldFieldId, newFieldId);
-//                });
-//
-//        //替换表单id
-//        List<Integer> formIdsTemplate = formsTemplate.stream().map(Form::getId).collect(Collectors.toList());
-//        formIdsTemplate.forEach(formId ->{
-//            String oldFormId = formId.toString();
-//            String formName = formMapper.selectFormNameById(formId);
-//            String newFormId = formMapper.selectIdByTenementIdAndFormName(tenementId, formName).toString();
-//            replaceString(detailJsonTemplateStringBuffer, oldFormId, newFormId);
-//        });
-//
-//        //分割出每个formFields
-//        List<String> formFields = Arrays.asList(formFieldsTemplateStringBuffer.toString().split("###"));
-//
-//        //分割出每个properties
-//        List<String> properties = Arrays.asList(propertiesTemplateStringBuffer.toString().split("###"));
-//
-//        //分割出每个detailJson
-//        String[] detailJson = detailJsonTemplateStringBuffer.toString().split("###");
-//
-//        //获取当前注册用户的公司所有表单
-//        List<Form> forms = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id", tenementId));
-//
-//        //更新当前注册用户的公司所有表单的formFields，properties
-//        IntStream.range(0, forms.size())
-//                .forEach(i -> {
-//                    Form form = forms.get(i);
-//                    form.setFormFields(formFields.get(i));
-//                    form.setProperties(properties.get(i));
-//                    formMapper.updateById(form);
-//                });
-//
-//        // 获取新建字段关联的表单id，并创建字段
-//        for (int i = 0; i < fieldsTemplate.size(); i++) {
-//            Field field = fieldsTemplate.get(i);
-//            String fieldId = fieldIds.get(i);
-//            String formName = formMapper.selectFormNameById(field.getFormId());
-//            int formId = formMapper.selectIdByTenementIdAndFormName(tenementId, formName).intValue();
-//            createField(fieldId, tenementId, formId, field.getName(), field.getTypeId(), detailJson[i]);
-//        }
-//
-//        return true;
-//    }
-//
-//
-//
-//    // 将字符串中旧值替换为新值,在替换字符串时，建议使用循环而非单次替换，以防止出现遗漏的情况
-//    public void replaceString(StringBuffer sb, String oldValue, String newValue) {
-//        int index = sb.indexOf(oldValue);
-//        while (index >= 0) {
-//            sb.replace(index, index + oldValue.length(), newValue);
-//            index = sb.indexOf(oldValue, index + newValue.length());
-//        }
-//    }
-
 //    @Override
 //    @Transactional
 //    public boolean createFormTemplate(int tenementId, int templateTenementId) {
@@ -1228,12 +1143,12 @@ public class StructureServiceImpl implements StructureService {
         String detailJson03 = "{\"widget\":\"self_divider\",\"typeId\":\"8\",\"title\":\"保养计划\",\"type\":\"any\",\"fieldId\":\""+fieldsId03+"\"}";
         String detailJson04 = "{\"typeId\":\"0\",\"check\":{},\"title\":\"保养负责人\",\"type\":\"string\",\"fieldId\":\""+fieldsId04+"\"}";
         String detailJson05 = "{\"typeId\":\"0\",\"check\":{},\"title\":\"保养频次\",\"type\":\"string\",\"fieldId\":\""+fieldsId05+"\"}";
-        String detailJson06 = "{\"default\":\"2022-08-02\",\"format\":\"date\",\"typeId\":\"3\",\"title\":\"本次保养时间\",\"type\":\"string\",\"fieldId\":\""+fieldsId06+"\"}";
-        String detailJson07 = "{\"format\":\"date\",\"typeId\":\"3\",\"title\":\"下次保养时间\",\"type\":\"string\",\"fieldId\":\""+fieldsId07+"\"}";
+        String detailJson06 = "{\"widget\":\"self_datapick\",\"typeId\":\"3\",\"title\":\"本次保养时间\",\"type\":\"string\",\"fieldId\":\""+fieldsId06+"\"}";
+        String detailJson07 = "{\"widget\":\"self_datapick\",\"typeId\":\"3\",\"title\":\"下次保养时间\",\"type\":\"string\",\"fieldId\":\""+fieldsId07+"\"}";
         String detailJson08 = "{\"widget\":\"self_divider\",\"typeId\":\"8\",\"title\":\"保养内容\",\"type\":\"any\",\"fieldId\":\""+fieldsId08+"\"}";
         String detailJson09 = "{\"format\":\"textarea\",\"typeId\":\"1\",\"check\":{},\"title\":\"保养内容以及要求\",\"type\":\"string\",\"fieldId\":\""+fieldsId09+"\"}";
-        String detailJson10 = "{\"widget\":\"radio\",\"enumNames\":[\"已经完成\",\"未完成\"],\"display_ways\":\"row\",\"className\":\"item_column\",\"typeId\":\"4\",\"title\":\"保养结果\",\"type\":\"string\",\"enum\":[\"已经完成\",\"未完成\"],\"fieldId\":\""+fieldsId10+"\"}";
-        String detailJson11 = "{\"widget\":\"select\",\"enumNames\":[\"日常保养\",\"一级保养\",\"二级保养\",\"三级保养\"],\"typeId\":\"6\",\"check\":{},\"title\":\"保养等级\",\"type\":\"string\",\"enum\":[\"日常保养\",\"一级保养\",\"二级保养\",\"三级保养\"],\"fieldId\":\""+fieldsId11+"\"}";
+        String detailJson10 = "{\"widget\":\"self_radio\",\"enumNames\":[\"已完成\",\"未完成\"],\"typeId\":\"4\",\"className\":\"item_column\",\"title\":\"保养结果\",\"type\":\"string\",\"enum\":[\"已完成\",\"未完成\"],\"fieldId\":\""+fieldsId10+"\"}";
+        String detailJson11 = "{\"widget\":\"self_select\",\"option_list\":[\"日常维护\",\"一级保养\",\"二级保养\",\"三级保养\"],\"typeId\":\"6\",\"check\":{},\"title\":\"保养等级\",\"type\":\"any\",\"fieldId\":\""+fieldsId11+"\"}";
         String detailJson12 = "{\"typeId\":\"0\",\"check\":{},\"title\":\"入库数量\",\"type\":\"string\",\"fieldId\":\""+fieldsId12+"\"}";
         String detailJson13 = "{\"typeId\":\"0\",\"check\":{},\"title\":\"保养等级\",\"type\":\"string\"}";
         String detailJson14 = "{\"typeId\":\"0\",\"check\":{},\"title\":\"规格型号\",\"type\":\"string\",\"fieldId\":\""+fieldsId14+"\"}";

@@ -49,4 +49,10 @@ public class UserVo {
     public static class registerUserVo{
         private Integer tenementId;
     }
+
+    @Data
+    public static class registerEmployeeVo{
+        private Integer tenementId;
+        private String msg;
+    }
 }

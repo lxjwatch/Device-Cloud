@@ -1,0 +1,364 @@
+2023-03-18 14:34:40.335 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-18 14:34:41.618 [main] INFO  center.misaki.zuul.ZuulApp - No active profile set, falling back to default profiles: default
+2023-03-18 14:34:42.091 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-18 14:34:42.101 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2023-03-18 14:34:42.194 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=5126ee31-1f36-39ec-92c0-2ae71053c5ad
+2023-03-18 14:34:42.369 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-18 14:34:42.528 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http) 8000 (http)
+2023-03-18 14:34:42.534 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-18 14:34:42.535 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+2023-03-18 14:34:42.543 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-18 14:34:42.543 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-03-18 14:34:42.652 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-18 14:34:42.652 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1020 ms
+2023-03-18 14:34:42.703 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-18 14:34:42.703 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-18 14:34:42.709 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@94e51e8
+2023-03-18 14:34:43.935 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:34:45.168 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:34:45.328 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-18 14:34:45.329 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-18 14:34:45.422 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-18 14:34:46.803 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:34:46.818 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-18 14:34:46.843 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-03-18 14:34:46.984 [main] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer - Starting filter initializer
+2023-03-18 14:34:46.992 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-03-18 14:34:47.044 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-03-18 14:34:47.096 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-03-18 14:34:47.129 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-03-18 14:34:47.129 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-03-18 14:34:47.199 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-03-18 14:34:47.199 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-03-18 14:34:47.336 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-18 14:34:47.454 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-18 14:34:47.455 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-18 14:34:47.455 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-18 14:34:47.455 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-18 14:34:47.455 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-18 14:34:47.455 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-03-18 14:34:47.455 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-18 14:34:47.588 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-18 14:34:47.589 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-03-18 14:34:47.591 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-03-18 14:34:47.593 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1679121287593 with initial instances count: 0
+2023-03-18 14:34:47.595 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application GATEWAY with eureka with status UP
+2023-03-18 14:34:47.595 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1679121287595, current=UP, previous=STARTING]
+2023-03-18 14:34:47.597 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway: registering service...
+2023-03-18 14:34:47.609 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-03-18 14:34:47.616 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2023-03-18 14:34:47.623 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) 8000 (http) with context path ''
+2023-03-18 14:34:47.623 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2023-03-18 14:34:47.661 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway - registration status: 204
+2023-03-18 14:34:48.797 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:34:48.799 [main] INFO  center.misaki.zuul.ZuulApp - Started ZuulApp in 10.052 seconds (JVM running for 10.805)
+2023-03-18 14:34:48.883 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:34:48.903 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-auth-center
+2023-03-18 14:34:48.903 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: auth-center instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-03-18 14:34:48.907 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-03-18 14:34:48.910 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client auth-center initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@48632f69
+2023-03-18 14:34:48.934 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:34:48.935 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-device-data
+2023-03-18 14:34:48.935 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: device-data instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-03-18 14:34:48.936 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-03-18 14:34:48.937 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client device-data initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@3f322610
+2023-03-18 14:34:49.275 [RMI TCP Connection(1)-172.26.1.57] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-18 14:34:49.275 [RMI TCP Connection(1)-172.26.1.57] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-18 14:34:49.281 [RMI TCP Connection(1)-172.26.1.57] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2023-03-18 14:35:17.602 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-18 14:35:17.603 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-18 14:35:17.603 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-18 14:35:17.603 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-18 14:35:17.603 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-18 14:35:17.603 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2023-03-18 14:35:17.603 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-18 14:35:17.637 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-18 14:35:47.524 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/uaa/user/registerUser
+2023-03-18 14:35:47.678 [http-nio-8080-exec-1] WARN  o.s.c.netflix.zuul.filters.post.SendErrorFilter - Error during filtering
+com.netflix.zuul.exception.ZuulException: Forwarding error
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.handleException(RibbonRoutingFilter.java:198)
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:173)
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.run(RibbonRoutingFilter.java:119)
+	at com.netflix.zuul.ZuulFilter.runFilter(ZuulFilter.java:117)
+	at com.netflix.zuul.FilterProcessor.processZuulFilter(FilterProcessor.java:193)
+	at center.misaki.zuul.filter.DeviceFilterProcessor.processZuulFilter(DeviceFilterProcessor.java:16)
+	at com.netflix.zuul.FilterProcessor.runFilters(FilterProcessor.java:157)
+	at com.netflix.zuul.FilterProcessor.route(FilterProcessor.java:118)
+	at com.netflix.zuul.ZuulRunner.route(ZuulRunner.java:96)
+	at com.netflix.zuul.http.ZuulServlet.route(ZuulServlet.java:116)
+	at com.netflix.zuul.http.ZuulServlet.service(ZuulServlet.java:81)
+	at org.springframework.web.servlet.mvc.ServletWrappingController.handleRequestInternal(ServletWrappingController.java:166)
+	at org.springframework.cloud.netflix.zuul.web.ZuulController.handleRequest(ZuulController.java:45)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: auth-center
+	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.subscribe(Observable.java:10423)
+	at rx.Observable.subscribe(Observable.java:10390)
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443)
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340)
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112)
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:221)
+	at org.springframework.cloud.netflix.zuul.filters.route.support.AbstractRibbonCommand.run(AbstractRibbonCommand.java:55)
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:302)
+	at com.netflix.hystrix.HystrixCommand$2.call(HystrixCommand.java:298)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:46)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:48)
+	at rx.internal.operators.OnSubscribeMap.call(OnSubscribeMap.java:33)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:41)
+	at rx.internal.operators.OnSubscribeDoOnEach.call(OnSubscribeDoOnEach.java:30)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:51)
+	at rx.internal.operators.OnSubscribeDefer.call(OnSubscribeDefer.java:35)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.subscribe(Observable.java:10423)
+	at rx.Observable.subscribe(Observable.java:10390)
+	at rx.internal.operators.BlockingOperatorToFuture.toFuture(BlockingOperatorToFuture.java:51)
+	at rx.observables.BlockingObservable.toFuture(BlockingObservable.java:410)
+	at com.netflix.hystrix.HystrixCommand.queue(HystrixCommand.java:378)
+	at com.netflix.hystrix.HystrixCommand.execute(HystrixCommand.java:344)
+	at org.springframework.cloud.netflix.zuul.filters.route.RibbonRoutingFilter.forward(RibbonRoutingFilter.java:167)
+	... 56 common frames omitted
+2023-03-18 14:35:49.950 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:35:49.966 [PollingServerListUpdater-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:00.969 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-18 14:36:02.248 [main] INFO  center.misaki.zuul.ZuulApp - No active profile set, falling back to default profiles: default
+2023-03-18 14:36:02.727 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-18 14:36:02.736 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2023-03-18 14:36:02.826 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=5126ee31-1f36-39ec-92c0-2ae71053c5ad
+2023-03-18 14:36:03.000 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-18 14:36:03.173 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http) 8000 (http)
+2023-03-18 14:36:03.181 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-18 14:36:03.182 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8000"]
+2023-03-18 14:36:03.190 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-18 14:36:03.190 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-03-18 14:36:03.307 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-18 14:36:03.307 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1045 ms
+2023-03-18 14:36:03.361 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-18 14:36:03.361 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-18 14:36:03.371 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@58740366
+2023-03-18 14:36:04.640 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:36:05.872 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:36:06.096 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-18 14:36:06.096 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-18 14:36:06.222 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-18 14:36:07.617 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:36:07.631 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-18 14:36:07.660 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-03-18 14:36:07.800 [main] INFO  o.s.cloud.netflix.zuul.ZuulFilterInitializer - Starting filter initializer
+2023-03-18 14:36:07.810 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-03-18 14:36:07.871 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-03-18 14:36:07.899 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-03-18 14:36:07.952 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-03-18 14:36:07.952 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-03-18 14:36:08.025 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-03-18 14:36:08.025 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-03-18 14:36:08.186 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-03-18 14:36:08.327 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-18 14:36:08.422 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-18 14:36:08.424 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-03-18 14:36:08.425 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-03-18 14:36:08.429 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1679121368428 with initial instances count: 3
+2023-03-18 14:36:08.431 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application GATEWAY with eureka with status UP
+2023-03-18 14:36:08.432 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1679121368432, current=UP, previous=STARTING]
+2023-03-18 14:36:08.434 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway: registering service...
+2023-03-18 14:36:08.451 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-03-18 14:36:08.460 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2023-03-18 14:36:08.468 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_GATEWAY/localhost:gateway - registration status: 204
+2023-03-18 14:36:08.468 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) 8000 (http) with context path ''
+2023-03-18 14:36:08.469 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8080
+2023-03-18 14:36:09.672 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-18 14:36:09.676 [main] INFO  center.misaki.zuul.ZuulApp - Started ZuulApp in 10.524 seconds (JVM running for 11.507)
+2023-03-18 14:36:09.747 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:09.762 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-auth-center
+2023-03-18 14:36:09.763 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: auth-center instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-03-18 14:36:09.767 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-03-18 14:36:09.779 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:09.781 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client auth-center initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=auth-center,current list of Servers=[localhost:8001],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8001;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 GMT+08:00 1970;	First connection made: Thu Jan 01 08:00:00 GMT+08:00 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@7c5c20ed
+2023-03-18 14:36:09.810 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:09.810 [main] INFO  com.netflix.util.concurrent.ShutdownEnabledTimer - Shutdown hook installed for: NFLoadBalancer-PingTimer-device-data
+2023-03-18 14:36:09.811 [main] INFO  com.netflix.loadbalancer.BaseLoadBalancer - Client: device-data instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-03-18 14:36:09.811 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - Using serverListUpdater PollingServerListUpdater
+2023-03-18 14:36:09.812 [main] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:09.813 [main] INFO  c.n.loadbalancer.DynamicServerListLoadBalancer - DynamicServerListLoadBalancer for client device-data initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=device-data,current list of Servers=[localhost:8002],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:localhost:8002;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 GMT+08:00 1970;	First connection made: Thu Jan 01 08:00:00 GMT+08:00 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@224e6e88
+2023-03-18 14:36:10.337 [RMI TCP Connection(4)-172.26.1.57] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-18 14:36:10.337 [RMI TCP Connection(4)-172.26.1.57] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-18 14:36:10.344 [RMI TCP Connection(4)-172.26.1.57] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2023-03-18 14:36:10.781 [PollingServerListUpdater-0] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: auth-center.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:10.826 [PollingServerListUpdater-1] INFO  com.netflix.config.ChainedDynamicProperty - Flipping property: device-data.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-03-18 14:36:28.353 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/uaa/user/registerUser
+2023-03-18 14:36:28.915 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/initMenu
+2023-03-18 14:36:31.419 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/data/form/initTemplate
+2023-03-18 14:36:44.069 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request POST:/uaa/login/token
+2023-03-18 14:36:44.629 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/showSelf
+2023-03-18 14:36:44.629 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-03-18 14:36:44.629 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:44.641 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-03-18 14:36:44.656 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:44.656 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:44.659 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-03-18 14:36:44.660 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-03-18 14:36:44.661 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:44.662 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.037 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-03-18 14:36:45.037 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-03-18 14:36:45.040 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.040 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.063 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-03-18 14:36:45.063 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-03-18 14:36:45.067 [http-nio-8000-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.067 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.346 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/menu
+2023-03-18 14:36:45.346 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:45.347 [http-nio-8000-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.753 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:45.753 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/handle
+2023-03-18 14:36:45.753 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/copy
+2023-03-18 14:36:45.753 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/launch
+2023-03-18 14:36:45.753 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/work/queryWorkLog/wait
+2023-03-18 14:36:45.754 [http-nio-8000-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.754 [http-nio-8000-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.754 [http-nio-8000-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:45.754 [http-nio-8000-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:52.632 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-03-18 14:36:52.633 [http-nio-8000-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:52.946 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:52.946 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-03-18 14:36:53.005 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/authF/show
+2023-03-18 14:36:53.005 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:53.325 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-03-18 14:36:53.326 [http-nio-8000-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:53.686 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-03-18 14:36:53.686 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:53.952 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:54.014 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-03-18 14:36:54.014 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-03-18 14:36:54.765 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:55.157 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/getFormSimpleStruc
+2023-03-18 14:36:55.157 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/data/form/get
+2023-03-18 14:36:55.159 [http-nio-8000-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:55.159 [http-nio-8000-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAccessed
+2023-03-18 14:36:55.342 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-03-18 14:36:55.342 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:55.679 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:55.772 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-03-18 14:36:56.004 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-03-18 14:36:56.619 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-03-18 14:36:56.619 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:56.879 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:56.942 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:56.942 [http-nio-8080-exec-3] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-03-18 14:36:56.942 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-03-18 14:36:57.204 [http-nio-8080-exec-8] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-03-18 14:36:57.204 [http-nio-8080-exec-1] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:57.268 [http-nio-8080-exec-10] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
+2023-03-18 14:36:57.268 [http-nio-8080-exec-9] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/user/show
+2023-03-18 14:36:57.282 [http-nio-8080-exec-7] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:57.518 [http-nio-8080-exec-2] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-03-18 14:36:57.532 [http-nio-8080-exec-5] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/isAdmin
+2023-03-18 14:36:57.626 [http-nio-8080-exec-6] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/role/show
+2023-03-18 14:36:57.626 [http-nio-8080-exec-4] INFO  center.misaki.zuul.filter.AccessFilter - request GET:/uaa/department/show
