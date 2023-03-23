@@ -37,7 +37,7 @@ public class MailController {
 
 
 
-
+    //发表评论接口
     @PostMapping("/comment")
     public Result<?> sendComment(@RequestBody CommentDto commentDto){
         Integer[] userIds = commentDto.getUserIds();

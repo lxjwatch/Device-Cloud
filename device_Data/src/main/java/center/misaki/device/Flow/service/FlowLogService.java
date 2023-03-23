@@ -85,7 +85,7 @@ public class FlowLogService {
     @Transactional
     public void finishFlowLog(Integer flowLogId,String userInfo){
         FlowLog flowLog = flowLogMapper.selectById(flowLogId);
-        flowLog.setState(true);
+        flowLog.setState(true);//标记为结束
         auditData(flowLog,userInfo);
         int i = flowLogMapper.updateById(flowLog);
         LOG.info("成功标记日志已经完成，影响行数：{}",i);

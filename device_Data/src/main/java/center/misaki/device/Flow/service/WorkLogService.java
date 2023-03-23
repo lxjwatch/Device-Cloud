@@ -107,7 +107,8 @@ public class WorkLogService {
         workLog.setState(WorkLogEnum.SOLVED.value);
         auditData(workLog);
         workLogMapper.updateById(workLog);
-        
+
+        //将同一节点、同一流程日志、同一租户下、状态为待处理的其他工作日志对象，将它们的状态和审批结果也一同更新
         List<WorkLog> workLogs = workLogMapper.selectList(new QueryWrapper<WorkLog>().eq("node_id", workLog.getNodeId()).eq("flow_log_id", workLog.getFlowLogId())
                 .eq("tenement_id", UserInfoUtil.getTenementId(userInfo)).ne("user_id", workLog.getUserId()).eq("state", WorkLogEnum.WAIT.value));
         

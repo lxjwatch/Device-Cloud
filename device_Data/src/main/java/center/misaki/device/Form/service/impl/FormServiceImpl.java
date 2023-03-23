@@ -127,10 +127,12 @@ public class FormServiceImpl extends ServiceImpl<FormMapper,Form> implements For
 
     @Override
     public boolean addOneData(OneDataDto oneDataDto, String userInfo) {
+        //如果是普通数据
         if(formMapper.selectType(oneDataDto.getFormId())==0){
             return formDataService.addOneData(oneDataDto,userInfo);
-        }else{
+        }else{//流程数据
             Integer dataId = formDataService.addOneFlowData(oneDataDto, userInfo);
+            //发起流程
             applicationEventPublisher.publishEvent(new FlowStartEvent(this,oneDataDto.getFormId(),dataId, userInfo));
             return dataId!=null;
         }

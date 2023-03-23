@@ -293,6 +293,7 @@ public class UserServiceImpl implements UserService {
         int departmentId = departmentMapper.selectIdByTenementIdAndPreId(tenementId,-1);
         userVo.setTenementName(departmentMapper.selectNameById(departmentId));
         userVo.setRoles(roleServiceImpl.getUserRoleMap(userId));
+        userVo.setTenementId(tenementId);
         return userVo;
     }
 

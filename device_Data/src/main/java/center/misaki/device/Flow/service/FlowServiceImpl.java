@@ -60,13 +60,17 @@ public class FlowServiceImpl implements FlowService {
     @Transactional
     public boolean enableFlow(Integer flowId,String userInfo) {
         Flow flow = flowMapper.selectById(flowId);
+        //根据该流程的表单ID从数据库中查询所有已启用的流程，除了当前流程。
         List<Flow> flows = flowMapper.selectList(new QueryWrapper<Flow>().eq("form_id", flow.getFormId()).eq("enable", true).ne("id", flowId));
+        //将该表单所有已启用的流程设置为禁用（除了当前流程）
         flows.forEach(f -> {
             f.setEnable(false);
             flowMapper.updateById(f);
         });
+        //启用当前流程
         flow.setEnable(true);
         int i = flowMapper.updateById(flow);
+        //更改表单类型为流程表单
         boolean j = formService.changeFormTypeToFlow(flow.getFormId(), userInfo);
         return i > 0&&j;
     }
@@ -137,6 +141,7 @@ public class FlowServiceImpl implements FlowService {
             flowVo.setUpdatePerson(f.getUpdatePerson());
             ans.add(flowVo);
         });
+        //按照创建时间从新到旧排序
         ans.sort((f1,f2)->{
             if(f1.getCreateTime().isAfter(f2.getCreateTime())){
                 return -1;
@@ -166,9 +171,13 @@ public class FlowServiceImpl implements FlowService {
     @Override
     public List<Flow.Node> startFlow(Integer formId) {
         Flow flow = flowMapper.selectOne(new QueryWrapper<Flow>().eq("form_id", formId).eq("enable", true));
+        // 将流程节点转换成Map，方便后面的查找（key=NodeId）
         Map<Integer, Flow.Node> nodeMap = convertToMap(JSON.parseArray(flow.getFlowNodes(), Flow.Node.class));
+        // 获取起始节点
         Flow.Node node = nodeMap.get(-1);
+        // 获取起始节点的下一步节点ID列表
         Integer[] downIds = node.getDownIds();
+        // 遍历下一步节点ID列表，将节点添加到结果列表中
         List<Flow.Node> ans = new ArrayList<>();
         for (Integer downId : downIds) {
             ans.add(nodeMap.get(downId));

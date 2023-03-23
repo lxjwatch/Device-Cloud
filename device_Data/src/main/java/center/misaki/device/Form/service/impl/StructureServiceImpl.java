@@ -33,6 +33,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author Misaki
@@ -826,6 +827,7 @@ public class StructureServiceImpl implements StructureService {
 //        // 获取form表中模板公司的所有表单
 //        List<Form> formsTemplate = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id", templateTenementId));
 //
+//
 //        // 分别将form_fields、properties和detailJson存储到对应的列表中
 //        List<String> formFieldsTemplate = formsTemplate.stream()
 //                .map(Form::getFormFields)
@@ -837,8 +839,9 @@ public class StructureServiceImpl implements StructureService {
 //                .map(Field::getDetailJson)
 //                .collect(Collectors.toList());
 //
-//        // 替换字段id和表单id
+//        // 替换字段id、表单id和部门id
 //        for (int i = 0; i < fieldsTemplate.size(); i++) {
+//            //替换字段id
 //            Field fieldTemplate = fieldsTemplate.get(i);
 //            String oldFieldId = fieldTemplate.getId();
 //            String newFieldId = fieldIds.get(i);
@@ -846,10 +849,17 @@ public class StructureServiceImpl implements StructureService {
 //            replaceString(propertiesTemplate, oldFieldId, newFieldId);
 //            replaceString(detailJsonTemplate, oldFieldId, newFieldId);
 //
-//            String oldFormId = String.valueOf(fieldTemplate.getFormId());
+//            //替换表单id
+//            String oldFormId = ":"+ fieldTemplate.getFormId() +",";
 //            String formName = formMapper.selectFormNameById(fieldTemplate.getFormId());
-//            String newFormId = String.valueOf(formMapper.selectIdByTenementIdAndFormName(tenementId, formName));
+//            String newFormId = ":"+ formMapper.selectIdByTenementIdAndFormName(tenementId, formName) +",";
 //            replaceString(detailJsonTemplate, oldFormId, newFormId);
+//
+//            //替换部门id
+//            String newDepartmentId = ":["+departmentMapper.selectIdByTenementIdAndPreId(tenementId,-1)+"],";
+//            String oldDepartmentId = ":["+departmentMapper.selectIdByTenementIdAndPreId(templateTenementId,-1)+"],";
+//            replaceString(detailJsonTemplate, oldDepartmentId, newDepartmentId);
+//
 //        }
 //
 //        // 将表单和关联的字段一起批量更新到数据库
@@ -881,19 +891,9 @@ public class StructureServiceImpl implements StructureService {
 //        boolean result2 = fieldService.saveBatch(fields);
 //        return result1 && result2;
 //    }
-//
-//    // 将字符串中旧值替换为新值
-//    private void replaceString(List<String> list, String oldValue, String newValue) {
-//        for (int i = 0; i < list.size(); i++) {
-//            String str = list.get(i);
-//            if (str.contains(oldValue)) {
-//                str = str.replace(oldValue, newValue);
-//                list.set(i, str);
-//            }
-//        }
-//    }
 
-    //表单初始化（初代版本）
+
+//    表单初始化（初代版本）
     @Override
     @Transactional
     public boolean createFormTemplate(int tenementId) {

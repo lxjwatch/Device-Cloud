@@ -54,7 +54,7 @@ public class FlowController {
         }else return Result.error("启用失败");
     }
     
-    //更新一个流程,不推荐使用
+    //更新一个流程,不推荐使用（？？？）
     @AuthOnCondition(NeedSysAdmin = false)
     @PostMapping("/update")
     public Result<?> updateFlow(@RequestBody FlowDto flowDto,String userInfo){
@@ -101,6 +101,7 @@ public class FlowController {
         flowLog.setRes("通过");
         flowLog.setStartTime(workLogService.getStartTime(workLogId));
         flowLog.setEndTime(LocalDateTime.now());
+        //发布一个 FlowNextEvent 事件
         applicationEventPublisher.publishEvent(new FlowNextEvent(this,workLogId,userInfo,flowLog, true));
         return Result.ok(null,"审批成功");
     }

@@ -20,7 +20,7 @@ public class UserVo {
     private Integer state;
     
     private Map<Integer,String> role;
-    
+
     @Data
     public static class SingleUserVo{
         private String name;
@@ -28,6 +28,7 @@ public class UserVo {
         private String phone;
         private String email;
         private String tenementName;
+        private Integer tenementId;
         private Map<Integer,String> departments;
         private Map<Integer,String> roles;
     }
