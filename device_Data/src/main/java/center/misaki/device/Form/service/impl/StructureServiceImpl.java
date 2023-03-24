@@ -4,15 +4,13 @@ import center.misaki.device.Flow.Flow;
 import center.misaki.device.Flow.FlowLog;
 import center.misaki.device.Flow.WorkLog;
 import center.misaki.device.Flow.dao.FlowLogMapper;
+import center.misaki.device.Flow.dao.FlowMapper;
 import center.misaki.device.Flow.dao.WorkLogMapper;
 import center.misaki.device.Flow.service.FlowService;
-import center.misaki.device.Form.dao.DepartmentMapper;
-import center.misaki.device.Form.dao.MenuMapper;
+import center.misaki.device.Form.dao.*;
 import center.misaki.device.Form.dto.BatchDeleteDto;
 import center.misaki.device.Form.vo.MenuFormVo;
 import center.misaki.device.domain.Pojo.Form;
-import center.misaki.device.Form.dao.FieldMapper;
-import center.misaki.device.Form.dao.FormMapper;
 import center.misaki.device.Form.dto.FormStrucDto;
 import center.misaki.device.Form.pojo.Field;
 import center.misaki.device.Form.service.StructureService;
@@ -29,9 +27,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -55,6 +56,11 @@ public class StructureServiceImpl implements StructureService {
     
     @Autowired
     private FlowService flowService;
+
+    @Resource
+    private FlowMapper flowMapper;
+    @Resource
+    private UserMapper userMapper;
     
     private final WorkLogMapper workLogMapper;
     private final FlowLogMapper flowLogMapper;
@@ -812,86 +818,236 @@ public class StructureServiceImpl implements StructureService {
         return true;
     }
 
-//    @Override
-//    @Transactional
-//    public boolean createFormTemplate(int tenementId, int templateTenementId) {
-//        // 获取field表中模板公司的所有字段数据
-//        List<Field> fieldsTemplate = fieldMapper.selectList(new QueryWrapper<Field>().eq("tenement_id", templateTenementId));
-//
-//        // 生成模板公司字段数量的字段id，生成后放在fieldIds集合里
-//        List<String> fieldIds = fieldsTemplate.stream()
-//                .map(Field::getTypeId)
-//                .map(this::getFieldsId)
-//                .collect(Collectors.toList());
-//
-//        // 获取form表中模板公司的所有表单
-//        List<Form> formsTemplate = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id", templateTenementId));
-//
-//
-//        // 分别将form_fields、properties和detailJson存储到对应的列表中
-//        List<String> formFieldsTemplate = formsTemplate.stream()
-//                .map(Form::getFormFields)
-//                .collect(Collectors.toList());
-//        List<String> propertiesTemplate = formsTemplate.stream()
-//                .map(Form::getProperties)
-//                .collect(Collectors.toList());
-//        List<String> detailJsonTemplate = fieldsTemplate.stream()
-//                .map(Field::getDetailJson)
-//                .collect(Collectors.toList());
-//
-//        // 替换字段id、表单id和部门id
-//        for (int i = 0; i < fieldsTemplate.size(); i++) {
-//            //替换字段id
-//            Field fieldTemplate = fieldsTemplate.get(i);
-//            String oldFieldId = fieldTemplate.getId();
-//            String newFieldId = fieldIds.get(i);
-//            replaceString(formFieldsTemplate, oldFieldId, newFieldId);
-//            replaceString(propertiesTemplate, oldFieldId, newFieldId);
-//            replaceString(detailJsonTemplate, oldFieldId, newFieldId);
-//
-//            //替换表单id
-//            String oldFormId = ":"+ fieldTemplate.getFormId() +",";
-//            String formName = formMapper.selectFormNameById(fieldTemplate.getFormId());
-//            String newFormId = ":"+ formMapper.selectIdByTenementIdAndFormName(tenementId, formName) +",";
-//            replaceString(detailJsonTemplate, oldFormId, newFormId);
-//
-//            //替换部门id
-//            String newDepartmentId = ":["+departmentMapper.selectIdByTenementIdAndPreId(tenementId,-1)+"],";
-//            String oldDepartmentId = ":["+departmentMapper.selectIdByTenementIdAndPreId(templateTenementId,-1)+"],";
-//            replaceString(detailJsonTemplate, oldDepartmentId, newDepartmentId);
-//
-//        }
-//
-//        // 将表单和关联的字段一起批量更新到数据库
-//        List<Form> forms = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id", tenementId));
-//        List<Field> fields = IntStream.range(0, fieldsTemplate.size())
-//                .mapToObj(i -> {
-//                    Field fieldTemplate = fieldsTemplate.get(i);
-//                    String fieldId = fieldIds.get(i);
-//                    String formName = formMapper.selectFormNameById(fieldTemplate.getFormId());
-//                    int formId = formMapper.selectIdByTenementIdAndFormName(tenementId, formName).intValue();
-//                    Field field = new Field();
-//                    field.setId(fieldId);
-//                    field.setTenementId(tenementId);
-//                    field.setFormId(formId);
-//                    field.setTypeId(fieldTemplate.getTypeId());
-//                    field.setName(fieldTemplate.getName());
-//                    field.setDetailJson(detailJsonTemplate.get(i));
-//                    field.setCreateTime(LocalDateTime.now());
-//                    field.setUpdateTime(LocalDateTime.now());
-//                    return field;
-//                })
-//                .collect(Collectors.toList());
-//        for (int i = 0; i < forms.size(); i++) {
-//            Form form = forms.get(i);
-//            form.setFormFields(formFieldsTemplate.get(i));
-//            form.setProperties(propertiesTemplate.get(i));
-//        }
-//        boolean result1 = formService.updateBatchById(forms);
-//        boolean result2 = fieldService.saveBatch(fields);
-//        return result1 && result2;
-//    }
+    @Override
+    @Transactional
+    public boolean createFormTemplate(int tenementId, int templateTenementId) {
+        // 获取field表中模板公司的所有字段数据
+        List<Field> fieldsTemplate = fieldMapper.selectList(new QueryWrapper<Field>().eq("tenement_id", templateTenementId));
 
+        // 生成模板公司字段数量的字段id，生成后放在fieldIds集合里
+        List<String> fieldIds = fieldsTemplate.stream()
+                .map(Field::getTypeId)
+                .map(this::getFieldsId)
+                .collect(Collectors.toList());
+
+        // 获取form表中模板公司的所有表单
+        List<Form> formsTemplate = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id", templateTenementId));
+
+        // 获取flow表中模板公司的所有流程
+        List<Flow> flowsTemplate = flowMapper.selectList(new QueryWrapper<Flow>().eq("tenement_id", templateTenementId));
+
+        // 分别将form_fields、properties、detailJson、view_data、flow_nodes存储到对应的列表中
+        List<String> formFieldsTemplate = formsTemplate.stream()
+                .map(Form::getFormFields)
+                .collect(Collectors.toList());
+        List<String> propertiesTemplate = formsTemplate.stream()
+                .map(Form::getProperties)
+                .collect(Collectors.toList());
+        List<String> detailJsonTemplate = fieldsTemplate.stream()
+                .map(Field::getDetailJson)
+                .collect(Collectors.toList());
+        List<String> viewDataTemplate = flowsTemplate.stream()
+                .map(Flow::getViewData)
+                .collect(Collectors.toList());
+        List<String> flowNodesTemplate = flowsTemplate.stream()
+                .map(Flow::getFlowNodes)
+                .collect(Collectors.toList());
+
+        //替换用户id
+        String oldUserId = ":["+userMapper.selectIdByTenementId(templateTenementId)+"]";
+        String newUserId = ":["+userMapper.selectIdByTenementId(tenementId)+"]";
+        replaceString(flowNodesTemplate, oldUserId, newUserId);
+        replaceString(viewDataTemplate, oldUserId, newUserId);
+
+        // 替换字段id、表单id和部门id
+        for (int i = 0; i < fieldsTemplate.size(); i++) {
+            //替换字段id
+            Field fieldTemplate = fieldsTemplate.get(i);
+            String oldFieldId = fieldTemplate.getId();
+            String newFieldId = fieldIds.get(i);
+            replaceString(formFieldsTemplate, oldFieldId, newFieldId);
+            replaceString(propertiesTemplate, oldFieldId, newFieldId);
+            replaceString(detailJsonTemplate, oldFieldId, newFieldId);
+            replaceString(viewDataTemplate, oldFieldId, newFieldId);
+            replaceString(flowNodesTemplate, oldFieldId, newFieldId);
+
+            //替换表单id
+            String oldFormId = ":"+ fieldTemplate.getFormId() +",";
+            String formName = formMapper.selectFormNameById(fieldTemplate.getFormId());
+            String newFormId = ":"+ formMapper.selectIdByTenementIdAndFormName(tenementId, formName) +",";
+            replaceString(detailJsonTemplate, oldFormId, newFormId);
+
+            //替换表单id(带引号类型)
+            String oldFormIdInArray = ":\""+ fieldTemplate.getFormId() +"\",";
+            String newFormIdInArray = ":\""+ formMapper.selectIdByTenementIdAndFormName(tenementId, formName) +"\",";
+            replaceString(detailJsonTemplate, oldFormIdInArray, newFormIdInArray);
+
+            //替换部门id
+            String newDepartmentId = ":["+departmentMapper.selectIdByTenementIdAndPreId(tenementId,-1)+"],";
+            String oldDepartmentId = ":["+departmentMapper.selectIdByTenementIdAndPreId(templateTenementId,-1)+"],";
+            replaceString(detailJsonTemplate, oldDepartmentId, newDepartmentId);
+        }
+
+        // 将表单和关联的字段一起批量更新到数据库
+        List<Form> forms = formMapper.selectList(new QueryWrapper<Form>().eq("tenement_id", tenementId));
+        List<Field> fields = IntStream.range(0, fieldsTemplate.size())
+                .mapToObj(i -> {
+                    Field fieldTemplate = fieldsTemplate.get(i);
+                    String fieldId = fieldIds.get(i);
+                    String formName = formMapper.selectFormNameById(fieldTemplate.getFormId());
+                    int formId = formMapper.selectIdByTenementIdAndFormName(tenementId, formName).intValue();
+                    Field field = new Field();
+                    field.setId(fieldId);
+                    field.setTenementId(tenementId);
+                    field.setFormId(formId);
+                    field.setTypeId(fieldTemplate.getTypeId());
+                    field.setName(fieldTemplate.getName());
+                    field.setDetailJson(detailJsonTemplate.get(i));
+                    field.setCreateTime(LocalDateTime.now());
+                    field.setUpdateTime(LocalDateTime.now());
+                    return field;
+                })
+                .collect(Collectors.toList());
+        for (int i = 0; i < forms.size(); i++) {
+            Form form = forms.get(i);
+            form.setFormFields(formFieldsTemplate.get(i));
+            form.setProperties(propertiesTemplate.get(i));
+        }
+        boolean result1 = formService.updateBatchById(forms);
+        boolean result2 = fieldService.saveBatch(fields);
+
+        //初始化流程
+        List<String> nodeIdsNotDistinctTemplate = new ArrayList<>();
+        List<String> itemIdsNotDistinctTemplate = new ArrayList<>();
+
+        flowsTemplate.forEach((flow)->{
+            String viewData = flow.getViewData();
+            String flowNodes = flow.getFlowNodes();
+
+            //获取节点id(或边id)
+            String nodeIdRegex = ":\\d{7},";
+            Pattern nodeIdPattern = Pattern.compile(nodeIdRegex);
+            Matcher nodeIdViewDataMatcher = nodeIdPattern.matcher(viewData);
+            Matcher nodeIdFlowNodesMatcher = nodeIdPattern.matcher(flowNodes);
+
+            while (nodeIdViewDataMatcher.find()) {
+                String match = nodeIdViewDataMatcher.group();
+                System.out.println("nodeIdViewDataMatcher found: " + match);
+                nodeIdsNotDistinctTemplate.add(match);
+            }
+            while (nodeIdFlowNodesMatcher.find()) {
+                String match = nodeIdFlowNodesMatcher.group();
+                System.out.println("nodeIdFlowNodesMatcher found: " + match);
+                nodeIdsNotDistinctTemplate.add(match);
+            }
+
+            //获取itemsId
+            String itemIdRegex = ":\"[\\-\\w]{21}\"";
+            Pattern itemIdPattern = Pattern.compile(itemIdRegex);
+            Matcher itemIdViewDataMatcher = itemIdPattern.matcher(viewData);
+            Matcher itemIdFlowNodesMatcher = itemIdPattern.matcher(flowNodes);
+
+            while (itemIdViewDataMatcher.find()) {
+                String match = itemIdViewDataMatcher.group();
+                System.out.println("itemIdViewDataMatcher found: " + match);
+                itemIdsNotDistinctTemplate.add(match);
+            }
+            while (itemIdFlowNodesMatcher.find()) {
+                String match = itemIdFlowNodesMatcher.group();
+                System.out.println("itemIdFlowNodesMatcher found: " + match);
+                itemIdsNotDistinctTemplate.add(match);
+            }
+        });
+
+        //获取模板节点id和边id
+        List<String> nodeIdsTemplate = nodeIdsNotDistinctTemplate.stream().distinct().collect(Collectors.toList());
+
+        //生成与模板相同数量的节点id和边id
+        List<Integer> nodeIds = new ArrayList<>();
+        for(int i=0;i<nodeIdsTemplate.size();i++){
+            nodeIds.add(getNodeId());
+        }
+
+        //获取模板itemId
+        List<String> itemIdsTemplate = itemIdsNotDistinctTemplate.stream().distinct().collect(Collectors.toList());
+
+        //生成与模板相同数量的itemId
+        List<String> itemIds = new ArrayList<>();
+        for(int i=0;i<itemIdsTemplate.size();i++){
+            itemIds.add(getItemId());
+        }
+
+        //替换节点id(bug)
+        for (int i=0;i<nodeIds.size();i++){
+            String oldNodeId = nodeIdsTemplate.get(i);
+            String newNodeId = ":"+nodeIds.get(i)+",";
+            replaceString(viewDataTemplate,oldNodeId,newNodeId);
+            replaceString(flowNodesTemplate,oldNodeId,newNodeId);
+
+            //单独替换flowNodes中数组格式的节点id
+            String oldNodeIdInFlowNodes = ":["+oldNodeId.substring(1,8)+"]";
+            String newNodeIdInFlowNodes = ":["+nodeIds.get(i)+"]";
+            replaceString(flowNodesTemplate,oldNodeIdInFlowNodes,newNodeIdInFlowNodes);
+        }
+
+        //替换itemId
+        for (int i=0;i<itemIds.size();i++){
+            String oldItemId = itemIdsTemplate.get(i);
+            String newItemId = ":\""+itemIds.get(i)+"\"";
+            replaceString(viewDataTemplate,oldItemId,newItemId);
+            replaceString(flowNodesTemplate,oldItemId,newItemId);
+        }
+
+        //创建流程
+        for(int i=0;i<flowsTemplate.size();i++){
+            Flow flow = new Flow();
+            flow.setTenementId(tenementId);
+            flow.setEnable(false);
+            String formName = formMapper.selectFormNameById(flowsTemplate.get(i).getFormId());
+            int formId = formMapper.selectIdByTenementIdAndFormName(tenementId, formName).intValue();
+            flow.setFormId(formId);
+            flow.setFlowNodes(flowNodesTemplate.get(i));
+            flow.setViewData(viewDataTemplate.get(i));
+            flow.setFlowProperty(flowsTemplate.get(i).getFlowProperty());
+            flow.setNodeMoreProperty(null);
+            String username = userMapper.selectUserNameByTenementId(tenementId);
+            flow.setCreatePerson(username);
+            flow.setUpdatePerson(username);
+            flow.setCreateTime(LocalDateTime.now());
+            flow.setUpdateTime(LocalDateTime.now());
+            flowMapper.insert(flow);
+        }
+
+        return result1 && result2;
+    }
+
+    // 将字符串中旧值替换为新值
+    private void replaceString(List<String> list, String oldValue, String newValue) {
+        for (int i = 0; i < list.size(); i++) {
+            String str = list.get(i);
+            if (str.contains(oldValue)) {
+                str = str.replace(oldValue, newValue);
+                list.set(i, str);
+            }
+        }
+    }
+
+    // 生成随机7位数字的id
+    private Integer getNodeId(){
+        int idLength = 7; // ID长度为7
+        StringBuilder sb = new StringBuilder(idLength);
+        Random random = new Random();
+        for (int i = 0; i < idLength; i++) {
+            sb.append(random.nextInt(10)); // 生成0-9的随机整数
+        }
+        String randomIDStr = sb.toString();
+        return Integer.parseInt(randomIDStr);
+    }
+
+    // 生成21位的随机id
+    private String getItemId(){
+        return UUID.randomUUID().toString().replaceAll("-", "").substring(0,21);
+    }
 
 //    表单初始化（初代版本）
     @Override
@@ -1351,16 +1507,7 @@ public class StructureServiceImpl implements StructureService {
         return true;
     }
 
-    // 将字符串中旧值替换为新值
-    private void replaceString(List<String> list, String oldValue, String newValue) {
-        for (int i = 0; i < list.size(); i++) {
-            String str = list.get(i);
-            if (str.contains(oldValue)) {
-                str = str.replace(oldValue, newValue);
-                list.set(i, str);
-            }
-        }
-    }
+
 
     //生成typeId_+19位的id
     @Override
