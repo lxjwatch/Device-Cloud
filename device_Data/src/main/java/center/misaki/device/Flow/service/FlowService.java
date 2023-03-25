@@ -3,12 +3,13 @@ package center.misaki.device.Flow.service;
 import center.misaki.device.Flow.Flow;
 import center.misaki.device.Flow.FlowDto;
 import center.misaki.device.Flow.FlowVo;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 import java.util.Set;
 
 //流程服务接口
-public interface FlowService {
+public interface FlowService extends IService<Flow> {
     
     //创建流程
     boolean createFlow(FlowDto flowDto,String userInfo);

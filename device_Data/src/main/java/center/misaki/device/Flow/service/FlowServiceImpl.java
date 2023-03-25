@@ -14,6 +14,8 @@ import center.misaki.device.utils.UserInfoUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +27,7 @@ import java.util.*;
  * @author Misaki
  */
 @Service
-public class FlowServiceImpl implements FlowService {
+public class FlowServiceImpl extends ServiceImpl<FlowMapper, Flow> implements FlowService, IService<Flow> {
 
     private final FlowMapper flowMapper;
     private final FormService formService;
