@@ -127,10 +127,10 @@ public class FormServiceImpl extends ServiceImpl<FormMapper,Form> implements For
 
     @Override
     public boolean addOneData(OneDataDto oneDataDto, String userInfo) {
-        //如果是普通数据
+        //如果是普通表单数据
         if(formMapper.selectType(oneDataDto.getFormId())==0){
             return formDataService.addOneData(oneDataDto,userInfo);
-        }else{//流程数据
+        }else{//流程表单数据
             Integer dataId = formDataService.addOneFlowData(oneDataDto, userInfo);
             //发起流程
             applicationEventPublisher.publishEvent(new FlowStartEvent(this,oneDataDto.getFormId(),dataId, userInfo));
@@ -142,21 +142,30 @@ public class FormServiceImpl extends ServiceImpl<FormMapper,Form> implements For
     public List<String> addOneData(OneDataDto.OneDataDtoPlus oneDataDtoPlus, String userInfo) {
         //首先进行重复检查
         Map<String, String> data = oneDataDtoPlus.getData();
+        //获取表单的所有旧字段数据（字段id：字段值）
         List<Map<String, String>> originAllData = formDataService.getOneFormAllDataMap(oneDataDtoPlus.getFormId(),userInfo);
+        //获取要检验的字段id
         List<String> checkFieldIds = oneDataDtoPlus.getCheckFieldIds();
         List<String> checkAns = new ArrayList<>();
         for(String checkId:checkFieldIds){
+            //获取提交的字段数据
             String checkData=data.get(checkId);
             for(Map<String,String> o:originAllData){
+                //不是要检验的字段直接跳过
                 if(!o.containsKey(checkId)) continue;
+                //获取旧字段数据
                 String originData = o.get(checkId);
+                //如果要添加的数据已经存在，则无法添加
                 if(originData.equals(checkData)){
+                    //添加到校验数据重复的集合中
                     checkAns.add(checkId);
                     break;
                 }
             }
         }
+        //如果校验出提交的有重复数据，返回重复数据的字段id集合
         if(!checkAns.isEmpty()) return checkAns;
+        //校验通过 -> 异步更新提交的数据到数据库
         OneDataDto oneDataDto = new OneDataDto();
         oneDataDto.setData(data);
         oneDataDto.setFormId(oneDataDtoPlus.getFormId());
@@ -173,21 +182,30 @@ public class FormServiceImpl extends ServiceImpl<FormMapper,Form> implements For
     public List<String> changeOneData(OneDataDto.OneDataDtoPlus oneDataDtoPlus, String userInfo) {
         //首先进行重复检查
         Map<String, String> data = oneDataDtoPlus.getData();
+        //获取一张表单的所有数据，除了要修改的那条数据
         List<Map<String, String>> originAllData = formDataService.getOneFormAllDataMapExOne(oneDataDtoPlus.getFormId(), oneDataDtoPlus.getDataId(), userInfo);
+        //获取要检验的字段id
         List<String> checkFieldIds = oneDataDtoPlus.getCheckFieldIds();
         List<String> checkAns = new ArrayList<>();
         for(String checkId:checkFieldIds){
+            //获取提交要修改的字段数据
             String checkData=data.get(checkId);
             for(Map<String,String> o:originAllData){
+                //不是要检验的字段直接跳过
                 if(!o.containsKey(checkId)) continue;
+                //获取旧字段数据
                 String originData = o.get(checkId);
+                //如果要修改成的数据已经存在，则无法修改
                 if(originData.equals(checkData)){
+                    //添加到校验数据重复的集合中
                     checkAns.add(checkId);
                     break;
                 }
             }
         }
+        //如果校验出提交的有重复数据，返回重复数据的字段id集合
         if(!checkAns.isEmpty()) return checkAns;
+        //校验通过 -> 异步更新提交的数据到数据库
         OneDataDto oneDataDto = new OneDataDto();
         oneDataDto.setDataId(oneDataDtoPlus.getDataId());
         oneDataDto.setData(data);

@@ -76,6 +76,7 @@ public interface FormService extends IService<Form> {
     
     List<OneDataVo.OneFormLinkValue> getDataLinkFormSearch(List<DataScreenDto> dataScreenDto, String userInfo) throws ExecutionException, InterruptedException;
 
+    //快速查询数据
     List<FormData> fastQuery(List<Integer> dataIds);
 
 }

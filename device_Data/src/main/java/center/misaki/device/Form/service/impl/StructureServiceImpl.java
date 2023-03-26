@@ -546,7 +546,7 @@ public class StructureServiceImpl implements StructureService {
                     Flow flowTemplate = flowsTemplate.get(i);
                     Flow flow = new Flow();
                     flow.setTenementId(tenementId);
-                    flow.setEnable(false);
+                    flow.setEnable(true);
                     String formName = formMapper.selectFormNameById(flowTemplate.getFormId());
                     flow.setFormId(formMapper.selectIdByTenementIdAndFormName(tenementId, formName).intValue());
                     flow.setFlowNodes(flowNodesTemplate.get(i));

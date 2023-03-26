@@ -184,13 +184,22 @@ public class FormDataService {
     
     
     
-    //获取一张表单内所有的数据ID，和数据值的MAP集合
+    //获取一张表单内所有的数据ID，和数据值的MAP集合（即 字段id：字段值）
     public List<Map<String,String>> getOneFormAllDataMap(Integer formId,String userInfo){
-       return getOneFormData(formId, userInfo).stream().map(FormData::getFormData).map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {})).collect(Collectors.toList());
+       return getOneFormData(formId, userInfo)
+               .stream()
+               .map(FormData::getFormData)
+               .map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {}))
+               .collect(Collectors.toList());
     }
     //获取一张表单内所有的数据ID，和数据值的MAP集合，除去其中一条数据
     public List<Map<String,String>> getOneFormAllDataMapExOne(Integer formId,Integer dataId,String userInfo){
-       return getOneFormData(formId, userInfo).stream().filter(a->!a.getId().equals(dataId)).map(FormData::getFormData).map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {})).collect(Collectors.toList());
+       return getOneFormData(formId, userInfo)
+               .stream()
+               .filter(a->!a.getId().equals(dataId))
+               .map(FormData::getFormData)
+               .map(m -> JSON.parseObject(m, new TypeReference<Map<String, String>>() {}))
+               .collect(Collectors.toList());
     }
     
     //获取一张表单内所有的数据ID
