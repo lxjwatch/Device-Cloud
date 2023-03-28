@@ -6,8 +6,7 @@
     </tr>
     <tr>
         <td>&nbsp;</td>
-        <td colspan="2" style="text-align: right;"><img
-                    src="https://mail001-1317295795.cos.ap-nanjing.myqcloud.com/imgs/20230315235428.png" width="100px"></td>
+        <td colspan="2" style="text-align: right;"></td>
         <td>&nbsp;</td>
     </tr>
     <tr height="30">
@@ -38,8 +37,7 @@
     </tr>
     <tr>
         <td colspan="4" style="color: #323232; text-align: center;"><span style="font-size: 12px;">Powered By </span>
-            <img src="https://mail001-1317295795.cos.ap-nanjing.myqcloud.com/imgs/20230315235428.png" style="vertical-align: middle;"
-                 height="16px"></td>
+           </td>
     </tr>
     <tr height="30">
     </tr>
