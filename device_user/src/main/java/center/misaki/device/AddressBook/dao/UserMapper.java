@@ -11,24 +11,24 @@ import java.util.List;
 public interface UserMapper extends BaseMapper<User> {
     
     
-    @Select({"select username from user where id =#{arg0}"})
+    @Select({"select user.username from user where user.id =#{arg0}"})
     String selectUsernameById(Integer userId);
     
-    @Select({"select email from user where id =#{arg0}"})
+    @Select({"select user.email from user where user.id =#{arg0}"})
     String selectEmailById(Integer userId);
 
-    @Select({"select * from user where username =#{arg0}"})
+    @Select({"select * from user where user.username =#{arg0}"})
     List<User> selectAllByUsername(String username);
 
-    @Select({"select * from user where tenement_id =#{arg0}"})
+    @Select({"select * from user where user.tenement_id =#{arg0}"})
     List<User> selectAllByTenementId(Integer tenementId);
 
-    @Select({"select max(tenement_id) from user"})
+    @Select({"select max(user.tenement_id) from user"})
     Integer selectMaxTenementId();
 
-    @Select({"select id from user where username =#{arg0}"})
+    @Select({"select user.id from user where user.username =#{arg0}"})
     Integer selectIdByUsername(String username);
 
-    @Select({"select tenement_id from user where username =#{arg0}"})
+    @Select({"select user.tenement_id from user where user.username =#{arg0}"})
     Integer selectTenementIdByUsername(String username);
 }

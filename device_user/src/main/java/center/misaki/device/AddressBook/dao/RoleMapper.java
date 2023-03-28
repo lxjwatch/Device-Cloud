@@ -34,7 +34,7 @@ public interface RoleMapper extends BaseMapper<Role> {
     List<Integer> selectAllGroupId(int tenementId);
     
     //查询这个角色名字
-    @Select({"select name from role where id=#{arg0}"})
+    @Select({"select role.name from role where role.id=#{arg0}"})
     String selectNameById(Integer roleId);
     
     //删除这个角色组

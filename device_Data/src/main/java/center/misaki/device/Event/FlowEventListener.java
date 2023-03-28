@@ -83,7 +83,7 @@ public class FlowEventListener {
             }else {
                 workLogService.flowToUserWorkLog(userIds,dataId,flowLogId,userInfo,node);
                 if(flowProperty.getMail()){
-                    //发送邮件，之后再做
+                    //发送邮件，通知负责人有待办消息
                     executor.execute(()->{userIds.forEach(u->{FlowSendEmail(dataId,u,flowFeignController,userInfo);});});
                 }
                 
@@ -131,7 +131,7 @@ public class FlowEventListener {
                 nextNodes.stream().filter(node->node.getTypeId()==2).forEach(n->{
                     Set<Integer> userIds = flowService.getUserIds(n, userInfo);
                     if(flowProperty.getMail()){
-                        //发送邮件，之后再做 
+                        //发送邮件，通知负责人有抄送消息
                         executor.execute(()->{userIds.forEach(u->{FlowCopySendEmail(dataId,u,flowFeignController,userInfo);});});
                     }
                     if(flowProperty.getWx()){
@@ -160,14 +160,14 @@ public class FlowEventListener {
                     if(n.getTypeId()==2){
                         workLogService.createCopyLog(userIds,dataId,flowLogId,userInfo,n);
                         if(flowProperty.getMail()){
-                            //发送邮件，之后再做 
+                            //发送邮件，通知负责人有抄送消息
                             executor.execute(()->{userIds.forEach(u->{FlowCopySendEmail(dataId,u,flowFeignController,userInfo);});});
                         }
                     }else {
                         //审核节点
                         workLogService.flowToUserWorkLog(userIds,dataId,flowLogId,userInfo,n);
                         if(flowProperty.getMail()){
-                            //发送邮件，之后再做
+                            //发送邮件，通知负责人有审核消息
                             executor.execute(()->{userIds.forEach(u->{FlowSendEmail(dataId,u,flowFeignController,userInfo);});});
                         }
                         if(flowProperty.getWx()){
@@ -183,7 +183,7 @@ public class FlowEventListener {
                 nodes.forEach(n->{
                     Set<Integer> userIds = flowService.getUserIds(n, userInfo);
                     if(flowProperty.getMail()){
-                        //发送邮件，之后再做     
+                        //发送邮件，通知负责人有待办消息
                         executor.execute(()->{userIds.forEach(u->{FlowSendEmail(dataId,u,flowFeignController,userInfo);});});
                     }
                     if(flowProperty.getWx()){
@@ -228,13 +228,14 @@ public class FlowEventListener {
     
     
     
-    
+    //发送待办通知
     private void FlowSendEmail(Integer dataId,Integer userId,FlowFeignController f,String userInfo){
         FlowMailDto flowMailDto = new FlowMailDto();
         flowMailDto.setFormName(formDataService.getFormNameByDataId(dataId));
         flowMailDto.setUserId(userId);
         f.flowAdvice(flowMailDto,UserInfoUtil.getToken(userInfo));
     }
+    //发送流程结束通知
     private void FlowEndSendEmail(Integer dataId,Integer userId,FlowFeignController f,String userInfo,Boolean isAgree){
         FlowMailDto flowMailDto = new FlowMailDto();
         flowMailDto.setFormName(formDataService.getFormNameByDataId(dataId));
@@ -242,6 +243,7 @@ public class FlowEventListener {
         flowMailDto.setIsAgree(isAgree);
         f.flowRejectAdvice(flowMailDto,UserInfoUtil.getToken(userInfo));
     }
+    //发送抄送通知
     private void FlowCopySendEmail(Integer dataId,Integer userId,FlowFeignController f,String userInfo){
         FlowMailDto flowMailDto = new FlowMailDto();
         flowMailDto.setFormName(formDataService.getFormNameByDataId(dataId));

@@ -1,13 +1,13 @@
-<table background-color:="#fff;"
-       style="line-height: 1.6; box-shadow: 0 0 7px 0 rgba(0,0,0,0.10); border-radius: 4px; -webkit-font-smoothing: antialiased; font-family: 'Helvetica Neue', 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑',Arial,sans-serif; max-width:800px"
-       width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+<table
+        style="line-height: 1.6; box-shadow: 0 0 7px 0 rgba(0,0,0,0.10); border-radius: 4px; -webkit-font-smoothing: antialiased; font-family: 'Helvetica Neue', 'PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑',Arial,sans-serif; max-width:800px"
+        width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
     <tbody>
     <tr height="40">
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td colspan="2" style="text-align: right;"><img
-                    src="https://assets.jiandaoyun.com/resources/images/logo-pure.png" width="100px"></td>
+                    src="https://mail001-1317295795.cos.ap-nanjing.myqcloud.com/imgs/20230315235428.png" width="100px"></td>
         <td>&nbsp;</td>
     </tr>
     <tr height="30">
@@ -38,7 +38,7 @@
     </tr>
     <tr>
         <td colspan="4" style="color: #323232; text-align: center;"><span style="font-size: 12px;">Powered By </span>
-            <img src="https://assets.jiandaoyun.com/resources/images/logo-pure.png" style="vertical-align: middle;"
+            <img src="https://mail001-1317295795.cos.ap-nanjing.myqcloud.com/imgs/20230315235428.png" style="vertical-align: middle;"
                  height="16px"></td>
     </tr>
     <tr height="30">

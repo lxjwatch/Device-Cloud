@@ -9,6 +9,6 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface DepartmentMapper {
 
-    @Select({"select id from department where tenement_id=#{arg0} and pre_id=#{arg1}"})
+    @Select({"select department.id from department where department.tenement_id=#{arg0} and department.pre_id=#{arg1}"})
     Long selectIdByTenementIdAndPreId(Integer tenementId,Integer preId);
 }

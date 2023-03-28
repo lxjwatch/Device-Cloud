@@ -23,11 +23,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/mail")
 public class MailController {
-    
+
     private final MailServiceImpl mailService;
     private final UserMapper userMapper;
     private final DataCommentController dataCommentController;
-    
+
     public MailController(MailServiceImpl mailService, UserMapper userMapper, DataCommentController dataCommentController) {
         this.mailService = mailService;
         this.userMapper = userMapper;
@@ -37,7 +37,7 @@ public class MailController {
 
 
 
-    //发表评论接口
+
     @PostMapping("/comment")
     public Result<?> sendComment(@RequestBody CommentDto commentDto){
         Integer[] userIds = commentDto.getUserIds();
@@ -52,7 +52,7 @@ public class MailController {
             if(email==null||email.equals(""))continue;
             args.put("userName",userMapper.selectUsernameById(userId));
             args.put("userEmail",email);
-            mailService.asyncSendTemplateMail(email,"设备运维系统",args,"invite.ftl");
+            mailService.asyncSendTemplateMail(email,"数据评论",args,"comment.ftl");
         }
         DataCommentDto dataCommentDto = new DataCommentDto();
         dataCommentDto.setUserName(SecurityUtils.getCurrentUsername());
@@ -62,7 +62,7 @@ public class MailController {
         });
         return Result.ok(null,"评论成功");
     }
-    
+
     //流程流转通知接口
     @PostMapping("/flow")
     public Result<?> flowAdvice(@RequestBody FlowMailDto flowMailDto){
@@ -75,10 +75,10 @@ public class MailController {
         args.put("formName",flowMailDto.getFormName());
         args.put("time",LocalDateTime.now().toString());
         args.put("word","待办");
-        mailService.asyncSendTemplateMail(email,"待办通知",args,"flow.ftl");
+        mailService.asyncSendTemplateMail(email,"设备运维系统待办",args,"flow.ftl");
         return Result.ok(null,"发送成功");
     }
-    
+
     //流程抄送通知接口
     @PostMapping("/flow/copy")
     public Result<?> flowCopyAdvice(@RequestBody FlowMailDto flowMailDto){
@@ -94,8 +94,8 @@ public class MailController {
         mailService.asyncSendTemplateMail(email,"抄送通知",args,"flow.ftl");
         return Result.ok(null,"发送成功");
     }
-    
-    
+
+
     //流程结果通知接口
     @PostMapping("/flow/end")
     public Result<?> flowRejectAdvice(@RequestBody FlowMailDto flowMailDto){
@@ -111,7 +111,7 @@ public class MailController {
         mailService.asyncSendTemplateMail(email,"审核结果通知",args,"flowEnd.ftl");
         return Result.ok(null,"发送成功");
     }
-    
-    
-    
+
+
+
 }

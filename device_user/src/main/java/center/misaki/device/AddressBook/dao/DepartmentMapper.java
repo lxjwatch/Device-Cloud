@@ -32,18 +32,18 @@ public interface DepartmentMapper extends BaseMapper<Department> {
     List<Map<String,Object>> selectSubDepartIds(Integer departmentId,Integer tenementId);
     
     //查询这个部门名字
-    @Select({"select name from department where id=#{arg0}"})
+    @Select({"select department.name from department where department.id=#{arg0}"})
     String selectNameById(Integer departmentId);
     
     //用户注册初始化查询自己公司的id
-    @Select({"select id from department where tenement_id=#{arg0}"})
+    @Select({"select department.id from department where department.tenement_id=#{arg0}"})
     Integer selectIdByTenementId(Integer tenementId);
 
     //查询公司id
-    @Select({"select id from department where tenement_id=#{arg0} and pre_id=#{arg1}"})
+    @Select({"select department.id from department where department.tenement_id=#{arg0} and department.pre_id=#{arg1}"})
     Integer selectIdByTenementIdAndPreId(Integer tenementId,Integer preId);
 
     //查询上级部门id
-    @Select({"select pre_id from department where id=#{arg0}"})
+    @Select({"select department.pre_id from department where department.id=#{arg0}"})
     Integer selectIdByPreId(Integer Id);
 }
