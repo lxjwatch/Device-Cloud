@@ -8,9 +8,9 @@ spring:
   datasource:
     druid:
       driverClassName: com.mysql.cj.jdbc.Driver
-#      url: jdbc:mysql://device.misaki.world:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+      url: jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
 #      url: jdbc:mysql://192.168.0.1:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
-      url: jdbc:mysql://device.misaki.world:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+#      url: jdbc:mysql://device.misaki.world:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: device_mysql_001
 
@@ -26,7 +26,7 @@ spring:
 
   redis:
     host: 192.168.0.2
-    #host: 172.17.0.3
+#    host: 172.17.0.3
     port: 6379
     # Redis 服务器连接密码(默认为0)
     password: device_redis_001
