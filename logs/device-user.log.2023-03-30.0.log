@@ -1836,3 +1836,222 @@ Caused by: io.netty.channel.ConnectTimeoutException: connection timed out: /10.0
 2023-03-30 17:10:28.940 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
 2023-03-30 17:10:28.940 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
 2023-03-30 17:10:28.977 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-30 21:56:05.049 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2023-03-30 21:56:06.860 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:56:08.126 [main] INFO  center.misaki.device.userApp - The following profiles are active: prod
+2023-03-30 21:56:08.865 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-30 21:56:08.867 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-30 21:56:08.912 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 Redis repository interfaces.
+2023-03-30 21:56:08.977 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-30 21:56:09.128 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a22055f8-ab77-3702-9c8f-92a2fe3a992d
+2023-03-30 21:56:09.196 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$3497f6c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:56:09.261 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:56:09.439 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:56:09.626 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-03-30 21:56:09.633 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-03-30 21:56:09.634 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-30 21:56:09.634 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-03-30 21:56:09.731 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-30 21:56:09.732 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1592 ms
+2023-03-30 21:56:09.814 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-30 21:56:09.815 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-30 21:56:09.820 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@e29f4f6
+2023-03-30 21:56:09.910 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-03-30 21:56:15.432 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-03-30 21:56:16.682 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:56:17.919 [main] WARN  o.s.s.o.p.token.store.JwtAccessTokenConverter - Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2023-03-30 21:56:18.575 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@295f2d1b, org.springframework.security.web.context.SecurityContextPersistenceFilter@543da15, org.springframework.security.web.header.HeaderWriterFilter@6dbb3d7d, org.springframework.security.web.authentication.logout.LogoutFilter@18a0721b, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@6b6fd0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@57b33c29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75ee6f89, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ac05a33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65015a49, org.springframework.security.web.session.SessionManagementFilter@3ea9a091, org.springframework.security.web.access.ExceptionTranslationFilter@56b66a26, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d404a3c]
+2023-03-30 21:56:18.584 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@49cceb19, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@197d5a87, org.springframework.security.web.context.SecurityContextPersistenceFilter@27a90ce5, org.springframework.security.web.header.HeaderWriterFilter@36511772, org.springframework.security.web.authentication.logout.LogoutFilter@43b4ec0c, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@61d011e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77f4038c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49a06087, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@131d977f, org.springframework.security.web.session.SessionManagementFilter@51869ad6, org.springframework.security.web.access.ExceptionTranslationFilter@1eb9d69a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79617c3d]
+2023-03-30 21:56:18.593 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19e801b5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6fbc7853, org.springframework.security.web.header.HeaderWriterFilter@72e75786, org.springframework.security.web.csrf.CsrfFilter@294c44b7, org.springframework.security.web.authentication.logout.LogoutFilter@2dde0a34, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@556aed22, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@688d619c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@24de63b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1b69fc07, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@733fa95c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b2c8bda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42d0e41, org.springframework.security.web.session.SessionManagementFilter@2c0fefac, org.springframework.security.web.access.ExceptionTranslationFilter@2cc61b3b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2f75a9b1]
+2023-03-30 21:56:18.702 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-30 21:56:18.702 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-30 21:56:18.843 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-30 21:56:20.511 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:56:21.682 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:56:21.706 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-30 21:56:21.743 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-03-30 21:56:21.755 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-03-30 21:56:21.818 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-03-30 21:56:21.841 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-03-30 21:56:21.955 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-03-30 21:56:21.955 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-03-30 21:56:22.031 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-03-30 21:56:22.031 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-03-30 21:56:22.126 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-30 21:56:22.246 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-30 21:56:22.247 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-30 21:56:22.247 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-30 21:56:22.247 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-30 21:56:22.247 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-30 21:56:22.247 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-03-30 21:56:22.247 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-30 21:56:22.371 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-30 21:56:22.372 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-03-30 21:56:22.373 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-03-30 21:56:22.376 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1680184582375 with initial instances count: 0
+2023-03-30 21:56:22.379 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application AUTH-CENTER with eureka with status UP
+2023-03-30 21:56:22.380 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1680184582380, current=UP, previous=STARTING]
+2023-03-30 21:56:22.381 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/localhost:auth-center:8001: registering service...
+2023-03-30 21:56:22.393 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-03-30 21:56:22.413 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-03-30 21:56:22.414 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8001
+2023-03-30 21:56:22.437 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/localhost:auth-center:8001 - registration status: 204
+2023-03-30 21:56:23.591 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:56:23.593 [main] INFO  center.misaki.device.userApp - Started userApp in 18.506 seconds (JVM running for 19.335)
+2023-03-30 21:56:23.638 [RMI TCP Connection(3)-172.26.17.184] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-30 21:56:23.638 [RMI TCP Connection(3)-172.26.17.184] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-30 21:56:23.648 [RMI TCP Connection(3)-172.26.17.184] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2023-03-30 21:56:23.959 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2023-03-30 21:56:23.960 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2023-03-30 21:56:24.312 [boundedElastic-1] WARN  o.s.b.actuate.redis.RedisReactiveHealthIndicator - Redis health check failed
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 124.222.87.213:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1199)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1178)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedReactiveConnection(LettuceConnectionFactory.java:952)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:429)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:94)
+	at reactor.core.publisher.MonoSupplier.call(MonoSupplier.java:85)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:225)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 124.222.87.213:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:234)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:207)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.util.Optional.orElseGet(Optional.java:267)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1197)
+	... 14 common frames omitted
+Caused by: io.lettuce.core.RedisCommandExecutionException: ERR AUTH <password> called without any password configured for the default user. Are you sure your configuration is correct?
+	at io.lettuce.core.ExceptionFactory.createExecutionException(ExceptionFactory.java:135)
+	at io.lettuce.core.ExceptionFactory.createExecutionException(ExceptionFactory.java:108)
+	at io.lettuce.core.protocol.AsyncCommand.completeResult(AsyncCommand.java:120)
+	at io.lettuce.core.protocol.AsyncCommand.complete(AsyncCommand.java:111)
+	at io.lettuce.core.protocol.CommandWrapper.complete(CommandWrapper.java:59)
+	at io.lettuce.core.protocol.CommandHandler.complete(CommandHandler.java:654)
+	at io.lettuce.core.protocol.CommandHandler.decode(CommandHandler.java:614)
+	at io.lettuce.core.protocol.CommandHandler.channelRead(CommandHandler.java:565)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 common frames omitted
+2023-03-30 21:56:52.387 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-30 21:56:52.388 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-30 21:56:52.388 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-30 21:56:52.388 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-30 21:56:52.388 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-30 21:56:52.388 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: false
+2023-03-30 21:56:52.388 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-30 21:56:52.426 [DiscoveryClient-CacheRefreshExecutor-0] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-30 21:57:00.355 [main] INFO  org.springframework.core.KotlinDetector - Kotlin reflection implementation not found at runtime, related features won't be available.
+2023-03-30 21:57:01.970 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:57:03.228 [main] INFO  center.misaki.device.userApp - The following profiles are active: prod
+2023-03-30 21:57:03.955 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-03-30 21:57:03.957 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-03-30 21:57:04.000 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 Redis repository interfaces.
+2023-03-30 21:57:04.065 [main] WARN  o.springframework.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-03-30 21:57:04.212 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a22055f8-ab77-3702-9c8f-92a2fe3a992d
+2023-03-30 21:57:04.278 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncTaskExecutePool' of type [center.misaki.device.Config.AsyncTaskExecutePool$$EnhancerBySpringCGLIB$$f396b660] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:57:04.337 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:57:04.498 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-03-30 21:57:04.682 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2023-03-30 21:57:04.689 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2023-03-30 21:57:04.689 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-30 21:57:04.690 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-03-30 21:57:04.795 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-03-30 21:57:04.795 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1554 ms
+2023-03-30 21:57:04.871 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-30 21:57:04.872 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-30 21:57:04.878 [main] INFO  com.netflix.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3cdc7b09
+2023-03-30 21:57:04.968 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2023-03-30 21:57:10.074 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-03-30 21:57:11.323 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:57:12.541 [main] WARN  o.s.s.o.p.token.store.JwtAccessTokenConverter - Unable to create an RSA verifier from verifierKey (ignoreable if using MAC)
+2023-03-30 21:57:13.183 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17ae13d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f4adaab, org.springframework.security.web.header.HeaderWriterFilter@45c408a4, org.springframework.security.web.authentication.logout.LogoutFilter@6d4502ca, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@4e756867, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@60ab895f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54496c2d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e10a320, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69f3e556, org.springframework.security.web.session.SessionManagementFilter@cb318ac, org.springframework.security.web.access.ExceptionTranslationFilter@6c1b82cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@283bb8b7]
+2023-03-30 21:57:13.192 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@5e2975ca, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38cf4497, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a6efe33, org.springframework.security.web.header.HeaderWriterFilter@148b6f95, org.springframework.security.web.authentication.logout.LogoutFilter@2ecdcfe3, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@5c60c08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e5ebdfe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71668a67, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b4619a3, org.springframework.security.web.session.SessionManagementFilter@5ee581db, org.springframework.security.web.access.ExceptionTranslationFilter@43b4ec0c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@43d6262c]
+2023-03-30 21:57:13.202 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5ad40184, org.springframework.security.web.context.SecurityContextPersistenceFilter@362be0cd, org.springframework.security.web.header.HeaderWriterFilter@6a04d2a4, org.springframework.security.web.csrf.CsrfFilter@6fbc7853, org.springframework.security.web.authentication.logout.LogoutFilter@19d3f6ad, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50f05307, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1b632442, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3359c3f6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@8ee03f5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dde0a34, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61836cd9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d3b272a, org.springframework.security.web.session.SessionManagementFilter@35a9e665, org.springframework.security.web.access.ExceptionTranslationFilter@647ff23e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42d0e41]
+2023-03-30 21:57:13.315 [main] WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2023-03-30 21:57:13.315 [main] INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-03-30 21:57:13.461 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2023-03-30 21:57:15.079 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:57:16.244 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:57:16.268 [main] WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2023-03-30 21:57:16.302 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with default default cache. You can switch to using Caffeine cache, by adding it to the classpath.
+2023-03-30 21:57:16.314 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-03-30 21:57:16.382 [main] INFO  o.s.cloud.netflix.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2023-03-30 21:57:16.404 [main] INFO  com.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2023-03-30 21:57:16.511 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2023-03-30 21:57:16.512 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2023-03-30 21:57:16.585 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2023-03-30 21:57:16.586 [main] INFO  c.n.discovery.provider.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2023-03-30 21:57:16.677 [main] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Disable delta property : false
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Application is null : false
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Application version is -1: true
+2023-03-30 21:57:16.793 [main] INFO  com.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2023-03-30 21:57:16.893 [main] INFO  com.netflix.discovery.DiscoveryClient - The response status is 200
+2023-03-30 21:57:16.895 [main] INFO  com.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2023-03-30 21:57:16.896 [main] INFO  com.netflix.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-03-30 21:57:16.899 [main] INFO  com.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1680184636898 with initial instances count: 1
+2023-03-30 21:57:16.902 [main] INFO  o.s.c.n.e.serviceregistry.EurekaServiceRegistry - Registering application AUTH-CENTER with eureka with status UP
+2023-03-30 21:57:16.903 [main] INFO  com.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1680184636903, current=UP, previous=STARTING]
+2023-03-30 21:57:16.904 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/localhost:auth-center:8001: registering service...
+2023-03-30 21:57:16.915 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2023-03-30 21:57:16.935 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2023-03-30 21:57:16.936 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8001
+2023-03-30 21:57:16.939 [DiscoveryClient-InstanceInfoReplicator-0] INFO  com.netflix.discovery.DiscoveryClient - DiscoveryClient_AUTH-CENTER/localhost:auth-center:8001 - registration status: 204
+2023-03-30 21:57:18.096 [main] INFO  org.springframework.cloud.commons.util.InetUtils - Cannot determine local hostname
+2023-03-30 21:57:18.098 [main] INFO  center.misaki.device.userApp - Started userApp in 17.706 seconds (JVM running for 18.49)
+2023-03-30 21:57:18.495 [RMI TCP Connection(2)-172.26.17.184] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-30 21:57:18.495 [RMI TCP Connection(2)-172.26.17.184] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-30 21:57:18.506 [RMI TCP Connection(2)-172.26.17.184] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2023-03-30 21:57:18.617 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2023-03-30 21:57:18.619 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2023-03-30 22:02:16.808 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.shared.resolver.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2023-03-30 22:02:34.979 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Request URL: [http://localhost:8001/login/token], URI: [/login/token], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
+2023-03-30 22:02:34.985 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Parameters: [[{"clientId":"pc","clientSecret":"secret","password":"123456","username":"Misaki"}]]
+2023-03-30 22:02:34.990 [http-nio-8001-exec-1] WARN  o.s.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2023-03-30 22:02:35.091 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325036
+2023-03-30 22:02:35.104 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325163
+2023-03-30 22:02:35.116 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325299
+2023-03-30 22:02:35.129 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325431
+2023-03-30 22:02:35.138 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325559
+2023-03-30 22:02:35.152 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325675
+2023-03-30 22:02:35.168 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325840
+2023-03-30 22:02:35.181 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 325999
+2023-03-30 22:02:35.191 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 326123
+2023-03-30 22:02:35.203 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 326238
+2023-03-30 22:02:35.220 [http-nio-8001-exec-1] WARN  com.alibaba.druid.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://124.222.87.213:3306/device_test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false, version : 1.2.8, lastPacketReceivedIdleMillis : 326380
+2023-03-30 22:02:35.474 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - AuthController.login Response: [{"additionalInformation":{"jti":"cd6500a4-bf0a-4e57-9af9-d9cfad71395a"},"expiration":1680192155400,"expired":false,"expiresIn":7199,"scope":["all"],"tokenType":"bearer","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODAxOTIxNTUsInVzZXJfbmFtZSI6Ik1pc2FraSIsImp0aSI6ImNkNjUwMGE0LWJmMGEtNGU1Ny05YWY5LWQ5Y2ZhZDcxMzk1YSIsImNsaWVudF9pZCI6InBjIiwic2NvcGUiOlsiYWxsIl19.A784txS1tLGBDNPxu_sJuBZ40_VWACxe1ErfM0mXdW0"}]
+2023-03-30 22:02:35.474 [http-nio-8001-exec-1] INFO  center.misaki.device.Aspect.ControllerLogAop - Usage:
+StopWatch '/login/token': running time = 501068300 ns
+---------------------------------------------
+ns         %     Task name
+---------------------------------------------
+012459300  002%  PrintRequest
+483438600  096%  AuthController#login
+005170400  001%  PrintResponse
+

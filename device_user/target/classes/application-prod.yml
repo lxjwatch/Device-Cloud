@@ -25,11 +25,12 @@ spring:
 
 
   redis:
-    host: 192.168.0.2
+    host: 124.222.87.213
 #    host: 172.17.0.3
     port: 6379
     # Redis 服务器连接密码(默认为0)
-    password: device_redis_001
+#    password: device_redis_001
+    password:
     # 连接超时时间（毫秒）
     timeout: 10000
 
