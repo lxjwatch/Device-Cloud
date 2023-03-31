@@ -157,7 +157,7 @@ public class RoleServiceImpl implements RoleService {
     
     
     @Override
-    @AuthScope(role = true,useId = false)
+//    @AuthScope(role = true,useId = false)
     public List<RoleGroupVo> getAllGroupRole() {
         List<Role> roleList = roleMapper.selectList(new QueryWrapper<Role>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()));
         List<Integer> groupIds = roleMapper.selectAllGroupId(SecurityUtils.getCurrentUser().getTenementId());

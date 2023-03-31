@@ -1,6 +1,7 @@
 package center.misaki.device.Flow.api;
 
 import center.misaki.device.Annotation.AuthOnCondition;
+import center.misaki.device.Annotation.FormAuthCondition;
 import center.misaki.device.Event.FlowNextEvent;
 import center.misaki.device.Flow.FlowDto;
 import center.misaki.device.Flow.FlowLog;
@@ -95,6 +96,7 @@ public class FlowController {
 
     //用户通过该流程节点
     @PostMapping("/agree")
+    @AuthOnCondition(NeedSysAdmin = false)
     public Result<?> agreeFlowNext(Integer workLogId, String userInfo, @RequestBody FlowLog.Log flowLog) {
         workLogService.updateWorkLog(workLogId,true,userInfo);
         flowLog.setUserName(UserInfoUtil.getUserName(userInfo));

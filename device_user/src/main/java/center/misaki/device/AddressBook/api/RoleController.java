@@ -28,7 +28,7 @@ public class RoleController {
     
     //获取所有的角色组和组里面的角色
     @GetMapping("/show")
-    @AuthOnCondition(NeedSysAdmin = false)
+//    @AuthOnCondition(NeedSysAdmin = false)
     public Result<List<RoleGroupVo>> showAllRole(){
         List<RoleGroupVo> allGroupRole = roleService.getAllGroupRole();
         return Result.ok(allGroupRole,"获取成功");

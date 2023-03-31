@@ -8,7 +8,7 @@ eureka:
       defaultZone: http://localhost:18761/eureka
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: device-data
 #设置feign 客户端超时时间（openFeign默认支持ribbon）

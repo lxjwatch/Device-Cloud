@@ -2,7 +2,7 @@ server:
   port: 8001
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: auth-center
 
