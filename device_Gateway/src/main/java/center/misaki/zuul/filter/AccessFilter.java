@@ -61,7 +61,7 @@ public class AccessFilter extends ZuulFilter {
             response.setHeader("Access-Control-Allow-Origin",request.getHeader("Origin"));
             response.setHeader("Access-Control-Allow-Credentials","true");
             response.setHeader("Access-Control-Allow-Headers","authorization, x-requested-with,content-type");
-            response.setHeader("Access-Control-Allow-Methods","POST");
+            response.setHeader("Access-Control-Allow-Methods","*");
             ctx.setSendZuulResponse(Boolean.FALSE);
             ctx.setResponseStatusCode(200);
             return null;
