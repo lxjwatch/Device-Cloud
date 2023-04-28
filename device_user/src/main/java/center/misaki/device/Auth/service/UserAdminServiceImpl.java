@@ -149,6 +149,7 @@ public class UserAdminServiceImpl implements UserAdminService {
     @Override
     @Transactional
     public boolean deleteNormalAdmin(Integer userId) {
+        //删除普通管理员，将其所在的普通管理员组设置为-1
         int i = userMapper.update(null, new UpdateWrapper<User>().eq("id", userId).set("normal_admin_group_id", -1));
         return i>0;
     }

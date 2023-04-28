@@ -15,10 +15,10 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private final OAuth2WebSecurityExpressionHandler expressionHandler;
-    private final OAuth2AuthenticationEntryPoint oAuth2AuthenticationEntryPoint;
+    private final CustomAuthenticationEntryPoint oAuth2AuthenticationEntryPoint;
     private final ResponseExceptionTranslator  responseExceptionTranslator;
 
-    public ResourceServerConfig(OAuth2WebSecurityExpressionHandler expressionHandler, OAuth2AuthenticationEntryPoint oAuth2AuthenticationEntryPoint, ResponseExceptionTranslator responseExceptionTranslator) {
+    public ResourceServerConfig(OAuth2WebSecurityExpressionHandler expressionHandler, CustomAuthenticationEntryPoint oAuth2AuthenticationEntryPoint, ResponseExceptionTranslator responseExceptionTranslator) {
         this.expressionHandler = expressionHandler;
         this.oAuth2AuthenticationEntryPoint = oAuth2AuthenticationEntryPoint;
         this.responseExceptionTranslator = responseExceptionTranslator;
@@ -53,7 +53,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         {
             ((OAuth2AccessDeniedHandler) accessDeniedHandler).setExceptionTranslator(responseExceptionTranslator);
         }
-        //自定义认证失败，处理逻辑
+        //自定义认证失败，处理逻辑 默认返回体为{"error":"unauthorized","error_token":"token is invalid:"}
         resources.authenticationEntryPoint(oAuth2AuthenticationEntryPoint);
     }
 

@@ -49,12 +49,15 @@ public class StringZipUtil {
         }
     }
 
+    // 将Base64编码的字符串转换为字节数组
+
     private static byte[] convertFromBase64(String encdata) {
         Decoder decoder = Base64.getDecoder();
         byte[] compressed = decoder.decode(encdata);
         return compressed;
     }
 
+    // 将字节数组转换为Base64编码
     private static String convertToBase64(byte[] byteArray) {
         Encoder encoder = Base64.getEncoder();
         return encoder.encodeToString(byteArray);

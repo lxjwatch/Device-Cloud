@@ -42,6 +42,11 @@ public class AsyncTaskExecutePool implements AsyncConfigurer {
         return new DelegatingSecurityContextExecutorService(executor.getThreadPoolExecutor());
     }
 
+    /**
+     * 异步方法执行的过程中抛出的异常捕获
+     *
+     * @return
+     */
     @Override
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
         return (throwable, method, objects) -> {
@@ -49,7 +54,11 @@ public class AsyncTaskExecutePool implements AsyncConfigurer {
             log.error("exception method:"+method.getName());
         };
     }
-    
+
+    /**
+     * 从配置文件中读取线程池配置
+     * @return
+     */
     @Bean
     @ConfigurationProperties(prefix = "task.pool")
     public AsyncTaskProperties asyncTaskProperties(){

@@ -25,6 +25,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
     private final UserDetailsService userDetailsService;
+    // token 存储
     private final RedisTokenStore tokenStore;
     private final JwtAccessTokenConverter accessTokenConverter;
     public AuthorizationServerConfig(AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder, 

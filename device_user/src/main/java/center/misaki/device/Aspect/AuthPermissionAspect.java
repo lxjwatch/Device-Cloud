@@ -31,8 +31,10 @@ public class AuthPermissionAspect {
   
     @Around("haveAnnoPer()")
     public Object AroundMethodInvoke(ProceedingJoinPoint joinPoint) throws Throwable {
+        //获取方法签名
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
+        //拿到注解
         AuthOnCondition annotation = method.getAnnotation(AuthOnCondition.class);
         
         boolean needCreater = annotation.NeedCreater();

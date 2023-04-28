@@ -13,13 +13,10 @@ import java.lang.annotation.*;
 public @interface AuthScope {
      
      boolean department() default false;
-    
      //不使用ID时是 RoleGroupVo
      boolean role() default false;
      //是否使用方法参数的 相关ID进行控制？
      boolean useId() default true;
-     
-     
      //是否需要编辑
      boolean modify() default false;
      

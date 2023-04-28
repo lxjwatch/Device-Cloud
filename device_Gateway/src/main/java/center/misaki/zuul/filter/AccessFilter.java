@@ -44,6 +44,7 @@ public class AccessFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
+        //  获取当前的 RequestContext
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         HttpServletResponse response = ctx.getResponse();
@@ -55,6 +56,7 @@ public class AccessFilter extends ZuulFilter {
             return null;
         }
 
+        //判断请求是否为OPTIONS请求，如果是则放行
         if (request.getMethod().equals(HttpMethod.OPTIONS.name())){
             String curOrigin = request.getHeader("Origin");
             log.info("###跨域过滤器->当前访问来源->{}###",curOrigin);
@@ -80,8 +82,9 @@ public class AccessFilter extends ZuulFilter {
                 throw new HttpClientErrorException(HttpStatus.resolve(stringResponseEntity.getBody().getCode()),stringResponseEntity.getBody().getMsg());
             }
             // （2）鉴权通过后访问原来请求URI
-            // 用户信息
+            // 用户信息 请求中的所有参数名和参数值装入一个 Map 对象中返回
             Map<String, String[]> parameterMap = request.getParameterMap();
+            //加入压缩后的token
             parameterMap.put("userInfo",new String[]{(String) stringResponseEntity.getBody().getData()});
 
             // 请求参数

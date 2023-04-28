@@ -48,6 +48,12 @@ public class ConfigBeanConfiguration {
         return new RestTemplate();
     }
 
+
+    /**
+     * 是否被认证bean
+     * @param applicationContext
+     * @return
+     */
     @Bean
     public OAuth2WebSecurityExpressionHandler oAuth2WebSecurityExpressionHandler(ApplicationContext applicationContext) {
         OAuth2WebSecurityExpressionHandler expressionHandler = new OAuth2WebSecurityExpressionHandler();
@@ -57,7 +63,8 @@ public class ConfigBeanConfiguration {
 
     @Bean
     public RedisTokenStore tokenStore() {
-        return new RedisTokenExpendStore(connectionFactory,clientDetailsService);
+        return new
+                RedisTokenExpendStore(connectionFactory,clientDetailsService);
     }
     
     @Bean

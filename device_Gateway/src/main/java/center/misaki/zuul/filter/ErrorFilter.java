@@ -35,10 +35,12 @@ public class ErrorFilter extends ZuulFilter {
         Throwable throwable = currentContext.getThrowable();
         if(!currentContext.containsKey("error.status_code"))
         {
+            //如果是zuul的异常则设置状态码为zuul的异常状态码
             if(throwable instanceof ZuulException)
             {
                 currentContext.set("error.status_code", ((ZuulException)throwable).nStatusCode);
             }else {
+                //如果不是zuul的异常则设置状态码为500
                 currentContext.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             }
             currentContext.set("error.exception", throwable.getCause());

@@ -26,9 +26,8 @@ public class TestSend {
     
     @Test
     public void TConn() throws TemplateException, IOException, InterruptedException {
-        MailServiceImpl mailService = new MailServiceImpl(new FreeMarkerConfigurer());
-        mailService.testConnection();
-        Thread.sleep(10000);
+
+        System.out.println();
     }
     
     

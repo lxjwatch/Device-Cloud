@@ -41,8 +41,11 @@ public class AuthScopeAspect {
     @Around("authScope()")
     public Object AroundMethodInvoke(ProceedingJoinPoint joinPoint) throws Throwable{
 
+        //获取方法签名
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+        //获取方法
         Method method = signature.getMethod();
+        //获取注解
         AuthScope annotation = method.getAnnotation(AuthScope.class);
 
         boolean department = annotation.department();
@@ -60,7 +63,8 @@ public class AuthScopeAspect {
         AuthDto.Sco scope = authDto.getScope();
         Boolean isWatchDepartment = addressBook.getDepartment();
         Boolean[] isWatchManaRole = addressBook.getRole();
-        
+
+        //运行时异常，不允许访问
         if(department&&!isWatchDepartment) throw new ForbiddenException("不允许访问部门相关信息");
         if(role&&!isWatchManaRole[0]) throw new ForbiddenException("不允许访问角色相关信息");
         if(modify&&!isWatchManaRole[1]) throw new ForbiddenException("不允许修改角色相关信息");

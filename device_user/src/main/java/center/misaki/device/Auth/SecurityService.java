@@ -72,12 +72,16 @@ public class SecurityService implements UserDetailsService {
         userDto.eraseCredentials();
         return userDto;
     }
-    
-    
-    
-    
 
-    
+
+    /**
+     *
+     * 权限校验
+     * @param request
+     * @param authentication
+     * @return
+     */
+
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
         String requestURI = request.getRequestURI();
         Object principal = authentication.getPrincipal();

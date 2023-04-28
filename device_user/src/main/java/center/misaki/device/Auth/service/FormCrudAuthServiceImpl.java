@@ -133,6 +133,7 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
                         departmentAuthMapper.update(null,new UpdateWrapper<DepartmentAuthForm>()
                                 .eq("id",value.get("id")).set("submit",true));
                     }
+                    //防止重复提交
                     departAuthMap.remove(d.longValue());
                 }else{
                     DepartmentAuthForm authForm = new DepartmentAuthForm();

@@ -73,17 +73,20 @@ public class AuthController {
     //PC登陆接口
     @PostMapping("/login/token")
     public OAuth2AccessToken login(@Validated @RequestBody AuthUserDto authUser){
-        
+        //寻找客户端信息
         ClientDetails clientDetails = clientDetailsService.loadClientByClientId(authUser.getClientId());
         if (clientDetails == null) {
             throw new UnapprovedClientAuthenticationException("clientId对应的配置信息不存在:" + authUser.getClientId());
-        } else if (passwordEncoder.matches(clientDetails.getClientSecret(), authUser.getClientSecret())) {
+        } else if (!passwordEncoder.matches( authUser.getClientSecret(),clientDetails.getClientSecret())) {
             throw new UnapprovedClientAuthenticationException("clientSecret不匹配:" + authUser.getClientId());
         }
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(authUser.getUsername(), authUser.getPassword());
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
+
+        //向授权服务器请求访问令牌
         TokenRequest tokenRequest = new TokenRequest(new HashMap<>(), authUser.getClientId(), clientDetails.getScope(), "user");
+        //OAuth2Request用于封装OAuth2请求的信息
         OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
         OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
         OAuth2AccessToken token = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
@@ -105,6 +108,7 @@ public class AuthController {
             }
             //重新生成
             token = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
+
         }
         return token;
     }
@@ -175,24 +179,30 @@ public class AuthController {
     
     @GetMapping("/isAccessed")
     public Result<String> isAccessed(){
+        //继承了UserDetails
         JwtUserDto user;
         try {
             user = SecurityUtils.getCurrentUser();
             
             User user1 = userMapper.selectById(user.getUserId());
+            //是否为主管理员
             Long count = sysAdminMapper.selectCount(new QueryWrapper<SysAdmin>().eq("user_id", user.getUserId()));
             if(count>0) user.setSysAdmin(true);
+            //是否为普通管理员
             if(user1.getNormalAdminGroupId()!=-1) {
                 user.setNormalAdmin(true);
                 NormalAdmin normalAdmin = normalAdminMapper.selectById(user1.getNormalAdminGroupId());
+                //普通管理员权限
                 if (normalAdmin != null) user.setAuthDto(JSON.parseObject(normalAdmin.getConfig(), AuthDto.class));
             }
+            //  OAuth2AccessToken token = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
+            //  取出token
             OAuth2AccessToken accessToken = tokenStore.getAccessToken((OAuth2Authentication) SecurityContextHolder.getContext().getAuthentication());
             user.setToken(accessToken.getValue());
         }catch(Exception e){
             return Result.error("身份信息验证失败");
         }
-        
+        //压缩数据
         String data = StringZipUtil.compressData(JSONUtils.beanToJson(user));
         return Result.ok(data,"验证成功");
     }

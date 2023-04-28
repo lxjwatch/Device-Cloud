@@ -25,6 +25,7 @@ public class UserInfoAspect {
 
     @Around("Get()||Post()")
     public Object controller(ProceedingJoinPoint joinPoint) throws Throwable {
+        //获取方法参数名
         String[] parameterNames = ((CodeSignature) joinPoint.getSignature()).getParameterNames();
         int index=-1;
         for(int i=0;i<parameterNames.length;i++){
@@ -33,6 +34,7 @@ public class UserInfoAspect {
                 break;
             }
         }
+        //返回被通知方法参数列表
         Object[] args = joinPoint.getArgs();
         if(index!=-1) {
             args[index]=StringZipUtil.decompressData((String) args[index]);

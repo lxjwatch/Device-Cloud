@@ -50,9 +50,11 @@ public class ControllerLogAop {
         if(method == null){
             return joinPoint.proceed();
         }
+        //获取类名
         String className = joinPoint.getTarget().getClass().getSimpleName();
         String methodName = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
+        //用于存放用户信息
         ServletRequestAttributes requestAttributes =
                 (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = Objects.requireNonNull(requestAttributes).getRequest();
