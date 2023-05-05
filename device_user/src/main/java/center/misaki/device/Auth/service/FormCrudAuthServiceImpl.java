@@ -69,7 +69,10 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
             return ans;
         }
         //获取用户所在的部门ID集合
-        List<Integer> departmentIds = departmentMapper.selectUserDepartIds(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId()).stream().map(m -> ((Long) m.get("departmentId")).intValue()).collect(Collectors.toList());
+        List<Integer> departmentIds = departmentMapper.selectUserDepartIds
+                (currentUser.getUserId(),
+                        SecurityUtils.getCurrentUser().getTenementId())
+                .stream().map(m -> ((Long) m.get("departmentId")).intValue()).collect(Collectors.toList());
         List<Integer> roleIds = roleMapper.selectRoleIdsByUserId(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId()).stream().map(m -> ((Long) m.get("roleId")).intValue()).collect(Collectors.toList());
 
         UserAuthForm userAuthForm = userAuthMapper.selectOne(new QueryWrapper<UserAuthForm>().eq("user_id", currentUser.getUserId()).eq("form_id", formId));
@@ -593,8 +596,9 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
         stringListHashMap.put(FormAuthEnum.SUBMIT_SELF.operation, new ArrayList<>());
         stringListHashMap.put(FormAuthEnum.MANAGE.operation, new ArrayList<>());
         stringListHashMap.put(FormAuthEnum.WATCH.operation, new ArrayList<>());
-        
-        
+
+
+
         departmentAuthForms.forEach(d->{
             if(d.getSubmit()) stringListHashMap.get(FormAuthEnum.SUBMIT.operation).add(d);
             if(d.getSubmitSelf()) stringListHashMap.get(FormAuthEnum.SUBMIT_SELF.operation).add(d);

@@ -32,6 +32,8 @@ public class FormAuthController {
         Set<Integer> formAuth = formCrudAuthService.getFormAuth(formId);
         return Result.ok(formAuth,"获取成功");
     }
+
+
     
     //查看当前表所对应的权限组
     @GetMapping("/showGroup")
