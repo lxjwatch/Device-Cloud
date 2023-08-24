@@ -235,7 +235,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserVo> getAllUser() {
-        List<User> users = userMapper.selectList(new UpdateWrapper<User>().eq("tenement_id", SecurityUtils.getCurrentUser().getTenementId()).eq("is_delete", false));
+        List<User> users = userMapper.selectList(new UpdateWrapper<User>()
+                .eq("tenement_id",
+                        SecurityUtils.getCurrentUser().getTenementId()).eq("is_delete", false));
         List<UserVo> userVos = new ArrayList<>(32);
         users.forEach(u->{
             UserVo userVo = new UserVo();

@@ -61,19 +61,21 @@ public class FormCrudAuthServiceImpl implements FormCrudAuthService {
     public Set<Integer> getFormAuth(Integer formId) {
         JwtUserDto currentUser = SecurityUtils.getCurrentUser();
         Set<Integer> ans = new HashSet<>();
-        if(currentUser.isCreater()||currentUser.isSysAdmin()){
-            ans.add(FormAuthEnum.SUBMIT.operation);
-            ans.add(FormAuthEnum.SUBMIT_SELF.operation);
-            ans.add(FormAuthEnum.MANAGE.operation);
-            ans.add(FormAuthEnum.WATCH.operation);
-            return ans;
-        }
+//        if(currentUser.isCreater()||currentUser.isSysAdmin()){
+//            ans.add(FormAuthEnum.SUBMIT.operation);
+//            ans.add(FormAuthEnum.SUBMIT_SELF.operation);
+//            ans.add(FormAuthEnum.MANAGE.operation);
+//            ans.add(FormAuthEnum.WATCH.operation);
+//            return ans;
+//        }
         //获取用户所在的部门ID集合
         List<Integer> departmentIds = departmentMapper.selectUserDepartIds
-                (currentUser.getUserId(),
-                        SecurityUtils.getCurrentUser().getTenementId())
+                (currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId())
                 .stream().map(m -> ((Long) m.get("departmentId")).intValue()).collect(Collectors.toList());
-        List<Integer> roleIds = roleMapper.selectRoleIdsByUserId(currentUser.getUserId(), SecurityUtils.getCurrentUser().getTenementId()).stream().map(m -> ((Long) m.get("roleId")).intValue()).collect(Collectors.toList());
+        List<Integer> roleIds = roleMapper.selectRoleIdsByUserId
+                (currentUser.getUserId(), SecurityUtils.getCurrentUser()
+                        .getTenementId()).stream()
+                .map(m -> ((Long) m.get("roleId")).intValue()).collect(Collectors.toList());
 
         UserAuthForm userAuthForm = userAuthMapper.selectOne(new QueryWrapper<UserAuthForm>().eq("user_id", currentUser.getUserId()).eq("form_id", formId));
         if(userAuthForm!=null){

@@ -73,7 +73,7 @@ public class AuthController {
     //PC登陆接口
     @PostMapping("/login/token")
     public OAuth2AccessToken login(@Validated @RequestBody AuthUserDto authUser){
-        //寻找客户端信息
+        //寻找客户端信息z
         ClientDetails clientDetails = clientDetailsService.loadClientByClientId(authUser.getClientId());
         if (clientDetails == null) {
             throw new UnapprovedClientAuthenticationException("clientId对应的配置信息不存在:" + authUser.getClientId());

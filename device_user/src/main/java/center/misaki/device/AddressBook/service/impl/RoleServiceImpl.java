@@ -46,7 +46,8 @@ public class RoleServiceImpl implements RoleService {
     }
     //返回当前用户拥有的角色ID，和角色名Map集合
     public Map<Integer,String> getUserRoleMap(Integer userId){
-        List<Map<String, Object>> roleIdNameMap = roleMapper.selectRoleIdsByUserId(userId, SecurityUtils.getCurrentUser().getTenementId());
+        List<Map<String, Object>> roleIdNameMap = roleMapper.selectRoleIdsByUserId
+                (userId, SecurityUtils.getCurrentUser().getTenementId());
         Map<Integer, String> ans = new HashMap<>();
         roleIdNameMap.forEach(r->{
             ans.put(((Long) r.get("roleId")).intValue(), (String) r.get("name"));

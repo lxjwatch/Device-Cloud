@@ -17,6 +17,7 @@ import java.util.UUID;
 public class JsonTest {
     @Test
     public void testJ(){
-        System.out.println(UUID.randomUUID().toString());
+
+
     } 
 }

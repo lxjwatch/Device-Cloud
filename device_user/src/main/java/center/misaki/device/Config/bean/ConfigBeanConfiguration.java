@@ -1,6 +1,7 @@
 package center.misaki.device.Config.bean;
 
 
+import center.misaki.device.Auth.config.CustomAuthenticationEntryPoint;
 import center.misaki.device.Auth.dto.RedisTokenExpendStore;
 import center.misaki.device.Config.MyMetaObjectHandler;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
@@ -76,7 +77,7 @@ public class ConfigBeanConfiguration {
 
     @Bean
     public OAuth2AuthenticationEntryPoint oAuth2AuthenticationEntryPoint(){
-        return new OAuth2AuthenticationEntryPoint();
+        return new CustomAuthenticationEntryPoint();
     }
     
     @Bean

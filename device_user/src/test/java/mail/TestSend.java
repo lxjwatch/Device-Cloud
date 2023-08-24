@@ -2,18 +2,54 @@ package mail;
 
 import center.misaki.device.Mail.MailServiceImpl;
 import freemarker.template.TemplateException;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.*;
+import java.util.function.Consumer;
 
 /**
  * @author Misaki
  */
 public class TestSend {
+
+    public void handlerConsumer(Integer number, Consumer<Integer> consumer){
+        consumer.accept(number);
+    }
+
+    @Test
+    public void test1(){
+        this.handlerConsumer(10000, (i) -> System.out.println(i));
+    }
+
+
+    @Test
+    public void test() throws TemplateException, IOException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, ClassNotFoundException {
+
+        Member member = new Member();
+        Class aClass1 = member.getClass();
+        String name = aClass1.getName();
+        System.out.println(name);
+
+        //反射
+        Class<Member> memberClass = Member.class;
+        Method method = memberClass.getMethod("getName");
+        Constructor constructor = memberClass.getConstructor();
+        Object object = constructor.newInstance();
+        Object invoke = method.invoke(object);
+
+
+
+
+
+    }
     
     @Test
     public void SendTome() throws TemplateException, IOException, InterruptedException {
@@ -53,9 +89,64 @@ public class TestSend {
     @Test
     public void TConn() throws TemplateException, IOException, InterruptedException {
 
-        System.out.println(lemonadeChange("5 5 5 10 20"));
+        Optional<Member> optional = getMemberByIdFromDB();
+
     }
-    
-    
-    
+    public static Optional<Member> getMemberByIdFromDB() {
+        boolean hasName = true;
+        if (hasName) {
+            return Optional.of(new Member());
+        }
+        return Optional.empty();
+    }
 }
+
+class Member {
+    private String name;
+
+    private String age;
+    public Member(String name, String age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public Member() {
+    }
+
+    public String test1(){
+        return "test1";
+    }
+
+    public String test2(String a){
+        return a;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+

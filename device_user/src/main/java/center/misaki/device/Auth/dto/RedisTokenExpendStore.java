@@ -20,6 +20,12 @@ public class RedisTokenExpendStore extends RedisTokenStore {
         this.clientDetailsService = clientDetailsService;
     }
 
+    /**
+     * 设置AccessToken过期时间，更新AccessToken过期时间
+     * @param token The token value under which the authentication is stored.
+     * @return
+     */
+
     @Override
     public OAuth2Authentication readAuthentication(OAuth2AccessToken token) {
         OAuth2Authentication result = readAuthentication(token.getValue());

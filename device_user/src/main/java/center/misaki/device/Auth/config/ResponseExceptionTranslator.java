@@ -36,7 +36,6 @@ public class ResponseExceptionTranslator implements WebResponseExceptionTranslat
 
         Throwable[] causeChain = throwableAnalyzer.determineCauseChain(e);
         Exception ase = (OAuth2Exception) throwableAnalyzer.getFirstThrowableOfType(OAuth2Exception.class, causeChain);
-
         if (ase != null) {
             return handleOAuth2Exception((OAuth2Exception) ase);
         }
