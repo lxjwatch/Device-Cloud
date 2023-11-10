@@ -12,9 +12,5 @@
 │   ├── device_data -- 数据模块
 │   ├── device_user -- 用户模块(oauth2)
 
-外网面板地址: https://39.170.26.135:10795/273f420a
-内网面板地址: https://192.168.92.128:10795/273f420a
-username: l7wujes1
-password: 3b70229a
 
 

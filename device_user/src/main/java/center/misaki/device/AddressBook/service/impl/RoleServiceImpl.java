@@ -61,8 +61,9 @@ public class RoleServiceImpl implements RoleService {
     public void changeRoleIdForUser(List<Integer> changeRoleId,List<Integer> originRoleId,Integer userId){
         Set<Integer> originIds = new HashSet<>(originRoleId);
         changeRoleId.forEach(c->{
-            if(originIds.contains(c)) originIds.remove(c);
-            else{
+            if(originIds.contains(c)) {
+                originIds.remove(c);
+            } else{
                 insertOneUserToRole(userId,c);
             }
         });
@@ -191,13 +192,15 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     @Async
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void saveUserIdsForRole(List<Integer> userIds, Integer roleId) {
-//        if (userIds==null||userIds.isEmpty()) return;
         Set<Integer> originUserIds = roleMapper.selectUserForRole(roleId, SecurityUtils.getCurrentUser().getTenementId()).stream().map(User::getId).collect(Collectors.toSet());
         userIds.forEach(u->{
-            if(originUserIds.contains(u)) originUserIds.remove(u);
-            else insertOneUserToRole(u,roleId);
+            if(originUserIds.contains(u)) {
+                originUserIds.remove(u);
+            } else {
+                insertOneUserToRole(u,roleId);
+            }
         });
         originUserIds.forEach(o->{
             deleteOneUserFromRole(o,roleId);
@@ -226,7 +229,9 @@ public class RoleServiceImpl implements RoleService {
     @Transactional
     public boolean deleteRoleGroup(Integer groupId) {
         Long count = roleMapper.selectCount(new QueryWrapper<Role>().eq("group_id", groupId));
-        if(count>0) return false;
+        if(count>0) {
+            return false;
+        }
         int i = roleMapper.deleteRoleGroup(groupId);
         return i>0;
     }
